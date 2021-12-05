@@ -50,7 +50,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
 
         btnReject.setText("Reject Vaccine");
 
-        jTextField1.setText("Abhishek");
+        jTextField1.setText("EconomyWorkArea");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
