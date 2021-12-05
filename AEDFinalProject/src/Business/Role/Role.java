@@ -18,8 +18,14 @@ public abstract class Role {
     
     public enum RoleType{
         Admin("Admin"),
-        Doctor("Doctor"),
-        LabAssistant("Lab Assistant");
+        Distribution("Distribution - Service"),
+        Doctor("Doctor - Hospital"),
+        Economy("Economy - Government"),
+        Health("Health Ministry - Government"),
+        Lab("Lab - Hosptial"),
+        Manufacturing("Manufacturing - Pharmaceutical"),
+        Purchase("Purchase - Service"),
+        Sales("Sales - Pharmaceutical");
         
         private String value;
         private RoleType(String value){
@@ -36,16 +42,10 @@ public abstract class Role {
         }
     }
     
-    public abstract JPanel createWorkArea(JPanel userProcessContainer, 
-            UserAccount account, 
-            Organization organization, 
-            Enterprise enterprise, 
-            EcoSystem business);
+    public abstract JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business);
 
     @Override
     public String toString() {
         return this.getClass().getName();
-    }
-    
-    
+    }   
 }
