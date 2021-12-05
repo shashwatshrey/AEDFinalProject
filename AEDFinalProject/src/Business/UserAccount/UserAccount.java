@@ -10,7 +10,7 @@ import Business.WorkQueue.WorkQueue;
 
 /**
  *
- * @author raunak
+ * @author vraj
  */
 public class UserAccount {
     
@@ -23,9 +23,7 @@ public class UserAccount {
     public UserAccount() {
         workQueue = new WorkQueue();
     }
-    
-    
-    
+   
     public String getUsername() {
         return username;
     }
@@ -46,12 +44,12 @@ public class UserAccount {
         return role;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
     public void setRole(Role role) {
         this.role = role;
+    }
+    
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public Employee getEmployee() {
@@ -61,8 +59,6 @@ public class UserAccount {
     public WorkQueue getWorkQueue() {
         return workQueue;
     }
-
-    
     
     @Override
     public String toString() {
