@@ -2,42 +2,37 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.DoctorRole;
+package ui.EconomyRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.DoctorOrganization;
+import Business.Organization.EconomyOrganization;
 import Business.UserAccount.UserAccount;
-//import Business.WorkQueue.LabTestWorkRequest;
-//import Business.WorkQueue.WorkRequest;
-//import java.awt.CardLayout;
 import javax.swing.JPanel;
-//import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author vraj
  */
-public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
-
+public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
+        
     private JPanel userProcessContainer;
-    private DoctorOrganization organization;
+    private EconomyOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
     /**
-     * Creates new form DoctorWorkAreaJPanel
+     * Creates new form DistributionWorkAreaJPanel
      */
-    public DoctorWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DoctorOrganization organization, Enterprise enterprise) {
+    public EconomyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EconomyOrganization organization, Enterprise enterprise) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
-        //valueLabel.setText(enterprise.getName());
-        //populateRequestTable();
+        
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,13 +46,14 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 703, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
