@@ -42,19 +42,44 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnManagePopulation = new javax.swing.JButton();
+        btnManageAllotment = new javax.swing.JButton();
+
+        btnManagePopulation.setText("Manage Population Records");
+
+        btnManageAllotment.setText("Allot Services & Hosptials");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(194, 194, 194)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnManageAllotment)
+                    .addComponent(btnManagePopulation))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManageAllotment, btnManagePopulation});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(btnManagePopulation)
+                .addGap(38, 38, 38)
+                .addComponent(btnManageAllotment)
+                .addContainerGap(241, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageAllotment, btnManagePopulation});
+
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnManageAllotment;
+    private javax.swing.JButton btnManagePopulation;
     // End of variables declaration//GEN-END:variables
 }

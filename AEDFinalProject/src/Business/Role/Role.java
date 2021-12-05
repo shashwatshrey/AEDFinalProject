@@ -28,6 +28,7 @@ public abstract class Role {
         Sales("Sales - Pharmaceutical");
         
         private String value;
+        
         private RoleType(String value){
             this.value = value;
         }
