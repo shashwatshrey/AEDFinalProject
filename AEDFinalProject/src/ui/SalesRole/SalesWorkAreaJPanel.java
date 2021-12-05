@@ -44,6 +44,7 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
 
         btnAccept = new javax.swing.JButton();
         btnReject = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         btnAccept.setText("Accept Order");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
@@ -59,13 +60,17 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setText("Sales Work Area");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(191, 191, 191)
-                .addComponent(btnAccept)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnAccept))
                 .addGap(73, 73, 73)
                 .addComponent(btnReject)
                 .addContainerGap(214, Short.MAX_VALUE))
@@ -73,7 +78,9 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(342, Short.MAX_VALUE)
+                .addGap(68, 68, 68)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 258, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAccept)
                     .addComponent(btnReject))
@@ -93,5 +100,6 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccept;
     private javax.swing.JButton btnReject;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
