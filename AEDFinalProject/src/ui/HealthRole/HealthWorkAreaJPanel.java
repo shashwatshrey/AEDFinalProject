@@ -44,20 +44,28 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
 
         btnManagePopulation = new javax.swing.JButton();
         btnManageAllotment = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         btnManagePopulation.setText("Manage Population Records");
 
         btnManageAllotment.setText("Allot Services & Hosptials");
+
+        jLabel1.setText("Health Workarea");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(194, 194, 194)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnManageAllotment)
-                    .addComponent(btnManagePopulation))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnManageAllotment)
+                            .addComponent(btnManagePopulation)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(jLabel1)))
                 .addContainerGap(217, Short.MAX_VALUE))
         );
 
@@ -66,11 +74,13 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel1)
+                .addGap(57, 57, 57)
                 .addComponent(btnManagePopulation)
                 .addGap(38, 38, 38)
                 .addComponent(btnManageAllotment)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageAllotment, btnManagePopulation});
@@ -81,5 +91,6 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageAllotment;
     private javax.swing.JButton btnManagePopulation;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
