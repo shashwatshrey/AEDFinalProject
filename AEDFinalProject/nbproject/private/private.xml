@@ -2,6 +2,26 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/PurchaseRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/HealthRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/EconomyRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Organization/ManufacturingOrganization.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/DoctorRole/DoctorWorkAreaJPanel.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/HealthRole/HealthRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/EconomyRole/EconomyWorkAreaJPanel.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/SalesRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/AdminRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/DoctorRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/LabRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/DistributionRole/DistributionWorkAreaJPanel.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/ManufacturingRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/Role.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/DistributionRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Organization/LabOrganization.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/SystemAdminRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/AdministrativeRole/AdminWorkAreaJPanel.java</file>
+        </group>
     </open-files>
 </project-private>
