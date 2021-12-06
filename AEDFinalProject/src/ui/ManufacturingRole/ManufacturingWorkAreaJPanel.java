@@ -32,7 +32,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public ManufacturingWorkAreaJPanel(JPanel userProcessContainer, EcoSystem ecoSystem, UserAccount account, Network network, ManufacturingOrganization organization, Enterprise enterprise) {
+    public ManufacturingWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ManufacturingOrganization organization, Enterprise enterprise) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
