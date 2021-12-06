@@ -65,7 +65,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setText("EconomyWorkArea");
+        jTextField1.setText("Economy Work Area");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
