@@ -5,10 +5,19 @@
  */
 package ui.ManufacturingRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.EconomyOrganization;
 import Business.Organization.ManufacturingOrganization;
+import Business.Organization.Organization;
+
+import Business.WorkQueue.LabTestWorkRequest;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -44,10 +53,30 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
 
         btnSendSample = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        requestTable = new javax.swing.JTable();
 
         btnSendSample.setText("Send Sample for approval");
+        btnSendSample.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSendSampleActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Manufacturing Work area");
+
+        requestTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(requestTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -60,23 +89,66 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(btnSendSample))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(285, 285, 285)
-                        .addComponent(jLabel1)))
-                .addContainerGap(293, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(btnSendSample)
                 .addGap(129, 129, 129))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSendSampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendSampleActionPerformed
+        // TODO add your handling code here:
+        LabTestWorkRequest lr = new LabTestWorkRequest();
+        lr.setMessage("Please approve");
+        lr.setSender(userAccount);
+        lr.setStatus("requested");
+        lr.setReceiver(userAccount);
+        JOptionPane.showMessageDialog(this, "Approval Requested!!");
+        populateTable();
+        
+        
+        Organization org = null;
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if (organization instanceof EconomyOrganization){
+                org = organization;
+                break;
+            }
+        }
+        if (org!=null){
+            org.getWorkQueue().getWorkRequestList().add(lr);
+            userAccount.getWorkQueue().getWorkRequestList().add(lr);
+        }
+    }//GEN-LAST:event_btnSendSampleActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSendSample;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable requestTable;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
+        model.setRowCount(0);
+        
+        for(WorkRequest l : userAccount.getWorkQueue().getWorkRequestList()){
+            
+                Object[] row = new Object[2];
+                row[0] = l.getStatus();
+                model.addRow(row);
+        }
+    }
 }
