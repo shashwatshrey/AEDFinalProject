@@ -8,7 +8,9 @@ package ui.ManufacturingRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.EconomyOrganization;
 import Business.Organization.ManufacturingOrganization;
+import Business.Organization.Organization;
 
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.UserAccount.UserAccount;
@@ -24,9 +26,7 @@ import javax.swing.table.DefaultTableModel;
 public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         
     private JPanel userProcessContainer;
-    private EcoSystem ecoSystem;
     private ManufacturingOrganization organization;
-    private Network network;
     private Enterprise enterprise;
     private UserAccount userAccount;
     /**
@@ -36,8 +36,6 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
-        this.ecoSystem = ecoSystem;
-        this.network = network;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
@@ -117,9 +115,21 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         lr.setSender(userAccount);
         lr.setStatus("requested");
         lr.setReceiver(userAccount);
-        ecoSystem.getWorkQueue().getWorkRequestList().add(lr);
         JOptionPane.showMessageDialog(this, "Approval Requested!!");
         populateTable();
+        
+        
+        Organization org = null;
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if (organization instanceof EconomyOrganization){
+                org = organization;
+                break;
+            }
+        }
+        if (org!=null){
+            org.getWorkQueue().getWorkRequestList().add(lr);
+            userAccount.getWorkQueue().getWorkRequestList().add(lr);
+        }
     }//GEN-LAST:event_btnSendSampleActionPerformed
 
 
@@ -135,11 +145,10 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(WorkRequest l : userAccount.getWorkQueue().getWorkRequestList()){
-            if(l.getSender().equals(userAccount)){
+            
                 Object[] row = new Object[2];
                 row[0] = l.getStatus();
                 model.addRow(row);
-            }
         }
     }
 }
