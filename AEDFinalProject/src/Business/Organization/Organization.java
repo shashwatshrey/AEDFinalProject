@@ -55,6 +55,14 @@ public abstract class Organization {
         return organizationID;
     }
 
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Organization.counter = counter;
+    }
+
     public EmployeeDirectory getEmployeeDirectory() {
         return employeeDirectory;
     }

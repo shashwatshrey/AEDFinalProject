@@ -33,7 +33,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
-        
+        populateTable();
     }
     
     /**
