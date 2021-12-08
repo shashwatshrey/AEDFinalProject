@@ -53,18 +53,18 @@ public class EntryJFrame extends javax.swing.JFrame {
         lblSignin = new javax.swing.JLabel();
         lblUsername = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
+        separatorLine1 = new javax.swing.JSeparator();
+        separatorLine2 = new javax.swing.JSeparator();
         txtPassword = new javax.swing.JPasswordField();
         txtUsername = new javax.swing.JTextField();
         chkTerms = new javax.swing.JCheckBox();
         btnSignin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        iconLogo = new javax.swing.JLabel();
         iconExit = new javax.swing.JLabel();
         signoutPanel = new javax.swing.JPanel();
-        jSeparator3 = new javax.swing.JSeparator();
+        separatorLine3 = new javax.swing.JSeparator();
         lblText = new javax.swing.JLabel();
-        lblLogo = new javax.swing.JLabel();
+        iconLogoSmall = new javax.swing.JLabel();
         iconSignout = new javax.swing.JLabel();
         lblSignout = new javax.swing.JLabel();
         cardPanel = new javax.swing.JPanel();
@@ -84,7 +84,7 @@ public class EntryJFrame extends javax.swing.JFrame {
 
         lblSignin.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         lblSignin.setForeground(new java.awt.Color(204, 204, 204));
-        lblSignin.setText("Sign in to NUCC!");
+        lblSignin.setText("Sign in to your NUCC!");
 
         lblUsername.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(204, 204, 204));
@@ -94,38 +94,30 @@ public class EntryJFrame extends javax.swing.JFrame {
         lblPassword.setForeground(new java.awt.Color(204, 204, 204));
         lblPassword.setText("PASSWORD");
 
-        jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
 
         txtPassword.setBackground(new java.awt.Color(36, 47, 65));
-        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
+        txtPassword.setForeground(new java.awt.Color(204, 204, 204));
+        txtPassword.setText("password");
         txtPassword.setBorder(null);
-        txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtPasswordFocusGained(evt);
-            }
-        });
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
+        txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtPasswordMouseClicked(evt);
             }
         });
 
         txtUsername.setBackground(new java.awt.Color(36, 47, 65));
         txtUsername.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtUsername.setForeground(new java.awt.Color(255, 255, 255));
+        txtUsername.setForeground(new java.awt.Color(204, 204, 204));
         txtUsername.setText("Enter Username");
         txtUsername.setBorder(null);
+        txtUsername.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtUsername.setDisabledTextColor(new java.awt.Color(204, 204, 204));
         txtUsername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtUsernameMouseClicked(evt);
-            }
-        });
-        txtUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameActionPerformed(evt);
             }
         });
 
@@ -155,10 +147,10 @@ public class EntryJFrame extends javax.swing.JFrame {
                     .addComponent(lblSignin)
                     .addComponent(lblUsername)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(separatorLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPassword)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(separatorLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(signinFormPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnSignin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(chkTerms)))
@@ -174,13 +166,13 @@ public class EntryJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(separatorLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(lblPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(separatorLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(102, 102, 102)
                 .addComponent(chkTerms)
                 .addGap(18, 18, 18)
@@ -188,11 +180,11 @@ public class EntryJFrame extends javax.swing.JFrame {
                 .addGap(54, 54, 54))
         );
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo-signin.png"))); // NOI18N
-        jLabel1.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        iconLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo-signin.png"))); // NOI18N
+        iconLogo.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
-        iconExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-close-64.png"))); // NOI18N
+        iconExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
         iconExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 iconExitMousePressed(evt);
@@ -204,10 +196,10 @@ public class EntryJFrame extends javax.swing.JFrame {
         signinPanelLayout.setHorizontalGroup(
             signinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(signinPanelLayout.createSequentialGroup()
-                .addContainerGap(386, Short.MAX_VALUE)
+                .addContainerGap(402, Short.MAX_VALUE)
                 .addGroup(signinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signinPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(iconLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(371, 371, 371)
                         .addComponent(iconExit)
                         .addGap(16, 16, 16))
@@ -221,7 +213,7 @@ public class EntryJFrame extends javax.swing.JFrame {
                 .addGroup(signinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(signinPanelLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(iconLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(signinPanelLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(iconExit)))
@@ -236,15 +228,15 @@ public class EntryJFrame extends javax.swing.JFrame {
         signoutPanel.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         signoutPanel.setPreferredSize(new java.awt.Dimension(1440, 52));
 
-        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        separatorLine3.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        separatorLine3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
 
         lblText.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         lblText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblText.setText("From Prevention To Cure, We Do It All");
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo top.png"))); // NOI18N
+        iconLogoSmall.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo top.png"))); // NOI18N
 
         iconSignout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signout.png"))); // NOI18N
         iconSignout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -262,9 +254,9 @@ public class EntryJFrame extends javax.swing.JFrame {
             signoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, signoutPanelLayout.createSequentialGroup()
                 .addGap(108, 108, 108)
-                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(iconLogoSmall, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(separatorLine3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(156, 156, 156)
                 .addComponent(lblText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 506, Short.MAX_VALUE)
@@ -284,10 +276,10 @@ public class EntryJFrame extends javax.swing.JFrame {
                             .addComponent(lblText)
                             .addComponent(lblSignout, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jSeparator3))
+                    .addComponent(separatorLine3))
                 .addContainerGap())
             .addComponent(iconSignout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-            .addComponent(lblLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(iconLogoSmall, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         getContentPane().add(signoutPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -300,23 +292,10 @@ public class EntryJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
-        // TODO add your handling code here:
-        txtPassword.setText("");
-    }//GEN-LAST:event_txtPasswordFocusGained
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
-
     private void txtUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsernameMouseClicked
         // TODO add your handling code here:
         txtUsername.setText("");
     }//GEN-LAST:event_txtUsernameMouseClicked
-
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void chkTermsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTermsActionPerformed
         // TODO add your handling code here:
@@ -368,7 +347,11 @@ public class EntryJFrame extends javax.swing.JFrame {
         }
         
         if(userAccount==null){
-            JOptionPane.showMessageDialog(null, "Invalid credentials");
+            JOptionPane.showMessageDialog(null, "Invalid credentials", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!chkTerms.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         else{
@@ -410,6 +393,11 @@ public class EntryJFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_iconExitMousePressed
 
+    private void txtPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseClicked
+        // TODO add your handling code here:
+        txtPassword.setText("");
+    }//GEN-LAST:event_txtPasswordMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -450,17 +438,17 @@ public class EntryJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel cardPanel;
     private javax.swing.JCheckBox chkTerms;
     private javax.swing.JLabel iconExit;
+    private javax.swing.JLabel iconLogo;
+    private javax.swing.JLabel iconLogoSmall;
     private javax.swing.JLabel iconSignout;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblSignin;
     private javax.swing.JLabel lblSignout;
     private javax.swing.JLabel lblText;
     private javax.swing.JLabel lblUsername;
+    private javax.swing.JSeparator separatorLine1;
+    private javax.swing.JSeparator separatorLine2;
+    private javax.swing.JSeparator separatorLine3;
     private javax.swing.JPanel signinFormPanel;
     private javax.swing.JPanel signinPanel;
     private javax.swing.JPanel signoutPanel;
