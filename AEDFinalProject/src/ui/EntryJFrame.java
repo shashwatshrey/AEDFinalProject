@@ -360,13 +360,12 @@ public class EntryJFrame extends javax.swing.JFrame {
             cardPanel.setVisible(true);
             iconExit.setVisible(false);
             iconSignout.setVisible(true);
-            txtUsername.setText("");
-            txtPassword.setText("");
+            //txtUsername.setText("");
+            //txtPassword.setText("");
             
             CardLayout layout=(CardLayout) cardPanel.getLayout();
             cardPanel.add("workArea",userAccount.getRole().createWorkArea(cardPanel, userAccount, inOrganization, inEnterprise, system));
             layout.next(cardPanel);
-         
         }
         
         //loginJButton.setEnabled(false);
@@ -384,7 +383,9 @@ public class EntryJFrame extends javax.swing.JFrame {
         cardPanel.setVisible(false);
         iconExit.setVisible(true);
         iconSignout.setVisible(false);
-  
+        txtUsername.setText("Enter Username");
+        txtPassword.setText("password");
+        
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_iconSignoutMousePressed
 
