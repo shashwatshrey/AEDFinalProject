@@ -6,6 +6,7 @@
 package ui.PurchaseRole;
 
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.PurchaseOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -19,16 +20,18 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private PurchaseOrganization organization;
     private Enterprise enterprise;
+    private Network network;
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public PurchaseWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, PurchaseOrganization organization, Enterprise enterprise) {
+    public PurchaseWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, PurchaseOrganization organization, Enterprise enterprise, Network network) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
+        this.network = network;
         this.userAccount = account;
         
     }

@@ -6,10 +6,14 @@ package ui.EconomyRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.EconomyOrganization;
+import Business.Organization.Vaccine;
+import Business.Organization.VaccineDirectory;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.approveVaccine;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,16 +26,19 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EconomyOrganization organization;
     private Enterprise enterprise;
+    private EcoSystem system;
     private UserAccount userAccount;
+    private VaccineDirectory directory;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public EconomyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EconomyOrganization organization, Enterprise enterprise) {
+    public EconomyWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EconomyOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
+        this.system = system;
         this.userAccount = account;
         populateTable();
     }
@@ -80,7 +87,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Status"
+                "Vaccine Name", "Sender", "Receiver", "Status"
             }
         ));
         jScrollPane1.setViewportView(workRequestJTable);
@@ -124,8 +131,9 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
         
         model.setRowCount(0);
-        
-        for(WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
+        System.out.println("Searching WorkRequest");
+        for(WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
+            System.out.println("WorkRequest found");
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
@@ -147,9 +155,15 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         
-        LabTestWorkRequest request = (LabTestWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        approveVaccine request = (approveVaccine)workRequestJTable.getValueAt(selectedRow, 0);
      
         request.setStatus("Approved");
+        request.getVaccine().setStatus("Approved");
+//        for(Vaccine v: organization.getDirectory().getVaccineDirectory()){
+//            if(v.getName().equals(request.getMessage())){
+//                v.setStatus("Approved");
+//            }
+//        }
         populateTable();
     }//GEN-LAST:event_btnApproveActionPerformed
 

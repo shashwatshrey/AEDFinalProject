@@ -19,7 +19,7 @@ public class ManufacturingOrganization extends Organization{
     private ArrayList<Vaccine> vaccineDirectory;
     
     public ManufacturingOrganization() {
-        super(Organization.Type.Manufacturing.getValue());
+        super(Type.Manufacturing.getValue());
         this.vaccineDirectory = new ArrayList<Vaccine>();
     }
     

@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.Network.Network;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -13,8 +14,8 @@ import java.util.ArrayList;
  * @author shashwatshrey
  */
 public class ServiceEnterprise extends Enterprise {
-     public ServiceEnterprise(String name){
-        super(name,EnterpriseType.Service);
+     public ServiceEnterprise(String name, Network network){
+        super(name,EnterpriseType.Service, network);
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

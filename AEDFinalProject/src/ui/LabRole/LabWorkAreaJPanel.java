@@ -6,6 +6,7 @@
 package ui.LabRole;
 
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.LabOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
@@ -22,16 +23,18 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private LabOrganization organization;
     private Enterprise enterprise;
+    private Network network;
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LabOrganization organization, Enterprise enterprise) {
+    public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LabOrganization organization, Enterprise enterprise, Network network) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
+        this.network = network;
         this.userAccount = account;
         populateTable();
     }

@@ -6,6 +6,7 @@
 package ui.DistributionRole;
 
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.DistributionOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -19,16 +20,18 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private DistributionOrganization organization;
     private Enterprise enterprise;
+    private Network network;
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public DistributionWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization organization, Enterprise enterprise) {
+    public DistributionWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization organization, Enterprise enterprise, Network network) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
+        this.network = network;
         this.userAccount = account;
         
     }

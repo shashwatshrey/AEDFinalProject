@@ -6,6 +6,7 @@
 package ui.SalesRole;
 
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.SalesOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -19,16 +20,18 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private SalesOrganization organization;
     private Enterprise enterprise;
+    private Network network;
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public SalesWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, SalesOrganization organization, Enterprise enterprise) {
+    public SalesWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, SalesOrganization organization, Enterprise enterprise, Network network) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
+        this.network = network;
         this.userAccount = account;
         
     }

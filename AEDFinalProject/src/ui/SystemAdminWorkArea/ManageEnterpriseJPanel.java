@@ -194,7 +194,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         String name = nameJTextField.getText();
 
-        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type, network);
+        System.out.println(network.getName());
 
         populateTable();
 

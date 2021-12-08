@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class PurchaseOrganization extends Organization {
      public PurchaseOrganization() {
-        super(Organization.Type.Purchase.getValue());
+        super(Type.Purchase.getValue());
     }
     
     @Override

@@ -7,16 +7,22 @@ package ui.ManufacturingRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.Enterprise.EnterpriseType;
 import Business.Network.Network;
 import Business.Organization.EconomyOrganization;
 import Business.Organization.ManufacturingOrganization;
 import Business.Organization.Organization;
+import Business.Organization.Type;
 import Business.Organization.Vaccine;
 import Business.Organization.VaccineDirectory;
+import Business.Role.EconomyRole;
+import Business.Role.Role;
+//import Business.Role;
 
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.approveVaccine;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -30,6 +36,7 @@ import ui.AdministrativeRole.ManageOrganizationJPanel;
 public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         
     private Network network;
+    private EcoSystem system;
     private JPanel userProcessContainer;
     private ManufacturingOrganization organization;
     private Enterprise enterprise;
@@ -38,13 +45,15 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public ManufacturingWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ManufacturingOrganization organization, Enterprise enterprise) {
+    public ManufacturingWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ManufacturingOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
+        this.system = system;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.network = network;
         populateTable();
     }
 
@@ -128,33 +137,43 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnSendSampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendSampleActionPerformed
         // TODO add your handling code here:
-        this.network = network;
+//        this.network = network;
         int selectedRow = requestTable.getSelectedRow();
         if (selectedRow < 0){
             return;
         }
-        LabTestWorkRequest lr = new LabTestWorkRequest();
-        
-        String netname = network.getName();
-        
-        for(Enterprise e: network.getEnterpriseDirectory().getEnterpriseList()){
-            System.out.println("Searching Enterprise");
-            if(e.getEnterpriseType().equals("Government")){
-                System.out.println("Enterprise found");
-                for(Organization o:e.getOrganizationDirectory().getOrganizationList()){
-                    System.out.println("Organization found");
-                    if(o.getSupportedRole().equals("Economy")){
-                        System.out.println("UserAccount found");
-                        UserAccount u = o.getUserAccountDirectory().getUserAccountList().get(0);
-                        lr.setReceiver(u);
+        approveVaccine lr = new approveVaccine();
+        Vaccine v = (Vaccine) requestTable.getValueAt(selectedRow, 0);
+        UserAccount cg = new UserAccount();
+        Network currnet = enterprise.getNetwork();
+        for(Enterprise e: currnet.getEnterpriseDirectory().getEnterpriseList()){
+            System.out.println("Searching enterprie");
+            System.out.println(e.getEnterpriseType());
+            if(e.getEnterpriseType()==EnterpriseType.Government){
+                System.out.println("enterprise found");
+                System.out.println(e.getOrganizationID());
+                for(Organization o: e.getOrganizationDirectory().getOrganizationList()){
+                    System.out.println(o.getOrganizationID());
+                    for(UserAccount u: o.getUserAccountDirectory().getUserAccountList()){
+                        System.out.println(u.getUsername());
+                        if(u.getRole().toString()=="Business.Role.EconomyRole"){
+                            System.out.println("UserAccount found");
+                            lr.setReceiver(u);
+                            cg = u;
+                            System.out.println("UserAccount added");
+                            break;
+                        }                        
+                        
                     }
                 }
             }
         }
-        
-        lr.setMessage("Please review and approve");
+        lr.setVaccine(v);
+        System.out.println("Seaarch ended");
+        lr.setMessage(v.getName());
         lr.setSender(userAccount);
         lr.setStatus("requested");
+        cg.getWorkQueue().getWorkRequestList().add(lr);
         JOptionPane.showMessageDialog(this, "Approval Requested!!");
         populateTable();
         

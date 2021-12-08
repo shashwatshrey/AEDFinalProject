@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.EconomyOrganization;
 import Business.UserAccount.UserAccount;
@@ -21,7 +22,9 @@ public class EconomyRole extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new EconomyWorkAreaJPanel(userProcessContainer, account, (EconomyOrganization)organization, enterprise);
+        return new EconomyWorkAreaJPanel(userProcessContainer, account, (EconomyOrganization)organization, enterprise, business);
     }
+
+    
 
 }
