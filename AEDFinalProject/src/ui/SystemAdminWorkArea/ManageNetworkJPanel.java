@@ -36,7 +36,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     }
 
     private void populateNetworkTable() {
-        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblNetwork.getModel();
 
         model.setRowCount(0);
         for (Network network : system.getNetworkList()) {
@@ -56,19 +56,19 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        networkJTable = new javax.swing.JTable();
+        tblNetwork = new javax.swing.JTable();
         lblName = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
-        txtNetworkName = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
-        separatorLine1 = new javax.swing.JSeparator();
+        separatorLine = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1240, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        networkJTable.setFont(new java.awt.Font("Optima", 0, 14)); // NOI18N
-        networkJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblNetwork.setFont(new java.awt.Font("Optima", 0, 14)); // NOI18N
+        tblNetwork.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -94,9 +94,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(networkJTable);
-        if (networkJTable.getColumnModel().getColumnCount() > 0) {
-            networkJTable.getColumnModel().getColumn(0).setResizable(false);
+        jScrollPane1.setViewportView(tblNetwork);
+        if (tblNetwork.getColumnModel().getColumnCount() > 0) {
+            tblNetwork.getColumnModel().getColumn(0).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 53, 404, 91));
@@ -115,11 +115,11 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 171, -1, -1));
 
-        txtNetworkName.setBackground(new java.awt.Color(36, 47, 65));
-        txtNetworkName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        txtNetworkName.setForeground(new java.awt.Color(255, 255, 255));
-        txtNetworkName.setBorder(null);
-        add(txtNetworkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 181, -1));
+        txtName.setBackground(new java.awt.Color(36, 47, 65));
+        txtName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setBorder(null);
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 181, -1));
 
         btnBack.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnBack.setText("<< Back");
@@ -130,15 +130,15 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
-        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
-        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
-        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 180, -1));
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
 
-        String name = txtNetworkName.getText();
+        String name = txtName.getText();
 
         Network network = system.createAndAddNetwork();
         network.setName(name);
@@ -155,9 +155,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
          }catch(Exception e){
              System.out.println("Exception Caught");
          }
-        //Component component = componentArray[componentArray.length - 1];
-        //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
-        //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -167,8 +164,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblName;
-    private javax.swing.JTable networkJTable;
-    private javax.swing.JSeparator separatorLine1;
-    private javax.swing.JTextField txtNetworkName;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JTable tblNetwork;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
