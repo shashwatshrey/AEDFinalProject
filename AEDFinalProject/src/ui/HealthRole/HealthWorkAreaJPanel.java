@@ -46,45 +46,18 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         btnManageAllotment = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnManagePopulation.setText("Manage Population Records");
+        add(btnManagePopulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 115, -1, -1));
 
         btnManageAllotment.setText("Allot Services & Hosptials");
+        add(btnManageAllotment, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 182, 217, -1));
 
         jLabel1.setText("Health Workarea");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnManageAllotment)
-                            .addComponent(btnManagePopulation)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(jLabel1)))
-                .addContainerGap(217, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManageAllotment, btnManagePopulation});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addGap(57, 57, 57)
-                .addComponent(btnManagePopulation)
-                .addGap(38, 38, 38)
-                .addComponent(btnManageAllotment)
-                .addContainerGap(321, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageAllotment, btnManagePopulation});
-
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 42, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
