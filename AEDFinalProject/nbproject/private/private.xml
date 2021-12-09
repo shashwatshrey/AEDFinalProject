@@ -9,12 +9,11 @@
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/UserAccount/UserAccount.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/SystemAdminWorkArea/ManageEnterpriseAdminJPanel.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/UserAccount/UserAccountDirectory.java</file>
-            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/SystemAdminRole.java</file>
-            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/DoctorRole/DoctorWorkAreaJPanel.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/EntryJFrame.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/AdministrativeRole/ManageUserAccountJPanel.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Organization/Organization.java</file>
-            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/MainJFrame.java</file>
-            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/DoctorRole.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/SystemAdminWorkArea/ManageNetworkJPanel.java</file>
+            <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/SystemAdminWorkArea/ManageEnterpriseJPanel.java</file>
         </group>
     </open-files>
 </project-private>
