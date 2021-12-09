@@ -98,6 +98,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
 
+        setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1240, 848));
         setPreferredSize(new java.awt.Dimension(1240, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
