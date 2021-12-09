@@ -10,69 +10,24 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import java.awt.CardLayout;
-import java.util.ArrayList;
+import java.awt.Color;
 import javax.swing.JPanel;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
- * @author MyPC1
+ * @author vraj
  */
 public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form SystemAdminWorkAreaJPanel
-     */
     JPanel userProcessContainer;
     EcoSystem ecosystem;
+    
     public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
-        populateTree();
     }
-    
-    public void populateTree(){
-        DefaultTreeModel model=(DefaultTreeModel)jTree.getModel();
-        ArrayList<Network> networkList=ecosystem.getNetworkList();
-        ArrayList<Enterprise> enterpriseList;
-        ArrayList<Organization> organizationList;
-        
-        Network network;
-        Enterprise enterprise;
-        Organization organization;
-        
-        DefaultMutableTreeNode networks=new DefaultMutableTreeNode("Networks");
-        DefaultMutableTreeNode root=(DefaultMutableTreeNode)model.getRoot();
-        root.removeAllChildren();
-        root.insert(networks, 0);
-        
-        DefaultMutableTreeNode networkNode;
-        DefaultMutableTreeNode enterpriseNode;
-        DefaultMutableTreeNode organizationNode;
-        
-        for(int i=0;i<networkList.size();i++){
-            network=networkList.get(i);
-            networkNode=new DefaultMutableTreeNode(network.getName());
-            networks.insert(networkNode, i);
-            
-            enterpriseList=network.getEnterpriseDirectory().getEnterpriseList();
-            for(int j=0; j<enterpriseList.size();j++){
-                enterprise=enterpriseList.get(j);
-                enterpriseNode=new DefaultMutableTreeNode(enterprise.getName());
-                networkNode.insert(enterpriseNode, j);
-                
-                organizationList=enterprise.getOrganizationDirectory().getOrganizationList();
-                for(int k=0;k<organizationList.size();k++){
-                    organization=organizationList.get(i);
-                    organizationNode=new DefaultMutableTreeNode(organization.getName());
-                    enterpriseNode.insert(organizationNode, k);
-                }
-            }
-        }
-        model.reload();
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,148 +37,195 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane = new javax.swing.JSplitPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTree = new javax.swing.JTree();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        lblSelectedNode = new javax.swing.JLabel();
-        btnManageNetwork = new javax.swing.JButton();
-        btnManageEnterprise = new javax.swing.JButton();
-        btnManageAdmin = new javax.swing.JButton();
+        background = new javax.swing.JPanel();
+        menuPanel = new javax.swing.JPanel();
+        onePanel = new javax.swing.JPanel();
+        lblNetwork = new javax.swing.JLabel();
+        twoPanel = new javax.swing.JPanel();
+        lblEnterprise = new javax.swing.JLabel();
+        threePanel = new javax.swing.JPanel();
+        lblProfile = new javax.swing.JLabel();
+        cardWorkPanel = new javax.swing.JPanel();
 
-        setLayout(new java.awt.BorderLayout());
+        setBackground(new java.awt.Color(36, 47, 65));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
-            public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
-                jTreeValueChanged(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTree);
+        background.setBackground(new java.awt.Color(23, 35, 51));
+        background.setFocusTraversalKeysEnabled(false);
+        background.setMaximumSize(new java.awt.Dimension(1440, 848));
+        background.setMinimumSize(new java.awt.Dimension(1440, 848));
+        background.setPreferredSize(new java.awt.Dimension(1440, 848));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
-        );
+        menuPanel.setBackground(new java.awt.Color(36, 47, 65));
+        menuPanel.setMaximumSize(new java.awt.Dimension(200, 848));
+        menuPanel.setMinimumSize(new java.awt.Dimension(200, 848));
+        menuPanel.setPreferredSize(new java.awt.Dimension(200, 848));
 
-        jSplitPane.setLeftComponent(jPanel1);
-
-        jLabel1.setText("Selected Node:");
-
-        lblSelectedNode.setText("<View_selected_node>");
-
-        btnManageNetwork.setText("Manage Network");
-        btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageNetworkActionPerformed(evt);
+        onePanel.setBackground(new java.awt.Color(36, 47, 65));
+        onePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                onePanelMousePressed(evt);
             }
         });
 
-        btnManageEnterprise.setText("Manage Enterprise");
-        btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageEnterpriseActionPerformed(evt);
+        lblNetwork.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
+        lblNetwork.setForeground(new java.awt.Color(255, 255, 255));
+        lblNetwork.setText("CREATE NETWORK ");
+
+        javax.swing.GroupLayout onePanelLayout = new javax.swing.GroupLayout(onePanel);
+        onePanel.setLayout(onePanelLayout);
+        onePanelLayout.setHorizontalGroup(
+            onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onePanelLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addComponent(lblNetwork)
+                .addGap(20, 20, 20))
+        );
+        onePanelLayout.setVerticalGroup(
+            onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblNetwork, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        twoPanel.setBackground(new java.awt.Color(36, 47, 65));
+        twoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                twoPanelMousePressed(evt);
             }
         });
 
-        btnManageAdmin.setText("Manage Enterprise Admin");
-        btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageAdminActionPerformed(evt);
+        lblEnterprise.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
+        lblEnterprise.setForeground(new java.awt.Color(255, 255, 255));
+        lblEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEnterprise.setText("CREATE ENTERPRISE");
+
+        javax.swing.GroupLayout twoPanelLayout = new javax.swing.GroupLayout(twoPanel);
+        twoPanel.setLayout(twoPanelLayout);
+        twoPanelLayout.setHorizontalGroup(
+            twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(twoPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblEnterprise)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        twoPanelLayout.setVerticalGroup(
+            twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(twoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        threePanel.setBackground(new java.awt.Color(36, 47, 65));
+        threePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                threePanelMousePressed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblSelectedNode))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnManageAdmin)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btnManageEnterprise, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnManageNetwork, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(239, Short.MAX_VALUE))
+        lblProfile.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
+        lblProfile.setForeground(new java.awt.Color(255, 255, 255));
+        lblProfile.setText("CREATE ADMIN PROFILE");
+
+        javax.swing.GroupLayout threePanelLayout = new javax.swing.GroupLayout(threePanel);
+        threePanel.setLayout(threePanelLayout);
+        threePanelLayout.setHorizontalGroup(
+            threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(threePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        threePanelLayout.setVerticalGroup(
+            threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(threePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManageAdmin, btnManageEnterprise, btnManageNetwork});
-
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(lblSelectedNode))
-                .addGap(54, 54, 54)
-                .addComponent(btnManageNetwork)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageEnterprise)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageAdmin)
-                .addContainerGap(175, Short.MAX_VALUE))
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(onePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(twoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(threePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(onePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(twoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(threePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jSplitPane.setRightComponent(jPanel2);
+        background.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        add(jSplitPane, java.awt.BorderLayout.CENTER);
+        cardWorkPanel.setBackground(new java.awt.Color(36, 47, 65));
+        cardWorkPanel.setPreferredSize(new java.awt.Dimension(1240, 848));
+        cardWorkPanel.setLayout(new java.awt.CardLayout());
+        background.add(cardWorkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, -1));
+
+        add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNetworkActionPerformed
-        ManageNetworkJPanel manageNetworkJPanel=new ManageNetworkJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageNetworkActionPerformed
+    private void threePanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_threePanelMousePressed
+        // TODO add your handling code here:
+        setColor(threePanel);
+        resetColor(new JPanel[]{twoPanel,onePanel});
+        ManageEnterpriseAdminJPanel manageEnterpriseAdminPanel = new ManageEnterpriseAdminJPanel(cardWorkPanel, ecosystem);
+        cardWorkPanel.add("ManageEnterpriseAdminJPanel",manageEnterpriseAdminPanel);
+        CardLayout layout = (CardLayout) cardWorkPanel.getLayout();
+        layout.next(cardWorkPanel);
+    }//GEN-LAST:event_threePanelMousePressed
 
-    private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
-        ManageEnterpriseJPanel manageEnterpriseJPanel=new ManageEnterpriseJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("manageEnterpriseJPanel",manageEnterpriseJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageEnterpriseActionPerformed
+    private void twoPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twoPanelMousePressed
+        // TODO add your handling code here:
+        setColor(twoPanel);
+        resetColor(new JPanel[]{onePanel,threePanel});
+        ManageEnterpriseJPanel manageEnterprisePanel = new ManageEnterpriseJPanel(cardWorkPanel, ecosystem);
+        cardWorkPanel.add("ManageEnterprisePanel",manageEnterprisePanel);
+        CardLayout layout = (CardLayout) cardWorkPanel.getLayout();
+        layout.next(cardWorkPanel);
+    }//GEN-LAST:event_twoPanelMousePressed
 
-    private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-        ManageEnterpriseAdminJPanel manageEnterpriseAdminJPanel=new ManageEnterpriseAdminJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageAdminActionPerformed
-
-    private void jTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_jTreeValueChanged
-        
-        DefaultMutableTreeNode selectedNode= (DefaultMutableTreeNode)jTree.getLastSelectedPathComponent();
-        if(selectedNode!=null){
-            lblSelectedNode.setText(selectedNode.toString());
-        }
-    }//GEN-LAST:event_jTreeValueChanged
+    private void onePanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onePanelMousePressed
+        // TODO add your handling code here:
+        setColor(onePanel);
+        resetColor(new JPanel[]{twoPanel,threePanel});
+        ManageNetworkJPanel manageNetworkPanel = new ManageNetworkJPanel(cardWorkPanel, ecosystem);
+        cardWorkPanel.add("ManageNetworkJPanel",manageNetworkPanel);
+        CardLayout layout = (CardLayout) cardWorkPanel.getLayout();
+        layout.next(cardWorkPanel);
+    }//GEN-LAST:event_onePanelMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageAdmin;
-    private javax.swing.JButton btnManageEnterprise;
-    private javax.swing.JButton btnManageNetwork;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSplitPane jSplitPane;
-    private javax.swing.JTree jTree;
-    private javax.swing.JLabel lblSelectedNode;
+    private javax.swing.JPanel background;
+    private javax.swing.JPanel cardWorkPanel;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblNetwork;
+    private javax.swing.JLabel lblProfile;
+    private javax.swing.JPanel menuPanel;
+    private javax.swing.JPanel onePanel;
+    private javax.swing.JPanel threePanel;
+    private javax.swing.JPanel twoPanel;
     // End of variables declaration//GEN-END:variables
+    
+    private void setColor(JPanel pane)
+    {
+        pane.setBackground(new Color(23,35,51));
+    }
+    private void resetColor(JPanel [] pane)
+    {
+        for(int i=0;i<pane.length;i++){
+           pane[i].setBackground(new Color(36,47,65));
+           
+        }
+    }
 }
