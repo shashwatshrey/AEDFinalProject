@@ -256,9 +256,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }catch(Exception e){
             System.out.println("Exception handled");
         }
-        //Component component = componentArray[componentArray.length - 1];
-        //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
-        //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
