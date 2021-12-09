@@ -5,11 +5,18 @@
  */
 package ui.PurchaseRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.PurchaseInventory;
 import Business.Organization.PurchaseOrganization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.requestVaccine;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import ui.ManufacturingRole.AddVaccineJPanel;
 
 /**
  *
@@ -20,20 +27,20 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private PurchaseOrganization organization;
     private Enterprise enterprise;
-    private Network network;
+    private EcoSystem system;
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public PurchaseWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, PurchaseOrganization organization, Enterprise enterprise, Network network) {
+    public PurchaseWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, PurchaseOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.network = network;
+        this.system = system;
         this.userAccount = account;
-        
+        populateTable();
     }
 
     /**
@@ -46,29 +53,92 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        vaccineTable = new javax.swing.JTable();
+        btnreqVaccine = new javax.swing.JButton();
 
         jLabel1.setText("Purchase Work Area");
+
+        vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Sender", "Receiver", "Quantity", "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(vaccineTable);
+
+        btnreqVaccine.setText("Request Vaccine");
+        btnreqVaccine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreqVaccineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel1)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnreqVaccine)
+                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(btnreqVaccine)
+                .addContainerGap(226, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnreqVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreqVaccineActionPerformed
+        // TODO add your handling code here:
+        RequestVaccineJPanel requestVaccineJPanel = new RequestVaccineJPanel(enterprise.getOrganizationDirectory(), userProcessContainer, organization, enterprise, userAccount);
+        userProcessContainer.add("requestVaccineJPanel", requestVaccineJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnreqVaccineActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnreqVaccine;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable vaccineTable;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) vaccineTable.getModel();
+        model.setRowCount(0);
+        try{
+        for(WorkRequest rv:userAccount.getWorkQueue().getWorkRequestList()){
+            Object row[] = new Object[4];
+            row[0] = rv;
+            row[1] = pi.getQty();
+            model.addRow(row);
+        }
+        }
+        catch(NullPointerException e){
+            System.out.println("No records found");
+        }
+    }
 }

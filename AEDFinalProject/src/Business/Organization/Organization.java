@@ -25,18 +25,18 @@ public abstract class Organization {
     private int organizationID;
     private static int counter=0;
     
-//    public enum Type{
-//        Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization") , Manufacturing("Manufacturer Organization")
-//        ,Sales("Sales Organization") , Purchase("Purchase Organization"),Distribution("Distribution Organization"),Health("Health Organization"),
-//        Economy("Economy Organization");
-//        private String value;
-//        private Type(String value) {
-//            this.value = value;
-//        }
-//        public String getValue() {
-//            return value;
-//        }
-//    }
+    public enum Type{
+        Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization") , Manufacturing("Manufacturer Organization")
+        ,Sales("Sales Organization") , Purchase("Purchase Organization"),Distribution("Distribution Organization"),Health("Health Organization"),
+        Economy("Economy Organization");
+        private String value;
+        private Type(String value) {
+            this.value = value;
+        }
+        public String getValue() {
+            return value;
+        }
+    }
 
     public Organization(String name) {
         this.name = name;

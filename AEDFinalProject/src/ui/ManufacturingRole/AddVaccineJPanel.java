@@ -10,6 +10,7 @@ import Business.Organization.ManufacturingOrganization;
 import Business.Organization.OrganizationDirectory;
 import Business.Organization.Vaccine;
 import Business.Organization.VaccineDirectory;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -49,6 +50,7 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         btnAddVaccine = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
         txtScientificName = new javax.swing.JTextField();
+        btnback = new javax.swing.JButton();
 
         txtTitle.setText("Add Vaccine");
 
@@ -69,23 +71,32 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnback.setText("<< Back");
+        btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblName)
+                        .addComponent(jLabel1))
+                    .addComponent(btnback))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblName)
-                            .addComponent(jLabel1))
                         .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtScientificName, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                             .addComponent(txtName)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
+                        .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAddVaccine)
                             .addComponent(txtTitle))))
@@ -105,7 +116,9 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1)
                     .addComponent(txtScientificName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(btnAddVaccine)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddVaccine)
+                    .addComponent(btnback))
                 .addGap(74, 74, 74))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -117,27 +130,29 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
     private void btnAddVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVaccineActionPerformed
         // TODO add your handling code here:
         if(validate(txtName.getText(), txtScientificName.getText())){
-            System.out.println("Entry validated");
             Vaccine newVaccine = new Vaccine();
-            System.out.println("Vaccine object initialized");
             newVaccine.setName(txtName.getText());
             newVaccine.setScientificName(txtScientificName.getText());
             newVaccine.setManufacturerName(organization.getName());
             newVaccine.setStatus("Pending");
-            System.out.println("Vaccine updated");
-            //vaccineDirectory.addVaccine(newVaccine);
-            System.out.println("vaccine added to directory");
             organization.addVaccine(newVaccine);
-            System.out.println("vaccine added to org directory");
             JOptionPane.showMessageDialog(this, "Vaccine Added");
         }
         txtName.setText("");
         txtScientificName.setText("");
     }//GEN-LAST:event_btnAddVaccineActionPerformed
 
+    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnbackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddVaccine;
+    private javax.swing.JButton btnback;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblName;
     private javax.swing.JTextField txtName;

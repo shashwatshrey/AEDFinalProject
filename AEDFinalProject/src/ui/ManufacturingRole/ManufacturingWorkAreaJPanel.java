@@ -12,7 +12,7 @@ import Business.Network.Network;
 import Business.Organization.EconomyOrganization;
 import Business.Organization.ManufacturingOrganization;
 import Business.Organization.Organization;
-import Business.Organization.Type;
+import Business.Organization.Organization.Type;
 import Business.Organization.Vaccine;
 import Business.Organization.VaccineDirectory;
 import Business.Role.EconomyRole;
@@ -144,23 +144,23 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         }
         approveVaccine lr = new approveVaccine();
         Vaccine v = (Vaccine) requestTable.getValueAt(selectedRow, 0);
+        if(v.getStatus().equals("Approved")){
+            JOptionPane.showMessageDialog(this, "Vaccine already approved!!");
+            return;
+        }
+        if(v.getStatus().equals("Rejected")){
+            JOptionPane.showMessageDialog(this, "Vaccine was rejected, please send new vaccine for approval");
+            return;
+        }
         UserAccount cg = new UserAccount();
         Network currnet = enterprise.getNetwork();
         for(Enterprise e: currnet.getEnterpriseDirectory().getEnterpriseList()){
-            System.out.println("Searching enterprie");
-            System.out.println(e.getEnterpriseType());
             if(e.getEnterpriseType()==EnterpriseType.Government){
-                System.out.println("enterprise found");
-                System.out.println(e.getOrganizationID());
                 for(Organization o: e.getOrganizationDirectory().getOrganizationList()){
-                    System.out.println(o.getOrganizationID());
                     for(UserAccount u: o.getUserAccountDirectory().getUserAccountList()){
-                        System.out.println(u.getUsername());
                         if(u.getRole().toString()=="Business.Role.EconomyRole"){
-                            System.out.println("UserAccount found");
                             lr.setReceiver(u);
                             cg = u;
-                            System.out.println("UserAccount added");
                             break;
                         }                        
                         
@@ -169,7 +169,6 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
             }
         }
         lr.setVaccine(v);
-        System.out.println("Seaarch ended");
         lr.setMessage(v.getName());
         lr.setSender(userAccount);
         lr.setStatus("requested");

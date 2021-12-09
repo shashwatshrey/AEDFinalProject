@@ -15,7 +15,25 @@ public class Vaccine {
     private String manufacturerName;
     private String mgQty;
     private String Status;
+    private double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
     private int noOfDoses;
+    private int Gap;
+
+    public int getGap() {
+        return Gap;
+    }
+
+    public void setGap(int Gap) {
+        this.Gap = Gap;
+    }
 
     public String getName() {
         return Name;

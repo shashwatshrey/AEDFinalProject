@@ -14,6 +14,7 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.approveVaccine;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -57,6 +58,14 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtQty = new javax.swing.JTextField();
+        txtNoDose = new javax.swing.JTextField();
+        txtGap = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtPrice = new javax.swing.JTextField();
 
         btnApprove.setText("Approve Vaccine");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
@@ -92,16 +101,30 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(workRequestJTable);
 
+        jLabel1.setText("Quantity per dose(in mg):");
+
+        jLabel2.setText("Number of doses:");
+
+        jLabel3.setText("Gap between dose(in days):");
+
+        txtQty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtQtyActionPerformed(evt);
+            }
+        });
+
+        txtGap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtGapActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Price (in USD):");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(367, Short.MAX_VALUE)
-                .addComponent(btnApprove)
-                .addGap(18, 18, 18)
-                .addComponent(btnReject)
-                .addGap(72, 72, 72))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -109,9 +132,31 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(116, 116, 116)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNoDose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGap, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(133, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnApprove)
+                .addGap(18, 18, 18)
+                .addComponent(btnReject)
+                .addGap(67, 67, 67))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtGap, txtNoDose, txtPrice, txtQty});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -119,11 +164,27 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNoDose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtGap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnApprove)
                     .addComponent(btnReject))
-                .addGap(170, 170, 170))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -131,9 +192,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
         
         model.setRowCount(0);
-        System.out.println("Searching WorkRequest");
         for(WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            System.out.println("WorkRequest found");
             Object[] row = new Object[4];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
@@ -156,15 +215,22 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         }
         
         approveVaccine request = (approveVaccine)workRequestJTable.getValueAt(selectedRow, 0);
+        
+        if(request.getStatus().equals("Approved")){
+            JOptionPane.showMessageDialog(this, "Vaccine already approved");
+            return;
+        }
      
+        if(validate(txtQty.getText(),txtNoDose.getText(),txtGap.getText(),txtPrice.getText())){
         request.setStatus("Approved");
         request.getVaccine().setStatus("Approved");
-//        for(Vaccine v: organization.getDirectory().getVaccineDirectory()){
-//            if(v.getName().equals(request.getMessage())){
-//                v.setStatus("Approved");
-//            }
-//        }
+        
+        request.getVaccine().setMgQty(txtQty.getText());
+        request.getVaccine().setNoOfDoses(Integer.parseInt(txtNoDose.getText()));
+        request.getVaccine().setGap(Integer.parseInt(txtGap.getText()));
+        request.getVaccine().setPrice(Double.parseDouble(txtPrice.getText()));
         populateTable();
+        }
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
@@ -175,18 +241,68 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         
-        LabTestWorkRequest request = (LabTestWorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        approveVaccine request = (approveVaccine)workRequestJTable.getValueAt(selectedRow, 0);
+        if(request.getStatus().equals("Rejected") || request.getStatus().equals("Approved")){
+            JOptionPane.showMessageDialog(this, "Vaccine already processed");
+            return;
+        }
      
         request.setStatus("Rejected");
+        request.getVaccine().setStatus("Rejected");
+        request.getVaccine().setMgQty(txtQty.getText());
+        request.getVaccine().setNoOfDoses(Integer.parseInt(txtNoDose.getText()));
+        request.getVaccine().setGap(Integer.parseInt(txtGap.getText()));
         populateTable();
     }//GEN-LAST:event_btnRejectActionPerformed
+
+    private void txtGapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGapActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(txtNoDose.getText())==1){
+            txtGap.setText("0");
+            txtGap.setEditable(false);
+        }
+        
+        
+    }//GEN-LAST:event_txtGapActionPerformed
+
+    private void txtQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQtyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApprove;
     private javax.swing.JButton btnReject;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtGap;
+    private javax.swing.JTextField txtNoDose;
+    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtQty;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
+
+    private boolean validate(String qty, String noDose, String gap, String price) {
+        if(qty.length()<1){
+            JOptionPane.showMessageDialog(this, "Please enter dosage quantity before approving");
+            return false;
+        }
+        if(noDose.length()<1){
+            JOptionPane.showMessageDialog(this, "Please enter number of doses before approving");
+            return false;
+        }
+        if(gap.length()<1){
+            JOptionPane.showMessageDialog(this, "Please enter gap between both doses before approving");
+            return false;
+        }
+        if(price.length()<1){
+            JOptionPane.showMessageDialog(this, "Please enter vaccine price before approving");
+            return false;
+        }
+        return true;
+    }
 }
