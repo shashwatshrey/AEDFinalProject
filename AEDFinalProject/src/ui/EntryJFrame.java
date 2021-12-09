@@ -233,7 +233,7 @@ public class EntryJFrame extends javax.swing.JFrame {
         lblText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblText.setText("From Prevention To Cure, We Do It All");
 
-        iconLogoSmall.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo top.png"))); // NOI18N
+        iconLogoSmall.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo-top.png"))); // NOI18N
 
         iconSignout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signout.png"))); // NOI18N
         iconSignout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -372,6 +372,7 @@ public class EntryJFrame extends javax.swing.JFrame {
         //reset the text fields to default values
         txtUsername.setText("Enter Username");
         txtPassword.setText("password");
+        chkTerms.setSelected(false);
         //save database
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_iconSignoutMousePressed

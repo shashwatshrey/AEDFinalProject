@@ -4,6 +4,7 @@
  */
 package ui.SystemAdminWorkArea;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -21,6 +22,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+
 
     /**
      * Creates new form ManageEnterpriseJPanel
@@ -180,15 +183,21 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         String name = nameJTextField.getText();
 
         Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
-
+        dB4OUtil.storeSystem(system);
         populateTable();
+        nameJTextField.setText("");
 
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
+         try{
+             Component component = componentArray[componentArray.length - 1];
+         }catch(Exception e){
+             System.out.println("Exception Handled");
+         }
+        //Component component = componentArray[componentArray.length - 1];
       //  SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         //sysAdminwjp.populateTree();
 

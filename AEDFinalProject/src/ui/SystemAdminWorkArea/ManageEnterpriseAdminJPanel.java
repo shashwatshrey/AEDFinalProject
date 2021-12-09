@@ -4,6 +4,7 @@
  */
 package ui.SystemAdminWorkArea;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
@@ -23,6 +24,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
     /**
      * Creates new form ManageEnterpriseJPanel
@@ -168,7 +170,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(998, 798, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 600, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +201,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 789, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 600, -1, -1));
 
         separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
@@ -238,6 +240,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
         
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
+        dB4OUtil.storeSystem(system);
+        usernameJTextField.setText("");
+        passwordJPasswordField.setText("");
+        nameJTextField.setText("");
         populateTable();
         
     }//GEN-LAST:event_submitJButtonActionPerformed
@@ -245,7 +251,12 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
+        try{
+            Component component = componentArray[componentArray.length - 1];
+        }catch(Exception e){
+            System.out.println("Exception handled");
+        }
+        //Component component = componentArray[componentArray.length - 1];
         //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
