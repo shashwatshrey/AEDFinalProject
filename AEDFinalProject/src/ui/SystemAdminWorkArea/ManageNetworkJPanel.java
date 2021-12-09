@@ -4,6 +4,7 @@
  */
 package ui.SystemAdminWorkArea;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
@@ -19,6 +20,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
     /**
      *
@@ -140,14 +142,20 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         Network network = system.createAndAddNetwork();
         network.setName(name);
-
+        dB4OUtil.storeSystem(system);
         populateNetworkTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
+         try{
+            Component component = componentArray[componentArray.length - 1];
+
+         }catch(Exception e){
+             System.out.println("Exception Caught");
+         }
+        //Component component = componentArray[componentArray.length - 1];
         //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
