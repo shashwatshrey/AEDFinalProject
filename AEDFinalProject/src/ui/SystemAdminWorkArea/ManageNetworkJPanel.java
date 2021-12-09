@@ -4,6 +4,7 @@
  */
 package ui.SystemAdminWorkArea;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
@@ -19,6 +20,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
     /**
      *
@@ -140,7 +142,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         Network network = system.createAndAddNetwork();
         network.setName(name);
-
+        dB4OUtil.storeSystem(system);
         populateNetworkTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
 
