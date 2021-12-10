@@ -64,6 +64,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         menuPanel.setPreferredSize(new java.awt.Dimension(200, 848));
 
         onePanel.setBackground(new java.awt.Color(36, 47, 65));
+        onePanel.setMinimumSize(new java.awt.Dimension(200, 40));
+        onePanel.setPreferredSize(new java.awt.Dimension(200, 40));
         onePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 onePanelMousePressed(evt);
@@ -72,23 +74,32 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         lblNetwork.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
         lblNetwork.setForeground(new java.awt.Color(255, 255, 255));
+        lblNetwork.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNetwork.setText("CREATE NETWORK ");
+        lblNetwork.setMaximumSize(new java.awt.Dimension(180, 20));
+        lblNetwork.setMinimumSize(new java.awt.Dimension(180, 20));
+        lblNetwork.setPreferredSize(new java.awt.Dimension(180, 20));
 
         javax.swing.GroupLayout onePanelLayout = new javax.swing.GroupLayout(onePanel);
         onePanel.setLayout(onePanelLayout);
         onePanelLayout.setHorizontalGroup(
             onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onePanelLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(lblNetwork)
-                .addGap(20, 20, 20))
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(lblNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         onePanelLayout.setVerticalGroup(
             onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblNetwork, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(onePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         twoPanel.setBackground(new java.awt.Color(36, 47, 65));
+        twoPanel.setMinimumSize(new java.awt.Dimension(200, 40));
+        twoPanel.setPreferredSize(new java.awt.Dimension(200, 40));
         twoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 twoPanelMousePressed(evt);
@@ -99,25 +110,29 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         lblEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         lblEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblEnterprise.setText("CREATE ENTERPRISE");
+        lblEnterprise.setMaximumSize(new java.awt.Dimension(180, 20));
+        lblEnterprise.setMinimumSize(new java.awt.Dimension(180, 20));
+        lblEnterprise.setPreferredSize(new java.awt.Dimension(180, 20));
 
         javax.swing.GroupLayout twoPanelLayout = new javax.swing.GroupLayout(twoPanel);
         twoPanel.setLayout(twoPanelLayout);
         twoPanelLayout.setHorizontalGroup(
             twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(twoPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblEnterprise)
-                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, twoPanelLayout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         twoPanelLayout.setVerticalGroup(
             twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(twoPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         threePanel.setBackground(new java.awt.Color(36, 47, 65));
+        threePanel.setMinimumSize(new java.awt.Dimension(200, 40));
         threePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 threePanelMousePressed(evt);
@@ -126,22 +141,23 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         lblProfile.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
         lblProfile.setForeground(new java.awt.Color(255, 255, 255));
+        lblProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProfile.setText("CREATE ADMIN PROFILE");
 
         javax.swing.GroupLayout threePanelLayout = new javax.swing.GroupLayout(threePanel);
         threePanel.setLayout(threePanelLayout);
         threePanelLayout.setHorizontalGroup(
             threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(threePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, threePanelLayout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(lblProfile)
+                .addContainerGap())
         );
         threePanelLayout.setVerticalGroup(
             threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(threePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblProfile, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addComponent(lblProfile)
                 .addContainerGap())
         );
 
@@ -153,16 +169,21 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             .addComponent(twoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(threePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        menuPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {onePanel, threePanel, twoPanel});
+
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(onePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(twoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(twoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(threePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        menuPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {onePanel, threePanel, twoPanel});
 
         background.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
