@@ -45,33 +45,16 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnPurchase = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(36, 47, 65));
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("Purchase Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(902, 46, -1, -1));
 
         btnPurchase.setText("Place Purchase Order");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(199, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(214, 214, 214))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnPurchase)
-                        .addGap(185, 185, 185))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
-                .addComponent(btnPurchase)
-                .addGap(70, 70, 70))
-        );
+        add(btnPurchase, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 749, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 

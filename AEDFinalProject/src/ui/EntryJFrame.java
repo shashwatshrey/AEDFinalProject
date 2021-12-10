@@ -124,6 +124,14 @@ public class EntryJFrame extends javax.swing.JFrame {
         btnSignin.setBackground(new java.awt.Color(204, 204, 204));
         btnSignin.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
         btnSignin.setText("Sign In");
+        btnSignin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSigninMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSigninMouseExited(evt);
+            }
+        });
         btnSignin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSigninActionPerformed(evt);
@@ -386,6 +394,17 @@ public class EntryJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         txtPassword.setText("");
     }//GEN-LAST:event_txtPasswordMouseClicked
+
+    private void btnSigninMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSigninMouseEntered
+        // TODO add your handling code here:
+        btnSignin.setForeground(Color.red);
+        
+    }//GEN-LAST:event_btnSigninMouseEntered
+
+    private void btnSigninMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSigninMouseExited
+        // TODO add your handling code here:
+        btnSignin.setForeground(Color.BLACK);
+    }//GEN-LAST:event_btnSigninMouseExited
 
     /**
      * @param args the command line arguments
