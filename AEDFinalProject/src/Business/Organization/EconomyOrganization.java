@@ -16,7 +16,17 @@ import java.util.ArrayList;
  */
 public class EconomyOrganization extends Organization {
     public EconomyOrganization() {
-        super(Organization.Type.Economy.getValue());
+        super(Type.Economy.getValue());
+    }
+    
+    private VaccineDirectory directory = new VaccineDirectory();
+
+    public VaccineDirectory getDirectory() {
+        return directory;
+    }
+
+    public void setDirectory(VaccineDirectory directory) {
+        this.directory = directory;
     }
     
     @Override

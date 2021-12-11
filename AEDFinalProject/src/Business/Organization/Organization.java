@@ -5,6 +5,7 @@
 package Business.Organization;
 
 import Business.Employee.EmployeeDirectory;
+import Business.Network.Network;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 public abstract class Organization {
 
     private String name;
+    private Network network;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
@@ -26,7 +28,7 @@ public abstract class Organization {
     public enum Type{
         Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization") , Manufacturing("Manufacturer Organization")
         ,Sales("Sales Organization") , Purchase("Purchase Organization"),Distribution("Distribution Organization"),Health("Health Organization"),
-        Economy("Economy Organization");
+        Economy("Economy Organization"),Person("Person Organization");
         private String value;
         private Type(String value) {
             this.value = value;
@@ -38,6 +40,7 @@ public abstract class Organization {
 
     public Organization(String name) {
         this.name = name;
+//        this.network = network;
         workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
@@ -53,6 +56,14 @@ public abstract class Organization {
 
     public int getOrganizationID() {
         return organizationID;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Organization.counter = counter;
     }
 
     public EmployeeDirectory getEmployeeDirectory() {

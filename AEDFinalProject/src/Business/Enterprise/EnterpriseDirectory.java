@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.Network.Network;
 import Business.Organization.OrganizationDirectory;
 import java.util.ArrayList;
 
@@ -29,19 +30,19 @@ public class EnterpriseDirectory {
     }
     
     //Create enterprise
-    public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
+    public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type, Network network){
         Enterprise enterprise=null;
         if(type==Enterprise.EnterpriseType.Hospital){
-            enterprise=new HospitalEnterprise(name);
+            enterprise=new HospitalEnterprise(name, network);
             enterpriseList.add(enterprise);
         } else if (type==Enterprise.EnterpriseType.Service){
-            enterprise=new ServiceEnterprise(name);
+            enterprise=new ServiceEnterprise(name, network);
             enterpriseList.add(enterprise);
         }else if (type==Enterprise.EnterpriseType.Pharmaceutical){
-            enterprise=new PharmaceuticalEnterprise(name);
+            enterprise=new PharmaceuticalEnterprise(name, network);
             enterpriseList.add(enterprise);
         }else if (type==Enterprise.EnterpriseType.Government){
-            enterprise=new GovernmentEnterprise(name);
+            enterprise=new GovernmentEnterprise(name, network);
             enterpriseList.add(enterprise);
         }
         return enterprise;

@@ -5,6 +5,8 @@
  */
 package Business.WorkQueue;
 
+import Business.Organization.Vaccine;
+
 /**
  *
  * @author abhis
@@ -21,6 +23,16 @@ public class approveVaccine extends WorkRequest{
  */
     
     private String testResult;
+    
+    private Vaccine vaccine;
+
+    public Vaccine getVaccine() {
+        return vaccine;
+    }
+
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
 
     public String getTestResult() {
         return testResult;
