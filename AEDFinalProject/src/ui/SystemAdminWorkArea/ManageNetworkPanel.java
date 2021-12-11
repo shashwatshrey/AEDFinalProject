@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.lang.model.SourceVersion;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author raunak
  */
-public class ManageNetworkJPanel extends javax.swing.JPanel {
+public class ManageNetworkPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
@@ -26,7 +27,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
      *
      * Creates new form ManageNetworkJPanel
      */
-    public ManageNetworkJPanel(JPanel userProcessContainer, EcoSystem system) {
+    public ManageNetworkPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
 
         this.userProcessContainer = userProcessContainer;
@@ -168,4 +169,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblNetwork;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
+    
 }
