@@ -64,17 +64,10 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-<<<<<<< HEAD
         btnSchedule = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtvaccineCount = new javax.swing.JTextField();
         VaccinationjDateChooser = new com.toedter.calendar.JDateChooser();
-=======
-        VaccinationjDateChooser = new com.toedter.calendar.JDateChooser();
-        btnSchedule = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        txtvaccineCount = new javax.swing.JTextField();
->>>>>>> main
 
         jLabel1.setText("DIstrubutor Work Area");
 
@@ -113,16 +106,15 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
                         .addGap(120, 120, 120)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-                            .addComponent(jLabel2)
-                            .addComponent(VaccinationjDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-                            .addComponent(VaccinationjDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
->>>>>>> main
-                        .addGap(33, 33, 33)
+                                .addGap(64, 64, 64)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(33, 33, 33))
+                                .addContainerGap()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(VaccinationjDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnSchedule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtvaccineCount))))
@@ -140,14 +132,9 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(txtvaccineCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnSchedule)
                     .addComponent(VaccinationjDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-                    .addComponent(VaccinationjDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSchedule))
->>>>>>> main
                 .addContainerGap(206, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
