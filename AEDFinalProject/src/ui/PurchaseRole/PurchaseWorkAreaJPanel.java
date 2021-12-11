@@ -61,26 +61,12 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-<<<<<<< HEAD
-        btnPurchase = new javax.swing.JButton();
-
-        setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1440, 848));
-        setPreferredSize(new java.awt.Dimension(1440, 848));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-=======
         jScrollPane1 = new javax.swing.JScrollPane();
         vaccineTable = new javax.swing.JTable();
         btnreqVaccine = new javax.swing.JButton();
->>>>>>> Abhishek
 
         jLabel1.setText("Purchase Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(902, 46, -1, -1));
 
-<<<<<<< HEAD
-        btnPurchase.setText("Place Purchase Order");
-        add(btnPurchase, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 749, -1, -1));
-=======
         vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -130,7 +116,6 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(btnreqVaccine)
                 .addContainerGap(226, Short.MAX_VALUE))
         );
->>>>>>> Abhishek
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnreqVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreqVaccineActionPerformed
@@ -143,11 +128,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JButton btnPurchase;
-=======
     private javax.swing.JButton btnreqVaccine;
->>>>>>> Abhishek
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable vaccineTable;

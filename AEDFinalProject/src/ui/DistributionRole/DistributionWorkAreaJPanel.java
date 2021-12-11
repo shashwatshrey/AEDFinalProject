@@ -62,29 +62,15 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-<<<<<<< HEAD
-        btnDose = new javax.swing.JButton();
-
-        setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1440, 848));
-        setPreferredSize(new java.awt.Dimension(1440, 848));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-=======
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         VaccinationjDateChooser = new com.toedter.calendar.JDateChooser();
         btnSchedule = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtvaccineCount = new javax.swing.JTextField();
->>>>>>> Abhishek
 
         jLabel1.setText("DIstrubutor Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 31, -1, -1));
 
-<<<<<<< HEAD
-        btnDose.setText("Administor Vaccine Dose");
-        add(btnDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 328, -1, -1));
-=======
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -147,7 +133,6 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnSchedule))
                 .addContainerGap(206, Short.MAX_VALUE))
         );
->>>>>>> Abhishek
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScheduleActionPerformed
@@ -183,12 +168,8 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JButton btnDose;
-=======
     private com.toedter.calendar.JDateChooser VaccinationjDateChooser;
     private javax.swing.JButton btnSchedule;
->>>>>>> Abhishek
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

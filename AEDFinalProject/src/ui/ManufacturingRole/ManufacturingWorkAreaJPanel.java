@@ -74,21 +74,14 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         btnOrder = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1440, 848));
-        setPreferredSize(new java.awt.Dimension(1440, 848));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         btnSendSample.setText("Send Sample for approval");
         btnSendSample.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendSampleActionPerformed(evt);
             }
         });
-        add(btnSendSample, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 391, -1, -1));
 
         jLabel1.setText("Manufacturing Work area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 78, -1, -1));
 
         requestTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -103,9 +96,6 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(requestTable);
 
-<<<<<<< HEAD
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 112, -1, 229));
-=======
         btnAddVaccine.setText("Add Vaccine");
         btnAddVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +161,6 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(jButton1))
                 .addGap(106, 106, 106))
         );
->>>>>>> Abhishek
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendSampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendSampleActionPerformed

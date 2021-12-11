@@ -67,18 +67,12 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtPrice = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1440, 848));
-        setPreferredSize(new java.awt.Dimension(1440, 848));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         btnApprove.setText("Approve Vaccine");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnApproveActionPerformed(evt);
             }
         });
-        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(868, 649, -1, -1));
 
         btnReject.setText("Reject Vaccine");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -86,15 +80,13 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 btnRejectActionPerformed(evt);
             }
         });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(1034, 649, -1, -1));
 
-        jTextField1.setText("Economy Work Area");
+        jTextField1.setText("EconomyWorkArea");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 27, -1, -1));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,9 +101,6 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(workRequestJTable);
 
-<<<<<<< HEAD
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 92, -1, 241));
-=======
         jLabel1.setText("Quantity per dose(in mg):");
 
         jLabel2.setText("Number of doses:");
@@ -197,7 +186,6 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(btnReject))
                 .addContainerGap(134, Short.MAX_VALUE))
         );
->>>>>>> Abhishek
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateTable(){
