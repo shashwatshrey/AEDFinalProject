@@ -139,13 +139,14 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-
+        
         String name = txtName.getText();
 
         Network network = system.createAndAddNetwork();
         network.setName(name);
         dB4OUtil.storeSystem(system);
         populateNetworkTable();
+        txtName.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
