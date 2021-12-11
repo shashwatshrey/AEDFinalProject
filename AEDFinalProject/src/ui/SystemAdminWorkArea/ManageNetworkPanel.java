@@ -66,6 +66,7 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1240, 848));
+        setPreferredSize(new java.awt.Dimension(1240, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblNetwork.setFont(new java.awt.Font("Optima", 0, 14)); // NOI18N

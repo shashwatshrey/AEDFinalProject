@@ -84,6 +84,9 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         submitJButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(36, 47, 65));
+        setMinimumSize(new java.awt.Dimension(1240, 848));
+
         enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -155,7 +158,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                         .addComponent(backJButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(submitJButton)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(678, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +181,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submitJButton)
                     .addComponent(backJButton))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(474, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

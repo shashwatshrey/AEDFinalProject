@@ -99,8 +99,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         roleJComboBox = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1240, 848));
-        setPreferredSize(new java.awt.Dimension(1240, 848));
+        setMinimumSize(new java.awt.Dimension(1190, 848));
+        setPreferredSize(new java.awt.Dimension(1190, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createUserJButton.setText("Create");

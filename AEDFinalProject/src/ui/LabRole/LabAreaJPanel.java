@@ -83,6 +83,9 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
+
         jLabel1.setText("Lab Testing Zone!");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -266,7 +269,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel11)
                                         .addGap(59, 59, 59)
                                         .addComponent(jTextField1)))))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(520, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

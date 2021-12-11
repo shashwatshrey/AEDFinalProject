@@ -18,6 +18,15 @@ public class requestVaccine extends WorkRequest{
     private String testResult;
     private UserAccount purchaser;
     private UserAccount distribution;
+    private UserAccount sales;
+
+    public UserAccount getSales() {
+        return sales;
+    }
+
+    public void setSales(UserAccount sales) {
+        this.sales = sales;
+    }
 
     public UserAccount getDistribution() {
         return distribution;
