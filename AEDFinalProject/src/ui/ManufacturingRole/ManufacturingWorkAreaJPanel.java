@@ -74,14 +74,19 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         btnOrder = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnSendSample.setText("Send Sample for approval");
         btnSendSample.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendSampleActionPerformed(evt);
             }
         });
+        add(btnSendSample, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 666, -1, -1));
 
         jLabel1.setText("Manufacturing Work area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 78, -1, -1));
 
         requestTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,12 +101,15 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(requestTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 112, -1, 229));
+
         btnAddVaccine.setText("Add Vaccine");
         btnAddVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddVaccineActionPerformed(evt);
             }
         });
+        add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 666, -1, -1));
 
         btnOrder.setText("Order Management");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +117,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
                 btnOrderActionPerformed(evt);
             }
         });
+        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 713, -1, -1));
 
         jButton1.setText("Delete Vaccine");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -116,51 +125,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(285, 285, 285)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(238, 238, 238)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnSendSample)
-                                    .addGap(50, 50, 50)
-                                    .addComponent(btnAddVaccine)
-                                    .addGap(14, 14, 14))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnOrder)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(137, 137, 137)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(168, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSendSample)
-                    .addComponent(btnAddVaccine))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOrder)
-                    .addComponent(jButton1))
-                .addGap(106, 106, 106))
-        );
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 713, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendSampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendSampleActionPerformed
@@ -204,11 +169,28 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
                 }
             }
         }
+        UserAccount sale = new UserAccount();
+        for(Enterprise e : currnet.getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == EnterpriseType.Pharmaceutical){
+                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        if(u.getRole().toString().equals("Business.Role.SalesRole")){
+                            System.out.println(u.getRole().toString());
+                            System.out.println(u.getUsername());
+                            lr.setSales(u);
+                            sale = u;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
         lr.setVaccine(v);
         lr.setMessage(v.getName());
         lr.setSender(userAccount);
         lr.setStatus("requested");
         cg.getWorkQueue().getWorkRequestList().add(lr);
+        sale.getWorkQueue().getWorkRequestList().add(lr);
         JOptionPane.showMessageDialog(this, "Approval Requested!!");
         populateTable();
         

@@ -5,11 +5,23 @@
  */
 package ui.SalesRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.ManufacturingOrganization;
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+import Business.Organization.PurchaseInventory;
 import Business.Organization.SalesOrganization;
+import Business.Organization.Vaccine;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.approveVaccine;
+import Business.WorkQueue.requestVaccine;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +29,9 @@ import javax.swing.JPanel;
  */
 public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         
+    
+    private EcoSystem system;
+    private OrganizationDirectory directory;
     private JPanel userProcessContainer;
     private SalesOrganization organization;
     private Enterprise enterprise;
@@ -25,15 +40,15 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public SalesWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, SalesOrganization organization, Enterprise enterprise, Network network) {
+    public SalesWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, SalesOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.network = network;
+        this.system = system;
         this.userAccount = account;
-        
+        populateTable();
     }
 
     /**
@@ -45,47 +60,147 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnAccept = new javax.swing.JButton();
-        btnReject = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ordersjTable = new javax.swing.JTable();
+        btnReject = new javax.swing.JButton();
+        txtComments = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        btnApprove = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
+        setMaximumSize(new java.awt.Dimension(1440, 848));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAccept.setText("Accept Order");
-        btnAccept.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAcceptActionPerformed(evt);
-            }
-        });
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 647, -1, -1));
-
-        btnReject.setText("Reject Order");
-        btnReject.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRejectActionPerformed(evt);
-            }
-        });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 647, -1, -1));
-
         jLabel1.setText("Sales Work Area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 68, -1, -1));
+
+        ordersjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Sender", "Receiver", "Quantity", "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(ordersjTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, 180));
+
+        btnReject.setText("Reject");
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, -1));
+        add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, -1));
+
+        jLabel2.setText("Comments:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
+
+        btnApprove.setText("Approve");
+        btnApprove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnApproveActionPerformed(evt);
+            }
+        });
+        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
+    private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAcceptActionPerformed
-
-    private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRejectActionPerformed
+        ManufacturingOrganization org = null;
+        for(Organization o : enterprise.getOrganizationDirectory().getOrganizationList()){
+            for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                if(u.getRole().toString().equals("Business.Role.ManufacturingRole")){
+                    org = ((ManufacturingOrganization)o);
+                }
+            }
+            
+        }
+        for(Vaccine v : org.getVaccineDirectory()){
+            System.out.println("Inside for");
+            if(v.getStatus().equals("Approved")){
+                System.out.println("Vaccine record approved");
+                int selectedRow = ordersjTable.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this, "Please select an order to approve");
+            return;
+        }
+        requestVaccine request = (requestVaccine)ordersjTable.getValueAt(selectedRow, 0);
+        
+        if(request.getStatus().equals("Approved")){
+            JOptionPane.showMessageDialog(this, "Vaccine already approved");
+            return;
+        }
+     
+        if(validate(txtComments.getText())){
+        request.setStatus("Approved");
+        request.setTestResult("Approved");
+        ArrayList<PurchaseInventory> inv = ((requestVaccine) request).getInventoryPurchase();
+        if(inv!=null){
+            for(PurchaseInventory p : inv){
+                ((requestVaccine) request).setQty(p.getQty());
+                
+            }
+            }
+        
+        
+        populateTable();
+        }
+        break;
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "You must have an approved vaccine in the inventory to manage orders");
+                return;
+            }
+        }
+    }//GEN-LAST:event_btnApproveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAccept;
+    private javax.swing.JButton btnApprove;
     private javax.swing.JButton btnReject;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable ordersjTable;
+    private javax.swing.JTextField txtComments;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) ordersjTable.getModel();
+        model.setRowCount(0);
+        System.out.println(enterprise.getName());
+        try{
+        for(WorkRequest wr : userAccount.getWorkQueue().getWorkRequestList()){
+            UserAccount inv = ((approveVaccine) wr).getSales();
+            Object[] row = new Object[4];
+            row[0] = wr;
+            row[1] = inv.getUsername();
+//            if(inv!=null){
+//            for(PurchaseInventory p : inv){
+//                row[2] = p.getQty();
+//            }
+            row[2] = "20";
+            row[3] = wr.getStatus();
+            
+            model.addRow(row);
+            }
+        }
+    
+        catch(NullPointerException e){
+            System.out.println("Null exception caught");
+    }
+    }
+
+    private boolean validate(String comment) {
+       if(comment.length()<1){
+           JOptionPane.showMessageDialog(this, "Please enter comments");
+           return false;
+       }
+           return true;
+    }
+    
 }

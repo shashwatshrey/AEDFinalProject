@@ -6,6 +6,7 @@
 package Business.WorkQueue;
 
 import Business.Organization.Vaccine;
+import Business.UserAccount.UserAccount;
 
 /**
  *
@@ -25,6 +26,16 @@ public class approveVaccine extends WorkRequest{
     private String testResult;
     
     private Vaccine vaccine;
+    
+    private UserAccount sales;
+
+    public UserAccount getSales() {
+        return sales;
+    }
+
+    public void setSales(UserAccount sales) {
+        this.sales = sales;
+    }
 
     public Vaccine getVaccine() {
         return vaccine;
