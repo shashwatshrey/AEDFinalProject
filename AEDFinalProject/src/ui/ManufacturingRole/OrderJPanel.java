@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author abhis
  */
-public class OrdersJPanel extends javax.swing.JPanel {
+public class OrderJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form OrdersJPanel
@@ -36,7 +36,7 @@ public class OrdersJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private UserAccount userAccount;
     
-    public OrdersJPanel(JPanel userProcessContainer, Enterprise enterprise, OrganizationDirectory directory, ManufacturingOrganization organization, UserAccount userAccount) {
+    public OrderJPanel(JPanel userProcessContainer, Enterprise enterprise, OrganizationDirectory directory, ManufacturingOrganization organization, UserAccount userAccount) {
         initComponents();
         this.directory = directory;
         this.enterprise = enterprise;
