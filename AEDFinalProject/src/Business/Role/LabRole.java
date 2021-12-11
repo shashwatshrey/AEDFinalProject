@@ -11,7 +11,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.LabOrganization;
 import Business.UserAccount.UserAccount;
-import ui.LabRole.LabWorkAreaJPanel;
+import ui.LabRole.LabAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -22,7 +22,7 @@ public class LabRole extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new LabWorkAreaJPanel(userProcessContainer, account, (LabOrganization)organization, enterprise, business);
+        return new LabAreaJPanel(userProcessContainer, account, (LabOrganization)organization, enterprise, business);
     }
 
     
