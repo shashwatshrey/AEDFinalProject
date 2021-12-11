@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.lang.model.SourceVersion;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -168,4 +169,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblNetwork;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
+    
 }
