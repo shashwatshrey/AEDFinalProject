@@ -27,12 +27,18 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="VaccinationjDateChooser" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="VaccinationjDateChooser" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnSchedule" max="32767" attributes="0"/>
                           <Component id="txtvaccineCount" max="32767" attributes="0"/>
@@ -56,9 +62,9 @@
                   <Component id="txtvaccineCount" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="VaccinationjDateChooser" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="btnSchedule" min="-2" max="-2" attributes="0"/>
+                  <Component id="VaccinationjDateChooser" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="206" max="32767" attributes="0"/>
           </Group>
@@ -119,8 +125,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="com.toedter.calendar.JDateChooser" name="VaccinationjDateChooser">
-    </Component>
     <Component class="javax.swing.JButton" name="btnSchedule">
       <Properties>
         <Property name="text" type="java.lang.String" value="Schedule"/>
@@ -135,6 +139,8 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtvaccineCount">
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="VaccinationjDateChooser">
     </Component>
   </SubComponents>
 </Form>
