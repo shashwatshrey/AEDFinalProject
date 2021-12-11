@@ -20,13 +20,9 @@ import javax.swing.JPanel;
  */
 public class HealthRole extends Role{
     
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-        return new HealthWorkAreaJPanel(userProcessContainer, account, (HealthOrganization)organization, enterprise, network);
-    }
-
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new HealthWorkAreaJPanel(userProcessContainer, account, (HealthOrganization)organization, enterprise, business);
     }
 
 }

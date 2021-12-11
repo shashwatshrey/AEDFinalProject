@@ -5,6 +5,7 @@
  */
 package ui.HealthRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.HealthOrganization;
@@ -20,18 +21,18 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private HealthOrganization organization;
     private Enterprise enterprise;
-    private Network network;
+    private EcoSystem system;
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
-    public HealthWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, HealthOrganization organization, Enterprise enterprise, Network network) {
+    public HealthWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, HealthOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.network = network;
+        this.system = system;
         this.userAccount = account;
         
     }
