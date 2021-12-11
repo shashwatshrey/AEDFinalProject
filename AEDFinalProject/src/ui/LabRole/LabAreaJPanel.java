@@ -13,6 +13,7 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.appointment;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -56,8 +57,33 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         btnSubmit = new javax.swing.JButton();
         txtResult = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        vitalYesRadio = new javax.swing.JRadioButton();
+        vitalNoRadio = new javax.swing.JRadioButton();
+        dosageYesRadio = new javax.swing.JRadioButton();
+        coldYesRadio = new javax.swing.JRadioButton();
+        tempYesRadio = new javax.swing.JRadioButton();
+        dosageNoRadio = new javax.swing.JRadioButton();
+        coldNoRadio = new javax.swing.JRadioButton();
+        tempNoRadio = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        vitalSignBar = new javax.swing.JProgressBar();
+        DosageBar = new javax.swing.JProgressBar();
+        ColdBar = new javax.swing.JProgressBar();
+        TemperatureBar = new javax.swing.JProgressBar();
+        jLabel10 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Lab Testing Zone!");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -79,25 +105,168 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtResultActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Are the Vital Signs of the person completely normal ? ");
+
+        jLabel3.setText("Has the patient completed both the doses ?");
+
+        jLabel4.setText("Does the patient have cold, cough ?");
+
+        jLabel5.setText("Does the patient have a normal temperature ? ");
+
+        vitalYesRadio.setText("Yes");
+        vitalYesRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vitalYesRadioActionPerformed(evt);
+            }
+        });
+
+        vitalNoRadio.setText("No");
+        vitalNoRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vitalNoRadioActionPerformed(evt);
+            }
+        });
+
+        dosageYesRadio.setText("Yes");
+        dosageYesRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dosageYesRadioActionPerformed(evt);
+            }
+        });
+
+        coldYesRadio.setText("Yes");
+        coldYesRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coldYesRadioActionPerformed(evt);
+            }
+        });
+
+        tempYesRadio.setText("Yes");
+        tempYesRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tempYesRadioActionPerformed(evt);
+            }
+        });
+
+        dosageNoRadio.setText("No");
+        dosageNoRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dosageNoRadioActionPerformed(evt);
+            }
+        });
+
+        coldNoRadio.setText("No");
+        coldNoRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coldNoRadioActionPerformed(evt);
+            }
+        });
+
+        tempNoRadio.setText("No");
+        tempNoRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tempNoRadioActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Vital Signs : ");
+
+        jLabel7.setText("Dosage : ");
+
+        jLabel8.setText("Cold, cough : ");
+
+        jLabel9.setText("Temperature : ");
+
+        jLabel10.setText("Final Report : ");
+
+        jLabel11.setText("Result : ");
+
+        jButton1.setText("Generate Report!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(157, 157, 157)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(57, 57, 57)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSubmit)))
-                .addContainerGap(185, Short.MAX_VALUE))
+                        .addGap(157, 157, 157)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSubmit))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel9)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(TemperatureBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel8)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(ColdBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(DosageBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addGap(42, 42, 42)
+                                                .addComponent(vitalSignBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addGap(246, 246, 246)))
+                                .addGap(68, 68, 68)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(vitalYesRadio)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(vitalNoRadio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(dosageYesRadio)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(dosageNoRadio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(coldYesRadio)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(coldNoRadio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(tempYesRadio)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tempNoRadio))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addGap(59, 59, 59)
+                                        .addComponent(jTextField1)))))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,19 +275,66 @@ public class LabAreaJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(52, 52, 52)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSubmit))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(vitalYesRadio)
+                    .addComponent(vitalNoRadio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(dosageYesRadio)
+                    .addComponent(dosageNoRadio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(coldYesRadio)
+                    .addComponent(coldNoRadio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSubmit)
-                        .addGap(105, 105, 105))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95))))
+                    .addComponent(jLabel5)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tempYesRadio)
+                        .addComponent(tempNoRadio)))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(vitalSignBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(DosageBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(ColdBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel11)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(TemperatureBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+        if(!txtResult.getText().equals(jTextField1.getText())){
+            JOptionPane.showMessageDialog(this, "Please input valid report");
+            return;
+        }
         int selectedRow = jTable1.getSelectedRow();
         
         if (selectedRow < 0){
@@ -134,13 +350,148 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
 
+    private void vitalYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitalYesRadioActionPerformed
+        // TODO add your handling code here:
+        if(vitalNoRadio.isSelected()){
+            vitalNoRadio.setSelected(false);
+        }
+        int internalvalue = 100;
+        vitalSignBar.setValue(internalvalue);
+        
+       
+    }//GEN-LAST:event_vitalYesRadioActionPerformed
+
+    private void dosageNoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dosageNoRadioActionPerformed
+        // TODO add your handling code here:
+        if(dosageYesRadio.isSelected()){
+            dosageYesRadio.setSelected(false);
+        }
+        int value = 0;
+        DosageBar.setValue(value);
+    }//GEN-LAST:event_dosageNoRadioActionPerformed
+
+    private void vitalNoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitalNoRadioActionPerformed
+        if(vitalYesRadio.isSelected()){
+            vitalYesRadio.setSelected(false);
+        }
+        int value = 0;
+        vitalSignBar.setValue(value);
+
+        
+    }//GEN-LAST:event_vitalNoRadioActionPerformed
+
+    private void dosageYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dosageYesRadioActionPerformed
+        // TODO add your handling code here:
+        if(dosageNoRadio.isSelected()){
+            dosageNoRadio.setSelected(false);
+        }
+        int internalvalue = 100;
+        DosageBar.setValue(internalvalue);
+        
+    }//GEN-LAST:event_dosageYesRadioActionPerformed
+
+    private void coldYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coldYesRadioActionPerformed
+        // TODO add your handling code here:
+        if(coldNoRadio.isSelected()){
+            coldNoRadio.setSelected(false);
+        }
+        int internalvalue = 100;
+        ColdBar.setValue(internalvalue);
+        
+        
+    }//GEN-LAST:event_coldYesRadioActionPerformed
+
+    private void coldNoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coldNoRadioActionPerformed
+        // TODO add your handling code here:
+         if(coldYesRadio.isSelected()){
+            coldYesRadio.setSelected(false);
+        }
+        int value = 0;
+        ColdBar.setValue(value);
+    }//GEN-LAST:event_coldNoRadioActionPerformed
+
+    private void tempYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempYesRadioActionPerformed
+        // TODO add your handling code here:
+        if(tempNoRadio.isSelected()){
+            tempNoRadio.setSelected(false);
+        }
+        int internalvalue = 100;
+        TemperatureBar.setValue(internalvalue);
+        
+    }//GEN-LAST:event_tempYesRadioActionPerformed
+
+    private void tempNoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempNoRadioActionPerformed
+        // TODO add your handling code here:
+         if(tempYesRadio.isSelected()){
+            tempYesRadio.setSelected(false);
+        }
+        int value = 0;
+        TemperatureBar.setValue(value);
+    }//GEN-LAST:event_tempNoRadioActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int vitals = vitalSignBar.getValue()/4;
+        int cold = ColdBar.getValue()/4;
+        int dosage = DosageBar.getValue()/4;
+        int temp = TemperatureBar.getValue()/4;
+        
+        int finalResult = vitals + cold + dosage + temp;
+        
+        jProgressBar1.setValue(finalResult);
+        if(finalResult == 100){
+            jProgressBar1.setStringPainted(true);
+            jProgressBar1.setForeground(Color.white);
+            jProgressBar1.setBackground(Color.green);
+           
+            
+            jTextField1.setText("Approved !");
+        } else if(finalResult >= 50 && finalResult < 100){
+            jProgressBar1.setForeground(Color.YELLOW);
+            jTextField1.setText("Needs Monitoring");
+        }else if (finalResult < 50){
+            jProgressBar1.setForeground(Color.RED);
+            jTextField1.setText("Danger!");
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtResultActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar ColdBar;
+    private javax.swing.JProgressBar DosageBar;
+    private javax.swing.JProgressBar TemperatureBar;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JRadioButton coldNoRadio;
+    private javax.swing.JRadioButton coldYesRadio;
+    private javax.swing.JRadioButton dosageNoRadio;
+    private javax.swing.JRadioButton dosageYesRadio;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JRadioButton tempNoRadio;
+    private javax.swing.JRadioButton tempYesRadio;
     private javax.swing.JTextField txtResult;
+    private javax.swing.JRadioButton vitalNoRadio;
+    private javax.swing.JProgressBar vitalSignBar;
+    private javax.swing.JRadioButton vitalYesRadio;
     // End of variables declaration//GEN-END:variables
     public void populateTable(){
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
