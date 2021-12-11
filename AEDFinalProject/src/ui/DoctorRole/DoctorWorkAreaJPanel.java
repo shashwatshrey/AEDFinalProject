@@ -77,13 +77,14 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
         requestTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Status", "Result"
+                "Message", "Sender", "Receiver", "Status", "Result", "Name"
             }
         ));
         jScrollPane1.setViewportView(requestTable);
@@ -217,7 +218,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[5];
+            Object[] row = new Object[6];
             if(request instanceof appointment){
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
@@ -225,6 +226,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             row[3] = request.getStatus();
             String result = ((appointment) request).getTestResult();
             row[4] = result;
+            row[5] = request.getReceiver().getUsername();
             
             model.addRow(row);
         }
