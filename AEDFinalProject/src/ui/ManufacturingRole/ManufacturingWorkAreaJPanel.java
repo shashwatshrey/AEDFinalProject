@@ -204,11 +204,28 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
                 }
             }
         }
+        UserAccount sale = new UserAccount();
+        for(Enterprise e : currnet.getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == EnterpriseType.Pharmaceutical){
+                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        if(u.getRole().toString().equals("Business.Role.SalesRole")){
+                            System.out.println(u.getRole().toString());
+                            System.out.println(u.getUsername());
+                            lr.setSales(u);
+                            sale = u;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
         lr.setVaccine(v);
         lr.setMessage(v.getName());
         lr.setSender(userAccount);
         lr.setStatus("requested");
         cg.getWorkQueue().getWorkRequestList().add(lr);
+        sale.getWorkQueue().getWorkRequestList().add(lr);
         JOptionPane.showMessageDialog(this, "Approval Requested!!");
         populateTable();
         

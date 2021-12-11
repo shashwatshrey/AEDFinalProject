@@ -158,14 +158,25 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         requestVaccine rv = new requestVaccine();
             rv.setPurchaser(userAccount);
             rv.setSender(userAccount);
-            for(UserAccount u : currEP.getUserAccountDirectory().getUserAccountList()){
-                System.out.println(ManufacturerjComboBox.getSelectedItem().toString());
-                if(u.getUsername().toString().equals(ManufacturerjComboBox.getSelectedItem().toString())){
+            for(Organization o : currEP.getOrganizationDirectory().getOrganizationList()){
+                for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                    if(u.getRole().toString().equals("Business.Role.SalesRole")){
+                        rv.setReceiver(u);
+                        receive = u;
+                    System.out.println(u.getRole().toString());
                     System.out.println(u.getUsername());
-                    rv.setReceiver(u);
-                    receive = u;
+                    }
                 }
             }
+//            for(UserAccount u : currEP.getUserAccountDirectory().getUserAccountList()){
+//                System.out.println(ManufacturerjComboBox.getSelectedItem().toString());
+//                if(u.getUsername().toString().equals(ManufacturerjComboBox.getSelectedItem().toString())){
+//                    System.out.println(u.getUsername());
+//                    rv.setReceiver(u);
+//                    receive = u;
+//                }
+//            }
+            System.out.println("123");
             rv.setStatus("Ordered");
             rv.setQty(Integer.parseInt(txtrequestQty.getText()));
             rv.setInventoryPurchase(inventory);
@@ -178,18 +189,18 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
                 System.out.println("Org found");
                 
                 System.out.println("Searching user");
-            for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
-                
-                System.out.println("user found");
-                System.out.println(u.getRole().toString());
-                if(u.getRole().toString().equals("Business.Role.ManufacturingRole")){
-                    
-                System.out.println("role found");
-                    System.out.println(u.getUsername());
-                    rv.setReceiver(u);
-                    u.getWorkQueue().getWorkRequestList().add(rv);
-                }
-            }
+//            for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+//                
+//                System.out.println("user found");
+//                System.out.println(u.getRole().toString());
+//                if(u.getRole().toString().equals("Business.Role.ManufacturingRole")){
+//                    
+//                System.out.println("role found");
+//                    System.out.println(u.getUsername());
+//                    rv.setReceiver(u);
+//                    u.getWorkQueue().getWorkRequestList().add(rv);
+//                }
+//            }
         }
             }
         }
