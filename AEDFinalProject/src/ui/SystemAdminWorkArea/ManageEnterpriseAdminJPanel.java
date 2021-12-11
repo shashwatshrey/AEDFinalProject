@@ -4,6 +4,7 @@
  */
 package ui.SystemAdminWorkArea;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
@@ -23,6 +24,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
     /**
      * Creates new form ManageEnterpriseJPanel
@@ -197,6 +199,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
         populateTable();
+        dB4OUtil.storeSystem(system);
+        passwordJPasswordField.setText("");
+        nameJTextField.setText("");
+        usernameJTextField.setText("");
+      
         
     }//GEN-LAST:event_submitJButtonActionPerformed
 
