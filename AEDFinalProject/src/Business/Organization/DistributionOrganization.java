@@ -16,7 +16,11 @@ import java.util.ArrayList;
  */
 public class DistributionOrganization extends Organization {
     public DistributionOrganization() {
+<<<<<<< HEAD
         super(Organization.Type.Distribution.getValue());
+=======
+        super(Type.Distribution.getValue());
+>>>>>>> parent of f88db4b... All WR done
     }
     
     @Override

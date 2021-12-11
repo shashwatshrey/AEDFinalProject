@@ -55,11 +55,15 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         requestTable = new javax.swing.JTable();
+<<<<<<< HEAD
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> parent of f88db4b... All WR done
 
         btnSendSample.setText("Send Sample for approval");
         btnSendSample.addActionListener(new java.awt.event.ActionListener() {
@@ -85,13 +89,91 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(requestTable);
 
+<<<<<<< HEAD
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 112, -1, 229));
+=======
+        jButton1.setText("Add Vaccine");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(btnSendSample)
+                        .addGap(50, 50, 50)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(285, 285, 285)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSendSample)
+                    .addComponent(jButton1))
+                .addGap(129, 129, 129))
+        );
+>>>>>>> parent of f88db4b... All WR done
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendSampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendSampleActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         LabTestWorkRequest lr = new LabTestWorkRequest();
         lr.setMessage("Please approve");
+=======
+//        this.network = network;
+        int selectedRow = requestTable.getSelectedRow();
+        if (selectedRow < 0){
+            return;
+        }
+        approveVaccine lr = new approveVaccine();
+        Vaccine v = (Vaccine) requestTable.getValueAt(selectedRow, 0);
+        if(v.getStatus().equals("Approved")){
+            JOptionPane.showMessageDialog(this, "Vaccine already approved!!");
+            return;
+        }
+        if(v.getStatus().equals("Rejected")){
+            JOptionPane.showMessageDialog(this, "Vaccine was rejected, please send new vaccine for approval");
+            return;
+        }
+        UserAccount cg = new UserAccount();
+        Network currnet = enterprise.getNetwork();
+        for(Enterprise e: currnet.getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType()==EnterpriseType.Government){
+                for(Organization o: e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u: o.getUserAccountDirectory().getUserAccountList()){
+                        if(u.getRole().toString()=="Business.Role.EconomyRole"){
+                            lr.setReceiver(u);
+                            cg = u;
+                            break;
+                        }                        
+                        
+                    }
+                }
+            }
+        }
+        lr.setVaccine(v);
+        lr.setMessage(v.getName());
+>>>>>>> parent of f88db4b... All WR done
         lr.setSender(userAccount);
         lr.setStatus("requested");
         lr.setReceiver(userAccount);
@@ -112,6 +194,18 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnSendSampleActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.vaccineDirectory = vaccineDirectory;
+        AddVaccineJPanel addVaccineJPanel = new AddVaccineJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), organization, vaccineDirectory);
+        userProcessContainer.add("addVaccineJPanel", addVaccineJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+>>>>>>> parent of f88db4b... All WR done
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSendSample;

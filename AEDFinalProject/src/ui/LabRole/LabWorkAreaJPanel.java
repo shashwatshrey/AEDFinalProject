@@ -22,16 +22,28 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private LabOrganization organization;
     private Enterprise enterprise;
+<<<<<<< HEAD
+=======
+    private Network network;
+>>>>>>> parent of f88db4b... All WR done
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
+<<<<<<< HEAD
     public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LabOrganization organization, Enterprise enterprise) {
+=======
+    public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LabOrganization organization, Enterprise enterprise, Network network) {
+>>>>>>> parent of f88db4b... All WR done
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
+<<<<<<< HEAD
+=======
+        this.network = network;
+>>>>>>> parent of f88db4b... All WR done
         this.userAccount = account;
         populateTable();
     }

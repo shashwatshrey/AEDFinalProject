@@ -6,8 +6,18 @@
 package ui.PurchaseRole;
 
 import Business.Enterprise.Enterprise;
+<<<<<<< HEAD
 import Business.Organization.PurchaseOrganization;
 import Business.UserAccount.UserAccount;
+=======
+import Business.Network.Network;
+import Business.Organization.PurchaseInventory;
+import Business.Organization.PurchaseOrganization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.requestVaccine;
+import java.awt.CardLayout;
+>>>>>>> parent of f88db4b... All WR done
 import javax.swing.JPanel;
 
 /**
@@ -30,7 +40,11 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+<<<<<<< HEAD
         
+=======
+        populateTable();
+>>>>>>> parent of f88db4b... All WR done
     }
 
     /**
@@ -62,4 +76,23 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnPurchase;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+<<<<<<< HEAD
+=======
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) vaccineTable.getModel();
+        model.setRowCount(0);
+        try{
+        for(WorkRequest rv:userAccount.getWorkQueue().getWorkRequestList()){
+            Object row[] = new Object[4];
+            row[0] = rv;
+            row[1] = pi.getQty();
+            model.addRow(row);
+        }
+        }
+        catch(NullPointerException e){
+            System.out.println("No records found");
+        }
+    }
+>>>>>>> parent of f88db4b... All WR done
 }

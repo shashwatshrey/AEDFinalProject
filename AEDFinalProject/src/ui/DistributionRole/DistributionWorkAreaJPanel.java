@@ -6,6 +6,10 @@
 package ui.DistributionRole;
 
 import Business.Enterprise.Enterprise;
+<<<<<<< HEAD
+=======
+import Business.Network.Network;
+>>>>>>> parent of f88db4b... All WR done
 import Business.Organization.DistributionOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -19,16 +23,28 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private DistributionOrganization organization;
     private Enterprise enterprise;
+<<<<<<< HEAD
+=======
+    private Network network;
+>>>>>>> parent of f88db4b... All WR done
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
+<<<<<<< HEAD
     public DistributionWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization organization, Enterprise enterprise) {
+=======
+    public DistributionWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DistributionOrganization organization, Enterprise enterprise, Network network) {
+>>>>>>> parent of f88db4b... All WR done
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
+<<<<<<< HEAD
+=======
+        this.network = network;
+>>>>>>> parent of f88db4b... All WR done
         this.userAccount = account;
         
     }
@@ -43,6 +59,7 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+<<<<<<< HEAD
         btnDose = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
@@ -55,11 +72,35 @@ public class DistributionWorkAreaJPanel extends javax.swing.JPanel {
 
         btnDose.setText("Administor Vaccine Dose");
         add(btnDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 328, -1, -1));
+=======
+
+        jLabel1.setText("DIstrubutor Work Area");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(jLabel1)
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1)
+                .addContainerGap(253, Short.MAX_VALUE))
+        );
+>>>>>>> parent of f88db4b... All WR done
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton btnDose;
+=======
+>>>>>>> parent of f88db4b... All WR done
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
