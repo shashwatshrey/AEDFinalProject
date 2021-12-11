@@ -5,11 +5,15 @@
  */
 package ui.LabRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.LabOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.appointment;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,27 +27,39 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
     private LabOrganization organization;
     private Enterprise enterprise;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     private Network network;
 >>>>>>> parent of f88db4b... All WR done
+=======
+    private EcoSystem system;
+>>>>>>> main
     private UserAccount userAccount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LabOrganization organization, Enterprise enterprise) {
 =======
     public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LabOrganization organization, Enterprise enterprise, Network network) {
 >>>>>>> parent of f88db4b... All WR done
+=======
+    public LabWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, LabOrganization organization, Enterprise enterprise, EcoSystem system) {
+>>>>>>> main
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         this.network = network;
 >>>>>>> parent of f88db4b... All WR done
+=======
+        this.system = system;
+>>>>>>> main
         this.userAccount = account;
         populateTable();
     }
@@ -73,13 +89,13 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Status"
+                "Message", "Sender", "Receiver", "Status", "Result"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -104,9 +120,12 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         
-        LabTestWorkRequest request = (LabTestWorkRequest)jTable1.getValueAt(selectedRow, 0);
-     
-        request.setStatus(txtResult.getText());
+        appointment request = (appointment)jTable1.getValueAt(selectedRow, 0);
+     System.out.println("1");
+        request.setTestResult(txtResult.getText());
+        System.out.println(txtResult.getText());
+        System.out.println("2");
+        JOptionPane.showMessageDialog(this, "Request tested");
         populateTable();
     }//GEN-LAST:event_btnSubmitActionPerformed
 
@@ -125,13 +144,18 @@ public class LabWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
+            if(request instanceof appointment){
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
             row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
             row[3] = request.getStatus();
+            String result = ((appointment) request).getTestResult();
+            row[4] = result;
+            
             
             model.addRow(row);
+        }
         }
     }
 }

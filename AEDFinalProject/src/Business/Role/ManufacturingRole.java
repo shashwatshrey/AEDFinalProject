@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.Organization.ManufacturingOrganization;
@@ -20,9 +21,12 @@ import javax.swing.JPanel;
  */
 public class ManufacturingRole extends Role{
     
+    
+//JPanel userProcessContainer, EcoSystem ecoSystem, UserAccount account, Network network, ManufacturingOrganization organization, Enterprise enterprise
+
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new ManufacturingWorkAreaJPanel(userProcessContainer, account, (ManufacturingOrganization)organization, enterprise);
+       return new ManufacturingWorkAreaJPanel(userProcessContainer, account, (ManufacturingOrganization)organization, enterprise, business);
     }
-//JPanel userProcessContainer, EcoSystem ecoSystem, UserAccount account, Network network, ManufacturingOrganization organization, Enterprise enterprise
+
 }

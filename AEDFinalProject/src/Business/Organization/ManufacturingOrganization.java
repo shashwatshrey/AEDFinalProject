@@ -15,8 +15,12 @@ import java.util.ArrayList;
  */
 public class ManufacturingOrganization extends Organization{
 
+    
+    private ArrayList<Vaccine> vaccineDirectory;
+    
     public ManufacturingOrganization() {
-        super(Organization.Type.Manufacturing.getValue());
+        super(Type.Manufacturing.getValue());
+        this.vaccineDirectory = new ArrayList<Vaccine>();
     }
     
     @Override
@@ -26,4 +30,25 @@ public class ManufacturingOrganization extends Organization{
         return roles;
     }
      
+    public ArrayList<Vaccine> getVaccineDirectory() {
+        return vaccineDirectory;
+    }
+
+    public void setVaccineDirectory(ArrayList<Vaccine> vaccineDirectory) {
+        this.vaccineDirectory = vaccineDirectory;
+    }
+    
+    public Vaccine addVaccine(Vaccine vaccine){
+        this.vaccineDirectory.add(vaccine);
+        return vaccine;
+    }
+    
+    public void updateVaccine(Vaccine vaccine){
+        int index = vaccineDirectory.indexOf(vaccine);
+        vaccineDirectory.set(index, vaccine);
+    }
+    
+    public void deleteVaccine(Vaccine vaccine){
+        vaccineDirectory.remove(vaccine);
+    }
 }

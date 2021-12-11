@@ -5,7 +5,13 @@
  */
 package Business.WorkQueue;
 
+<<<<<<< HEAD
 import Business.UserAccount.UserAccount;
+=======
+import Business.Organization.PurchaseInventory;
+import Business.UserAccount.UserAccount;
+import java.util.ArrayList;
+>>>>>>> main
 
 /**
  *
@@ -15,6 +21,41 @@ public class requestVaccine extends WorkRequest{
     
     private String testResult;
     private UserAccount purchaser;
+<<<<<<< HEAD
+=======
+    private UserAccount distribution;
+
+    public UserAccount getDistribution() {
+        return distribution;
+    }
+
+    public void setDistribution(UserAccount distribution) {
+        this.distribution = distribution;
+    }
+    private ArrayList<PurchaseInventory> inventoryPurchase;
+    private int count = 0;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+    
+    public requestVaccine(){
+        super();
+        this.inventoryPurchase= new ArrayList<>();
+    }
+
+    public ArrayList<PurchaseInventory> getInventoryPurchase() {
+        return inventoryPurchase;
+    }
+
+    public void setInventoryPurchase(ArrayList<PurchaseInventory> inventoryPurchase) {
+        this.inventoryPurchase = inventoryPurchase;
+    }
+>>>>>>> main
 
     public int getQty() {
         return qty;
@@ -40,4 +81,11 @@ public class requestVaccine extends WorkRequest{
     public void setPurchaser(UserAccount purchaser) {
         this.purchaser = purchaser;
     }
+<<<<<<< HEAD
+=======
+    @Override
+    public String toString(){
+        return purchaser.getUsername();
+    }
+>>>>>>> main
 }

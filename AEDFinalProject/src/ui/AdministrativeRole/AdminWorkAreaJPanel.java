@@ -4,6 +4,7 @@ package ui.AdministrativeRole;
 
 import Business.Enterprise.Enterprise;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -33,20 +34,17 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         menuPanel = new javax.swing.JPanel();
         enterpriseLabel1 = new javax.swing.JLabel();
         valueLabel1 = new javax.swing.JLabel();
-        manageOrganizationJButton1 = new javax.swing.JButton();
-        manageEmployeeJButton1 = new javax.swing.JButton();
-        userJButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        onePanel = new javax.swing.JPanel();
+        lblOrganizations = new javax.swing.JLabel();
+        twoPanel = new javax.swing.JPanel();
+        lblEmployees = new javax.swing.JLabel();
+        threePanel = new javax.swing.JPanel();
+        lblUsers = new javax.swing.JLabel();
         cardWorkPanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1240, 848));
-        setPreferredSize(new java.awt.Dimension(1240, 848));
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menuPanel.setBackground(new java.awt.Color(36, 47, 65));
@@ -61,93 +59,102 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel1.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel1.setText("<value>");
 
-        manageOrganizationJButton1.setText("Manage Organization");
-        manageOrganizationJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrganizationJButton1ActionPerformed(evt);
+        onePanel.setBackground(new java.awt.Color(36, 47, 65));
+        onePanel.setPreferredSize(new java.awt.Dimension(200, 40));
+        onePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                onePanelMouseClicked(evt);
             }
         });
 
-        manageEmployeeJButton1.setText("Manage Employee");
-        manageEmployeeJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageEmployeeJButton1ActionPerformed(evt);
+        lblOrganizations.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
+        lblOrganizations.setForeground(new java.awt.Color(255, 255, 255));
+        lblOrganizations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOrganizations.setText("Manage Organizations");
+        lblOrganizations.setMaximumSize(new java.awt.Dimension(180, 20));
+        lblOrganizations.setMinimumSize(new java.awt.Dimension(180, 20));
+        lblOrganizations.setPreferredSize(new java.awt.Dimension(180, 20));
+
+        javax.swing.GroupLayout onePanelLayout = new javax.swing.GroupLayout(onePanel);
+        onePanel.setLayout(onePanelLayout);
+        onePanelLayout.setHorizontalGroup(
+            onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(onePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        onePanelLayout.setVerticalGroup(
+            onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        twoPanel.setBackground(new java.awt.Color(36, 47, 65));
+        twoPanel.setPreferredSize(new java.awt.Dimension(200, 40));
+        twoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                twoPanelMouseClicked(evt);
             }
         });
 
-        userJButton1.setText("Manage User");
-        userJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userJButton1ActionPerformed(evt);
+        lblEmployees.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
+        lblEmployees.setForeground(new java.awt.Color(255, 255, 255));
+        lblEmployees.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEmployees.setText("Manage Employees");
+        lblEmployees.setMaximumSize(new java.awt.Dimension(180, 20));
+        lblEmployees.setMinimumSize(new java.awt.Dimension(180, 20));
+        lblEmployees.setPreferredSize(new java.awt.Dimension(180, 20));
+
+        javax.swing.GroupLayout twoPanelLayout = new javax.swing.GroupLayout(twoPanel);
+        twoPanel.setLayout(twoPanelLayout);
+        twoPanelLayout.setHorizontalGroup(
+            twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(twoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        twoPanelLayout.setVerticalGroup(
+            twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(twoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        threePanel.setBackground(new java.awt.Color(36, 47, 65));
+        threePanel.setPreferredSize(new java.awt.Dimension(200, 40));
+        threePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                threePanelMouseClicked(evt);
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(36, 47, 65));
+        lblUsers.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
+        lblUsers.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUsers.setText("Manage Users");
+        lblUsers.setMaximumSize(new java.awt.Dimension(180, 20));
+        lblUsers.setMinimumSize(new java.awt.Dimension(180, 20));
+        lblUsers.setPreferredSize(new java.awt.Dimension(180, 20));
 
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Manage Employees");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout threePanelLayout = new javax.swing.GroupLayout(threePanel);
+        threePanel.setLayout(threePanelLayout);
+        threePanelLayout.setHorizontalGroup(
+            threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, threePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        threePanelLayout.setVerticalGroup(
+            threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(threePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel2.setBackground(new java.awt.Color(36, 47, 65));
-
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Manage Organizations");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel3.setBackground(new java.awt.Color(36, 47, 65));
-
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Manage Users");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addComponent(lblUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -156,30 +163,22 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(manageOrganizationJButton1)
-                            .addGroup(menuPanelLayout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(manageEmployeeJButton1))
-                            .addGroup(menuPanelLayout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(userJButton1))))
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(enterpriseLabel1)
-                        .addGap(5, 5, 5)
-                        .addComponent(valueLabel1)))
+                .addGap(18, 18, 18)
+                .addComponent(enterpriseLabel1)
+                .addGap(5, 5, 5)
+                .addComponent(valueLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(twoPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(threePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(onePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        menuPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {onePanel, threePanel, twoPanel});
+
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
@@ -189,22 +188,16 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(menuPanelLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(valueLabel1)))
-                .addGap(42, 42, 42)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(manageOrganizationJButton1)
-                .addGap(5, 5, 5)
-                .addComponent(manageEmployeeJButton1)
-                .addGap(5, 5, 5)
-                .addComponent(userJButton1)
-                .addContainerGap())
+                .addGap(75, 75, 75)
+                .addComponent(onePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(twoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(threePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(602, 602, 602))
         );
 
-        menuPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jPanel1, jPanel2, jPanel3});
+        menuPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {onePanel, threePanel, twoPanel});
 
         add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -215,33 +208,58 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         add(cardWorkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void userJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButton1ActionPerformed
+    private void twoPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twoPanelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_userJButton1ActionPerformed
+        setColor(twoPanel);
+        resetColor(new JPanel[]{onePanel,threePanel});
+        ManageEmployeeJPanel manageEmployeeJPanel = new ManageEmployeeJPanel(userProcessContainer, enterprise.getOrganizationDirectory());
+        userProcessContainer.add("manageEmployeeJPanel", manageEmployeeJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_twoPanelMouseClicked
 
-    private void manageEmployeeJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButton1ActionPerformed
+    private void onePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onePanelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_manageEmployeeJButton1ActionPerformed
+        setColor(onePanel);
+        resetColor(new JPanel[]{twoPanel,threePanel});
+        ManageOrganizationJPanel manageOrganizationJPanel = new ManageOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory());
+        userProcessContainer.add("manageOrganizationJPanel", manageOrganizationJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_onePanelMouseClicked
 
-    private void manageOrganizationJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButton1ActionPerformed
+    private void threePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_threePanelMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_manageOrganizationJButton1ActionPerformed
+        setColor(threePanel);
+        resetColor(new JPanel[]{onePanel,twoPanel});
+        ManageUserAccountJPanel muajp = new ManageUserAccountJPanel(userProcessContainer, enterprise);
+        userProcessContainer.add("ManageUserAccountJPanel", muajp);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_threePanelMouseClicked
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardWorkPanel;
     private javax.swing.JLabel enterpriseLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton manageEmployeeJButton1;
-    private javax.swing.JButton manageOrganizationJButton1;
+    private javax.swing.JLabel lblEmployees;
+    private javax.swing.JLabel lblOrganizations;
+    private javax.swing.JLabel lblUsers;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JButton userJButton1;
+    private javax.swing.JPanel onePanel;
+    private javax.swing.JPanel threePanel;
+    private javax.swing.JPanel twoPanel;
     private javax.swing.JLabel valueLabel1;
     // End of variables declaration//GEN-END:variables
-    
+    private void setColor(JPanel pane)
+    {
+        pane.setBackground(new Color(23,35,51));
+    }
+    private void resetColor(JPanel [] pane)
+    {
+        for(int i=0;i<pane.length;i++){
+           pane[i].setBackground(new Color(36,47,65));
+           
+        }
+    }
 }

@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.DistributionOrganization;
 import Business.UserAccount.UserAccount;
@@ -18,6 +19,7 @@ import javax.swing.JPanel;
  * @author vraj
  */
 public class DistributionRole extends Role{
+<<<<<<< HEAD
     
 <<<<<<< HEAD
     @Override
@@ -32,6 +34,13 @@ public class DistributionRole extends Role{
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 >>>>>>> parent of f88db4b... All WR done
+=======
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new DistributionWorkAreaJPanel(userProcessContainer, account, (DistributionOrganization)organization, enterprise, business);
+>>>>>>> main
     }
+
+    
 
 }
