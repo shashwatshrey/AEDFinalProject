@@ -64,6 +64,7 @@ public class OrderJPanel extends javax.swing.JPanel {
         btnApprove = new javax.swing.JButton();
         btnReject = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
