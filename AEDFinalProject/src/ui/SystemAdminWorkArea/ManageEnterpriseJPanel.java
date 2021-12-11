@@ -182,8 +182,14 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         String name = txtName.getText();
 
+<<<<<<< HEAD
         Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
         dB4OUtil.storeSystem(system);
+=======
+        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type, network);
+        System.out.println(network.getName());
+
+>>>>>>> Abhishek
         populateTable();
         txtName.setText("");
 

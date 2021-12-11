@@ -154,10 +154,19 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         txtUsername.setBorder(null);
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 170, -1));
 
+<<<<<<< HEAD
         lblEnterprise.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         lblEnterprise.setText("Enterprise");
         add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 260, -1, -1));
+=======
+        enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        enterpriseJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterpriseJComboBoxActionPerformed(evt);
+            }
+        });
+>>>>>>> Abhishek
 
         cbmEnterprise.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         cbmEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -231,11 +240,19 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         
+<<<<<<< HEAD
         Enterprise enterprise = (Enterprise) cbmEnterprise.getSelectedItem();
         
         String username = txtUsername.getText();
         String password = String.valueOf(txtPassword.getPassword());
         String name = txtName.getText();
+=======
+        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        System.out.println(enterprise.getNetwork().getName());
+        String username = usernameJTextField.getText();
+        String password = String.valueOf(passwordJPasswordField.getPassword());
+        String name = nameJTextField.getText();
+>>>>>>> Abhishek
         
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
         
@@ -259,6 +276,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void enterpriseJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterpriseJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

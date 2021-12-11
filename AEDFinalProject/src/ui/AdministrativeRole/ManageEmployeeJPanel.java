@@ -151,7 +151,15 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 678, 126, -1));
 
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+<<<<<<< HEAD
         add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 633, 81, -1));
+=======
+        organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                organizationEmpJComboBoxActionPerformed(evt);
+            }
+        });
+>>>>>>> Abhishek
 
         jLabel3.setText("Organization");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 637, -1, -1));
@@ -180,6 +188,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             populateTable(organization);
         }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
+
+    private void organizationEmpJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationEmpJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_organizationEmpJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;

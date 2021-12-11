@@ -154,11 +154,20 @@
           </StringArray>
         </Property>
       </Properties>
+<<<<<<< HEAD
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="409" y="633" width="81" height="-1"/>
         </Constraint>
       </Constraints>
+=======
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="organizationEmpJComboBoxActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="ManageEmployeeJPanel_organizationEmpJComboBox"/>
+      </AuxValues>
+>>>>>>> Abhishek
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>

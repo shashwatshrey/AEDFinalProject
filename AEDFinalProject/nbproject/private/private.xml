@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Organization/EconomyOrganization.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Role/Role.java</file>
@@ -14,6 +15,17 @@
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/Business/Organization/Organization.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/SystemAdminWorkArea/ManageNetworkJPanel.java</file>
             <file>file:/Users/vraj/AEDFinalProject/AEDFinalProject/src/ui/SystemAdminWorkArea/ManageEnterpriseJPanel.java</file>
+=======
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/Business/Organization/Organization.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/ui/LabRole/LabWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/Business/Network/Network.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/ui/ManufacturingRole/AddVaccineJPanel.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/ui/ManufacturingRole/ManufacturingWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/Business/Role/Role.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/ui/EconomyRole/EconomyWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/ui/DoctorRole/DoctorWorkAreaJPanel.java</file>
+            <file>file:/C:/Users/abhis/OneDrive%20-%20Northeastern%20University/Documents/NetBeansProjects/AED%20Final%20Project/AEDFinalProject/AEDFinalProject/src/Business/Enterprise/Enterprise.java</file>
+>>>>>>> Abhishek
         </group>
     </open-files>
 </project-private>

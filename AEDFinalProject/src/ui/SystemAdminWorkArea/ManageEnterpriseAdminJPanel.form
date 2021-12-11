@@ -182,11 +182,17 @@
           </StringArray>
         </Property>
       </Properties>
+<<<<<<< HEAD
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="203" y="256" width="136" height="-1"/>
         </Constraint>
       </Constraints>
+=======
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterpriseJComboBoxActionPerformed"/>
+      </Events>
+>>>>>>> Abhishek
     </Component>
     <Component class="javax.swing.JButton" name="btnSubmit">
       <Properties>
