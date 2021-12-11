@@ -67,12 +67,17 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
 
         jTextField2.setText("jTextField2");
 
+        setBackground(new java.awt.Color(36, 47, 65));
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnvcn.setText("Schedule Vaccination");
         btnvcn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnvcnActionPerformed(evt);
             }
         });
+        add(btnvcn, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 530, -1, -1));
 
         btnappt.setText("Schedule Appointment");
         btnappt.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +85,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 btnapptActionPerformed(evt);
             }
         });
+        add(btnappt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 780, -1, -1));
 
         VaccinationRequestjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,6 +100,8 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(VaccinationRequestjTable);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 296, 375, 204));
+
         AppointmentjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -107,39 +115,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(AppointmentjTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(btnvcn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(btnappt))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addContainerGap(310, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnvcn)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(btnappt)
-                .addGap(39, 39, 39))
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 577, 375, 169));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnvcnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvcnActionPerformed

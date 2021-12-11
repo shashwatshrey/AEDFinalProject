@@ -52,11 +52,19 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         txtScientificName = new javax.swing.JTextField();
         btnback = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(36, 47, 65));
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         txtTitle.setText("Add Vaccine");
+        add(txtTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 6, -1, -1));
 
         lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 53, -1, -1));
 
         jLabel1.setText("Scientific Name:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 102, -1, -1));
 
         btnAddVaccine.setText("Add");
         btnAddVaccine.addActionListener(new java.awt.event.ActionListener() {
@@ -64,12 +72,15 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
                 btnAddVaccineActionPerformed(evt);
             }
         });
+        add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 202, -1, -1));
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 48, 86, -1));
+        add(txtScientificName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 97, 86, -1));
 
         btnback.setText("<< Back");
         btnback.addActionListener(new java.awt.event.ActionListener() {
@@ -77,50 +88,7 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
                 btnbackActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblName)
-                        .addComponent(jLabel1))
-                    .addComponent(btnback))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtScientificName, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                            .addComponent(txtName)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAddVaccine)
-                            .addComponent(txtTitle))))
-                .addContainerGap(131, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtTitle)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtScientificName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddVaccine)
-                    .addComponent(btnback))
-                .addGap(74, 74, 74))
-        );
+        add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 202, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
