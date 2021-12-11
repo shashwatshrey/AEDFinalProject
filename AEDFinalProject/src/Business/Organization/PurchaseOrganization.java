@@ -15,8 +15,21 @@ import java.util.ArrayList;
  * @author shashwatshrey
  */
 public class PurchaseOrganization extends Organization {
+    
+    private ArrayList<PurchaseInventory> purchaseDirectory;
+
+    public ArrayList<PurchaseInventory> getPurchaseDirectory() {
+        return purchaseDirectory;
+    }
+
+    public void setPurchaseDirectory(ArrayList<PurchaseInventory> purchaseDirectory) {
+        this.purchaseDirectory = purchaseDirectory;
+    }
+    
+    
      public PurchaseOrganization() {
-        super(Organization.Type.Purchase.getValue());
+        super(Type.Purchase.getValue());
+        this.purchaseDirectory = new ArrayList<PurchaseInventory>();
     }
     
     @Override
@@ -24,5 +37,19 @@ public class PurchaseOrganization extends Organization {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new PurchaseRole());
         return roles;
+    }
+    public PurchaseInventory addPI(PurchaseInventory pi){
+        
+        this.purchaseDirectory.add(pi);
+        return pi;
+    }
+    
+    public void updateVaccine(PurchaseInventory pi){
+        int index = purchaseDirectory.indexOf(pi);
+        purchaseDirectory.set(index, pi);
+    }
+    
+    public void deleteVaccine(PurchaseInventory pi){
+        purchaseDirectory.remove(pi);
     }
 }

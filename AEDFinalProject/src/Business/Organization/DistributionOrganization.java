@@ -15,8 +15,29 @@ import java.util.ArrayList;
  * @author shashwatshrey
  */
 public class DistributionOrganization extends Organization {
+    public ArrayList<PersonOrganization> personDirectory;
+    
+    public ArrayList<VaccineCount> vaccineDirectory;
+
+    public ArrayList<VaccineCount> getVaccineDirectory() {
+        return vaccineDirectory;
+    }
+
+    public void setVaccineDirectory(ArrayList<VaccineCount> vaccineDirectory) {
+        this.vaccineDirectory = vaccineDirectory;
+    }
+
+    public ArrayList<PersonOrganization> getPersonDirectory() {
+        return personDirectory;
+    }
+
+    public void setPersonDirectory(ArrayList<PersonOrganization> personDirectory) {
+        this.personDirectory = personDirectory;
+    }
     public DistributionOrganization() {
-        super(Organization.Type.Distribution.getValue());
+        super(Type.Distribution.getValue());
+        this.personDirectory = new ArrayList<PersonOrganization>();
+        this.vaccineDirectory = new ArrayList<VaccineCount>();
     }
     
     @Override

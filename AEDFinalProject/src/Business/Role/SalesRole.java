@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.SalesOrganization;
 import Business.UserAccount.UserAccount;
@@ -18,10 +19,14 @@ import javax.swing.JPanel;
  * @author vraj
  */
 public class SalesRole extends Role{
-    
+   
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
+        return new SalesWorkAreaJPanel(userProcessContainer, account, (SalesOrganization)organization, enterprise, network);
+    }
+
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new SalesWorkAreaJPanel(userProcessContainer, account, (SalesOrganization)organization, enterprise);
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

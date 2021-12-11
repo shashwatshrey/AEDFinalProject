@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class HealthOrganization extends Organization {
     public HealthOrganization() {
-        super(Organization.Type.Health.getValue());
+        super(Type.Health.getValue());
     }
     
     @Override

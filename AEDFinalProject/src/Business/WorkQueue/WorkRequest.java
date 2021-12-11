@@ -5,6 +5,7 @@
 package Business.WorkQueue;
 
 import Business.UserAccount.UserAccount;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -17,12 +18,8 @@ public abstract class WorkRequest {
     private UserAccount sender;
     private UserAccount receiver;
     private String status;
-    private Date requestDate;
+    private LocalDate requestDate;
     private Date resolveDate;
-    
-    public WorkRequest(){
-        requestDate = new Date();
-    }
 
     public String getMessage() {
         return message;
@@ -56,11 +53,11 @@ public abstract class WorkRequest {
         this.status = status;
     }
 
-    public Date getRequestDate() {
+    public LocalDate getRequestDate() {
         return requestDate;
     }
 
-    public void setRequestDate(Date requestDate) {
+    public void setRequestDate(LocalDate requestDate) {
         this.requestDate = requestDate;
     }
 
