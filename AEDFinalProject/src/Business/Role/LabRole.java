@@ -20,13 +20,11 @@ import javax.swing.JPanel;
  */
 public class LabRole extends Role{
     
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, Network network) {
-        return new LabWorkAreaJPanel(userProcessContainer, account, (LabOrganization)organization, enterprise, network);
-    }
-
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new LabWorkAreaJPanel(userProcessContainer, account, (LabOrganization)organization, enterprise, business);
     }
+
+    
 
 }

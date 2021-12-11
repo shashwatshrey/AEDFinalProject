@@ -8,6 +8,7 @@ package ui.PurchaseRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Enterprise.EnterpriseType;
+import Business.Enterprise.ServiceEnterprise;
 import Business.Network.Network;
 import Business.Organization.ManufacturingOrganization;
 import Business.Organization.Organization;
@@ -17,6 +18,7 @@ import Business.Organization.PurchaseOrganization;
 import Business.Organization.Vaccine;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.requestVaccine;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -34,6 +36,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
     public Enterprise currEP;
 //    private Network network;
     private UserAccount userAccount;
+    private ArrayList<PurchaseInventory> inventory = new ArrayList<>();
     
     /**
      * Creates new form RequestVaccineJPanel
@@ -143,26 +146,78 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
 
     private void btnOrderVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderVaccineActionPerformed
         // TODO add your handling code here:
+        
         UserAccount receive = new UserAccount();
         if(validate(ManufacturerjComboBox.getSelectedItem().toString(),txtrequestQty.getText())){
-//            PurchaseInventory pi = new PurchaseInventory();
-//            pi.setManuEP(currEP);
-//            pi.setQty(Integer.parseInt(txtrequestQty.getText()));
+            PurchaseInventory pi = new PurchaseInventory();
+            pi.setManuEP(currEP);
+            pi.setQty(Integer.parseInt(txtrequestQty.getText()));
+            inventory.add(pi);
 //            organization.addPI(pi);
-            requestVaccine rv = new requestVaccine();
+            
+        requestVaccine rv = new requestVaccine();
             rv.setPurchaser(userAccount);
             rv.setSender(userAccount);
             for(UserAccount u : currEP.getUserAccountDirectory().getUserAccountList()){
+                System.out.println(ManufacturerjComboBox.getSelectedItem().toString());
                 if(u.getUsername().toString().equals(ManufacturerjComboBox.getSelectedItem().toString())){
+                    System.out.println(u.getUsername());
                     rv.setReceiver(u);
+                    receive = u;
                 }
             }
             rv.setStatus("Ordered");
             rv.setQty(Integer.parseInt(txtrequestQty.getText()));
+            rv.setInventoryPurchase(inventory);
             receive.getWorkQueue().getWorkRequestList().add(rv);
+            Network currnet = enterprise.getNetwork();
+        for(Enterprise e: currnet.getEnterpriseDirectory().getEnterpriseList()){
+        if(e.getEnterpriseType() == EnterpriseType.Pharmaceutical){
+            System.out.println("Searching Org");
+            for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                System.out.println("Org found");
+                
+                System.out.println("Searching user");
+            for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                
+                System.out.println("user found");
+                System.out.println(u.getRole().toString());
+                if(u.getRole().toString().equals("Business.Role.ManufacturingRole")){
+                    
+                System.out.println("role found");
+                    System.out.println(u.getUsername());
+                    rv.setReceiver(u);
+                    u.getWorkQueue().getWorkRequestList().add(rv);
+                }
+            }
+        }
+            }
+        }
+            
             userAccount.getWorkQueue().getWorkRequestList().add(rv);
+            receive.getWorkQueue().getWorkRequestList().add(rv);
+//            for(Network n : business.getNetworkList()){
+//            for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+//                e.setEnterpriseType(EnterpriseType.Service);
+//                if(e instanceof ServiceEnterprise){
+//                Organization org = null;
+//                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+//                    if(o instanceof PurchaseOrganization){
+//                        org = o;
+//                        break;
+//                    }
+//                }
+//                if (org != null) {
+//
+//                        org.getWorkQueue().getWorkRequestList().add(rv);
+//                        userAccount.getWorkQueue().getWorkRequestList().add(rv);
+//                    }
+//            }
+//            }
+//        }
             JOptionPane.showMessageDialog(this, "Order Created");
         }
+        
     }//GEN-LAST:event_btnOrderVaccineActionPerformed
 
 

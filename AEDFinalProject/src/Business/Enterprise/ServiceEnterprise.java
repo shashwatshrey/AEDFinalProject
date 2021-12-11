@@ -14,6 +14,15 @@ import java.util.ArrayList;
  * @author shashwatshrey
  */
 public class ServiceEnterprise extends Enterprise {
+    private int vaccineCount;
+
+    public int getVaccineCount() {
+        return vaccineCount;
+    }
+
+    public void setVaccineCount(int vaccineCount) {
+        this.vaccineCount = vaccineCount;
+    }
      public ServiceEnterprise(String name, Network network){
         super(name,EnterpriseType.Service, network);
     }
