@@ -219,7 +219,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         setColor(onePanel);
         resetColor(new JPanel[]{twoPanel,threePanel});
-        ManageNetworkJPanel manageNetworkPanel = new ManageNetworkJPanel(cardWorkPanel, ecosystem);
+        ManageNetworkPanel manageNetworkPanel = new ManageNetworkPanel(cardWorkPanel, ecosystem);
         cardWorkPanel.add("ManageNetworkJPanel",manageNetworkPanel);
         CardLayout layout = (CardLayout) cardWorkPanel.getLayout();
         layout.next(cardWorkPanel);

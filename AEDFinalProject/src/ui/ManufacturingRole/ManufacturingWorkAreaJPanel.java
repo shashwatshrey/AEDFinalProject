@@ -243,7 +243,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         // TODO add your handling code here:
-        OrdersJPanel orderJPanel = new OrdersJPanel(userProcessContainer, enterprise, enterprise.getOrganizationDirectory(), organization, userAccount);
+        OrderJPanel orderJPanel = new OrderJPanel(userProcessContainer, enterprise, enterprise.getOrganizationDirectory(), organization, userAccount);
         userProcessContainer.add("orderJPanel", orderJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
