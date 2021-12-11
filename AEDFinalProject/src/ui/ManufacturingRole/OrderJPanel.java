@@ -64,6 +64,10 @@ public class OrderJPanel extends javax.swing.JPanel {
         btnApprove = new javax.swing.JButton();
         btnReject = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         ordersjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -77,7 +81,11 @@ public class OrderJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(ordersjTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 84, 375, 275));
+
         jLabel1.setText("Comments");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 390, -1, -1));
+        add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 385, 86, -1));
 
         btnApprove.setText("Approve");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +93,7 @@ public class OrderJPanel extends javax.swing.JPanel {
                 btnApproveActionPerformed(evt);
             }
         });
+        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 429, -1, -1));
 
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
@@ -92,44 +101,7 @@ public class OrderJPanel extends javax.swing.JPanel {
                 btnRejectActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jLabel1)
-                        .addGap(44, 44, 44)
-                        .addComponent(txtComments, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(btnApprove)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnReject)
-                .addGap(76, 76, 76))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtComments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnApprove)
-                    .addComponent(btnReject))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 429, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed

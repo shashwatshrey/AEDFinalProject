@@ -80,7 +80,11 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         txtrequestQty = new javax.swing.JTextField();
         btnOrderVaccine = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("Select Manufacturer");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 605, -1, -1));
 
         ManufacturerjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ManufacturerjComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -88,8 +92,11 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
                 ManufacturerjComboBoxActionPerformed(evt);
             }
         });
+        add(ManufacturerjComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 601, -1, -1));
 
         jLabel2.setText("Enter Quantity");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 666, -1, -1));
+        add(txtrequestQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 661, 89, -1));
 
         btnOrderVaccine.setText("Order");
         btnOrderVaccine.addActionListener(new java.awt.event.ActionListener() {
@@ -97,42 +104,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
                 btnOrderVaccineActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(btnOrderVaccine))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(68, 68, 68)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ManufacturerjComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtrequestQty, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(ManufacturerjComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtrequestQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addComponent(btnOrderVaccine)
-                .addGap(75, 75, 75))
-        );
+        add(btnOrderVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 744, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ManufacturerjComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManufacturerjComboBoxActionPerformed

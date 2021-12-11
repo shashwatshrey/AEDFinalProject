@@ -69,6 +69,7 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         btnApprove = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
+        setMaximumSize(new java.awt.Dimension(1440, 848));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
