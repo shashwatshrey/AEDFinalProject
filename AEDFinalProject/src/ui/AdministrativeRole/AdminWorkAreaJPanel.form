@@ -57,7 +57,7 @@
         <Component class="javax.swing.JLabel" name="lblValue">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Optima" size="18" style="1"/>
+              <Font name="Optima" size="22" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c3" green="d4" red="61" type="rgb"/>
@@ -130,7 +130,7 @@
             <Component class="javax.swing.JLabel" name="iconOrganizations">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Images/icons8-company-45.png"/>
+                  <Image iconType="3" name="/Images/manageorganization.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -198,7 +198,7 @@
             <Component class="javax.swing.JLabel" name="iconEmployees">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Images/icons8-employee-50 (1).png"/>
+                  <Image iconType="3" name="/Images/manageemployees.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -269,7 +269,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Images/icons8-employee-50.png"/>
+                  <Image iconType="3" name="/Images/manageuser.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>

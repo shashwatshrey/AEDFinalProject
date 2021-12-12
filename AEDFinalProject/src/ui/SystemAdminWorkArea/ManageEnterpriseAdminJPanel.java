@@ -108,8 +108,14 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1190, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblEnterprise.setBackground(new java.awt.Color(97, 212, 195));
+        tblEnterprise.setForeground(new java.awt.Color(36, 47, 65));
         tblEnterprise.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
@@ -127,14 +133,17 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblEnterprise.setGridColor(new java.awt.Color(97, 212, 195));
+        tblEnterprise.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblEnterprise.setRowHeight(20);
         jScrollPane1.setViewportView(tblEnterprise);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 560, 180));
 
         lblNetwork.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblNetwork.setForeground(new java.awt.Color(255, 255, 255));
         lblNetwork.setText("Network:");
-        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
 
         cmbNetwork.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         cmbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -143,24 +152,24 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 cmbNetworkActionPerformed(evt);
             }
         });
-        add(cmbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 136, -1));
+        add(cmbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 136, -1));
 
         lblUsername.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(255, 255, 255));
         lblUsername.setText("Username:");
-        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, -1, -1));
 
         txtUsername.setBackground(new java.awt.Color(36, 47, 65));
         txtUsername.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtUsername.setForeground(new java.awt.Color(255, 255, 255));
         txtUsername.setBorder(null);
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 301, 210, 20));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 210, 20));
 
         lblEnterprise.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         lblEnterprise.setText("Enterprise:");
         lblEnterprise.setToolTipText("");
-        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, -1, -1));
 
         cmbEnterprise.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         cmbEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -169,7 +178,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 cmbEnterpriseActionPerformed(evt);
             }
         });
-        add(cmbEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 136, -1));
+        add(cmbEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 136, -1));
 
         btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSubmit.setText("Submit");
@@ -178,44 +187,44 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 650, -1, -1));
 
         lblPassword.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password:");
-        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, -1, -1));
 
         txtName.setBackground(new java.awt.Color(36, 47, 65));
         txtName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtName.setForeground(new java.awt.Color(255, 255, 255));
         txtName.setBorder(null);
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 180, 20));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 180, 20));
 
         lblName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 550, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(36, 47, 65));
         txtPassword.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setBorder(null);
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 210, 20));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 210, 20));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 180, -1));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 560, 180, -1));
 
         separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 180, -1));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 180, -1));
 
         separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine2.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 180, -1));
+        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, 180, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ENTERPRISEADMIN.png"))); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, -1, 850));

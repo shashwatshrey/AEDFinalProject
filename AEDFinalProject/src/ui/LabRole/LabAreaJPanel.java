@@ -118,6 +118,8 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable1.setBackground(new java.awt.Color(97, 212, 195));
+        jTable1.setForeground(new java.awt.Color(36, 47, 65));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -129,9 +131,12 @@ public class LabAreaJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Sender Email", "Receiver", "Status", "Result"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(97, 212, 195));
+        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        jTable1.setRowHeight(20);
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 441, 113));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 480, 100));
 
         btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSubmit.setText("Submit Result to Doctor");

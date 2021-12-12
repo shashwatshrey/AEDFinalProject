@@ -12,7 +12,9 @@ import Business.Organization.ManufacturingOrganization;
 import Business.Organization.OrganizationDirectory;
 import Business.Organization.Vaccine;
 import Business.Organization.VaccineDirectory;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -28,15 +30,21 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
     private VaccineDirectory vaccineDirectory;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     private EcoSystem system;
+    private UserAccount account;
+    private Enterprise enterprise;
+   
     /**
      * Creates new form AddVaccineJPanel
      */
-    public AddVaccineJPanel(JPanel userProcessContainer, OrganizationDirectory directory, ManufacturingOrganization organization, VaccineDirectory vaccineDirectory) {
+    public AddVaccineJPanel(JPanel userProcessContainer, OrganizationDirectory directory, ManufacturingOrganization organization, VaccineDirectory vaccineDirectory, UserAccount account, Enterprise enterprise) {
         initComponents();
         this.directory = directory;
+        this.account = account;
+        this.enterprise = enterprise;
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.vaccineDirectory = vaccineDirectory;
+       
     }
 
     /**
@@ -56,6 +64,8 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         txtScientific = new javax.swing.JTextField();
         separatorLine = new javax.swing.JSeparator();
         separatorLine1 = new javax.swing.JSeparator();
+        lblTitle = new javax.swing.JLabel();
+        iconBack = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -95,13 +105,13 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
                 txtNameActionPerformed(evt);
             }
         });
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 260, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 250, -1));
 
         txtScientific.setBackground(new java.awt.Color(36, 47, 65));
         txtScientific.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtScientific.setForeground(new java.awt.Color(255, 255, 255));
         txtScientific.setBorder(null);
-        add(txtScientific, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 260, -1));
+        add(txtScientific, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 250, -1));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
@@ -112,6 +122,17 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
         add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 220, 10));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/HEALTHWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 0, 90, 850));
+
+        iconBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
+        iconBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconBackMousePressed(evt);
+            }
+        });
+        add(iconBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -131,6 +152,7 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
             newVaccine.setManufacturerName(organization.getName());
             newVaccine.setStatus("Pending");
             organization.addVaccine(newVaccine);
+            System.out.println(organization.getName());
             JOptionPane.showMessageDialog(this, "Vaccine Added");
         }
         dB4OUtil.storeSystem(system);
@@ -138,12 +160,31 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         txtScientific.setText("");
     }//GEN-LAST:event_btnAddVaccineActionPerformed
 
+    private void iconBackMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconBackMousePressed
+        // TODO add your handling code here:
+        userProcessContainer.removeAll();
+                //(this);
+        //Component[] componentArray = userProcessContainer.getComponents();
+        //Component component = componentArray[componentArray.length - 1];
+        ManufacturingWorkAreaJPanel manufacturingWorkAreaJPanel = new ManufacturingWorkAreaJPanel(userProcessContainer, account, organization, enterprise, system);
+        //component;
+        userProcessContainer.add("ManufacturingWorkAreaJPanel", manufacturingWorkAreaJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        //dB4OUtil.storeSystem(system);
+        //txtName.setText("");
+        //txtScientific.setText("");
+
+    }//GEN-LAST:event_iconBackMousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddVaccine;
+    private javax.swing.JLabel iconBack;
     private javax.swing.JLabel lblAddVaccine;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblScientific;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JSeparator separatorLine;
     private javax.swing.JSeparator separatorLine1;
     private javax.swing.JTextField txtName;

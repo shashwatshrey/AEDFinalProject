@@ -45,6 +45,7 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.userAccount = account;
+        lblValue.setText(account.getEmployee().getName());
         populateApproveTable();
         populateRequestedTable();
     }
@@ -66,51 +67,71 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         lblRequested = new javax.swing.JLabel();
         btnChart = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
+        lblText = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblRequested.setBackground(new java.awt.Color(97, 212, 195));
+        tblRequested.setForeground(new java.awt.Color(36, 47, 65));
         tblRequested.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
                 "Person", "Distribution", "Status", "Date"
             }
         ));
+        tblRequested.setGridColor(new java.awt.Color(97, 212, 195));
+        tblRequested.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblRequested.setRowHeight(20);
         jScrollPane1.setViewportView(tblRequested);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 460, 180));
 
+        tblApproved.setBackground(new java.awt.Color(97, 212, 195));
+        tblApproved.setForeground(new java.awt.Color(36, 47, 65));
         tblApproved.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
                 "Person", "Distribution", "Status", "Date"
             }
         ));
+        tblApproved.setGridColor(new java.awt.Color(97, 212, 195));
+        tblApproved.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblApproved.setRowHeight(20);
         jScrollPane2.setViewportView(tblApproved);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, 170));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 470, 180));
 
         lblApproved.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblApproved.setForeground(new java.awt.Color(255, 255, 255));
         lblApproved.setText("Approved List of Vaccine by person");
-        add(lblApproved, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+        add(lblApproved, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
         lblRequested.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblRequested.setForeground(new java.awt.Color(255, 255, 255));
         lblRequested.setText("Requested List of Vaccines by person");
-        add(lblRequested, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
+        add(lblRequested, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
 
         btnChart.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnChart.setText("Generate PieChart");
@@ -119,10 +140,20 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
                 btnChartActionPerformed(evt);
             }
         });
-        add(btnChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, -1, -1));
+        add(btnChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 730, -1, -1));
 
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/HEALTHWORKAREA.png"))); // NOI18N
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
+
+        lblText.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblText.setForeground(new java.awt.Color(255, 255, 255));
+        lblText.setText("Currently Logged in as:");
+        add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, 30));
+
+        lblValue.setFont(new java.awt.Font("Optima", 1, 22)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(97, 212, 195));
+        lblValue.setText("<value>");
+        add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChartActionPerformed
@@ -145,7 +176,9 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblApproved;
     private javax.swing.JLabel lblRequested;
+    private javax.swing.JLabel lblText;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JTable tblApproved;
     private javax.swing.JTable tblRequested;
     // End of variables declaration//GEN-END:variables

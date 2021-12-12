@@ -53,6 +53,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         currEP = ((ServiceEnterprise) enterprise).getVaccineCount();
         currentCount = 0;
+        lblValue.setText(account.getEmployee().getName());
         populateTable();
     }
 
@@ -68,14 +69,24 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVaccine = new javax.swing.JTable();
         btnRequest = new javax.swing.JButton();
+        cardRequestPanel = new javax.swing.JPanel();
+        lblTitle = new javax.swing.JLabel();
+        lblText = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblVaccine.setBackground(new java.awt.Color(97, 212, 195));
+        tblVaccine.setForeground(new java.awt.Color(36, 47, 65));
         tblVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -85,9 +96,12 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Receiver", "Quantity", "Status"
             }
         ));
+        tblVaccine.setGridColor(new java.awt.Color(97, 212, 195));
+        tblVaccine.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblVaccine.setRowHeight(20);
         jScrollPane1.setViewportView(tblVaccine);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 368, 172));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 420, 180));
 
         btnRequest.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnRequest.setText("Request Vaccine");
@@ -96,7 +110,26 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                 btnRequestActionPerformed(evt);
             }
         });
-        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
+        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, -1, -1));
+
+        cardRequestPanel.setBackground(new java.awt.Color(36, 47, 65));
+        cardRequestPanel.setMinimumSize(new java.awt.Dimension(670, 848));
+        cardRequestPanel.setPreferredSize(new java.awt.Dimension(670, 848));
+        cardRequestPanel.setLayout(new java.awt.CardLayout());
+        add(cardRequestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, -1, -1));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PURCHASEWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
+
+        lblText.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblText.setForeground(new java.awt.Color(255, 255, 255));
+        lblText.setText("Currently Logged in as:");
+        add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, 30));
+
+        lblValue.setFont(new java.awt.Font("Optima", 1, 22)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(97, 212, 195));
+        lblValue.setText("<value>");
+        add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
@@ -106,9 +139,9 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         System.out.println("Current count -> " + currentCount);
         if(currentCount <= 10){
         RequestVaccineJPanel requestVaccineJPanel = new RequestVaccineJPanel(enterprise.getOrganizationDirectory(), userProcessContainer, organization, enterprise, userAccount);
-        userProcessContainer.add("requestVaccineJPanel", requestVaccineJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        cardRequestPanel.add("requestVaccineJPanel", requestVaccineJPanel);
+        CardLayout layout = (CardLayout) cardRequestPanel.getLayout();
+        layout.next(cardRequestPanel);
         dB4OUtil.storeSystem(system);
         }
         else{
@@ -120,7 +153,11 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRequest;
+    private javax.swing.JPanel cardRequestPanel;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblText;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JTable tblVaccine;
     // End of variables declaration//GEN-END:variables
 

@@ -46,6 +46,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         populateVaccineTable();
         populateAppointmentTable();
         Date td = new Date();
+        lblValue.setText(account.getEmployee().getName());
 //        System.out.println(((td.getTime()-v1date.getTime())/(1000*60*60*24))%365);
     }
 
@@ -67,6 +68,10 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         tblVaccineRequest = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAppoinment = new javax.swing.JTable();
+        cardWorkArea = new javax.swing.JPanel();
+        lblTitle = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
+        lblText = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -86,7 +91,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 btnVaccineActionPerformed(evt);
             }
         });
-        add(btnVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, -1, -1));
+        add(btnVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
         btnAppointment.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnAppointment.setText("Schedule Appointment");
@@ -95,10 +100,16 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 btnAppointmentActionPerformed(evt);
             }
         });
-        add(btnAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 720, -1, -1));
+        add(btnAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 740, -1, -1));
 
+        tblVaccineRequest.setBackground(new java.awt.Color(97, 212, 195));
+        tblVaccineRequest.setForeground(new java.awt.Color(36, 47, 65));
         tblVaccineRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -108,12 +119,21 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Vaccination Date", "Status", "Distribution Center", "Vaccine Name"
             }
         ));
+        tblVaccineRequest.setGridColor(new java.awt.Color(97, 212, 195));
+        tblVaccineRequest.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblVaccineRequest.setRowHeight(20);
         jScrollPane2.setViewportView(tblVaccineRequest);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 375, 204));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 610, 180));
 
+        tblAppoinment.setBackground(new java.awt.Color(97, 212, 195));
+        tblAppoinment.setForeground(new java.awt.Color(36, 47, 65));
         tblAppoinment.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -123,9 +143,31 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Receiver", "Status", "Date"
             }
         ));
+        tblAppoinment.setGridColor(new java.awt.Color(97, 212, 195));
+        tblAppoinment.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblAppoinment.setRowHeight(20);
         jScrollPane1.setViewportView(tblAppoinment);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 375, 169));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 530, 410, 180));
+
+        cardWorkArea.setBackground(new java.awt.Color(36, 47, 65));
+        cardWorkArea.setMinimumSize(new java.awt.Dimension(670, 848));
+        cardWorkArea.setPreferredSize(new java.awt.Dimension(670, 848));
+        cardWorkArea.setLayout(new java.awt.CardLayout());
+        add(cardWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, -1, -1));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PERSONWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
+
+        lblValue.setFont(new java.awt.Font("Optima", 1, 22)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(97, 212, 195));
+        lblValue.setText("<value>");
+        add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 230, 30));
+
+        lblText.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblText.setForeground(new java.awt.Color(255, 255, 255));
+        lblText.setText("Currently Logged in as:");
+        add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineActionPerformed
@@ -134,9 +176,9 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         if(count==0){
         populateVaccineTable();
         ScheduleVaccineJPanel scheduleVaccineJPanel = new ScheduleVaccineJPanel(userProcessContainer, organization, enterprise, business, account);
-        userProcessContainer.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        cardWorkArea.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
+        CardLayout layout = (CardLayout) cardWorkArea.getLayout();
+        layout.next(cardWorkArea);
         dB4OUtil.storeSystem(business);
         }
         else{
@@ -151,9 +193,9 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         if(count!=0){
         populateAppointmentTable();
         ScheduleAppointmentJPanel scheduleAppointmentJPanel = new ScheduleAppointmentJPanel(userProcessContainer, organization, enterprise, business, account);
-        userProcessContainer.add("scheduleAppointmentJPanel", scheduleAppointmentJPanel);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        cardWorkArea.add("scheduleAppointmentJPanel", scheduleAppointmentJPanel);
+        CardLayout layout = (CardLayout) cardWorkArea.getLayout();
+        layout.next(cardWorkArea);
         }
         else{
             JOptionPane.showMessageDialog(this, "You can only book an appointment if you have received or a vaccination scheduled!!");
@@ -165,11 +207,15 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAppointment;
     private javax.swing.JButton btnVaccine;
+    private javax.swing.JPanel cardWorkArea;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblText;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JTable tblAppoinment;
     private javax.swing.JTable tblVaccineRequest;
     // End of variables declaration//GEN-END:variables

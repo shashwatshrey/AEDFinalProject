@@ -91,8 +91,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1190, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblOrganization.setBackground(new java.awt.Color(97, 212, 195));
+        tblOrganization.setForeground(new java.awt.Color(36, 47, 65));
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -117,13 +123,16 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblOrganization.setGridColor(new java.awt.Color(97, 212, 195));
+        tblOrganization.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblOrganization.setRowHeight(20);
         jScrollPane1.setViewportView(tblOrganization);
         if (tblOrganization.getColumnModel().getColumnCount() > 0) {
             tblOrganization.getColumnModel().getColumn(0).setResizable(false);
             tblOrganization.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 480, 180));
 
         btnCreate.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnCreate.setText("Create Employee");
@@ -141,7 +150,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 cmbOrganizationActionPerformed(evt);
             }
         });
-        add(cmbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 120, -1));
+        add(cmbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 240, -1));
 
         lblOrganization.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblOrganization.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,7 +175,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 organizationEmpJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 110, -1));
+        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 260, -1));
 
         lblSelectOrg.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblSelectOrg.setForeground(new java.awt.Color(255, 255, 255));

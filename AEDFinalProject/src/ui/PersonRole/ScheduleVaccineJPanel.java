@@ -55,8 +55,8 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         cmbDistributor = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1440, 848));
-        setPreferredSize(new java.awt.Dimension(1440, 848));
+        setMinimumSize(new java.awt.Dimension(670, 848));
+        setPreferredSize(new java.awt.Dimension(670, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDistributor.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N

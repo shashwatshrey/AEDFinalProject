@@ -123,8 +123,14 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1190, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblOrganization.setBackground(new java.awt.Color(97, 212, 195));
+        tblOrganization.setForeground(new java.awt.Color(36, 47, 65));
         tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -149,13 +155,16 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblOrganization.setGridColor(new java.awt.Color(97, 212, 195));
+        tblOrganization.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblOrganization.setRowHeight(20);
         jScrollPane1.setViewportView(tblOrganization);
         if (tblOrganization.getColumnModel().getColumnCount() > 0) {
             tblOrganization.getColumnModel().getColumn(0).setResizable(false);
             tblOrganization.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 60, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 60, 480, 180));
 
         btnAdd.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnAdd.setText("Add Organization");
@@ -164,16 +173,16 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, -1, -1));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
 
         cmbOrganization.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         cmbOrganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cmbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 120, -1));
+        add(cmbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 240, -1));
 
         lblOrganization.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblOrganization.setForeground(new java.awt.Color(255, 255, 255));
         lblOrganization.setText("Organization Type:");
-        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 229, -1, -1));
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
 
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ORGANIZATIONS.png"))); // NOI18N
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 100, 850));

@@ -68,7 +68,9 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         btnApprove = new javax.swing.JButton();
         appointmentjDateChooser = new com.toedter.calendar.JDateChooser();
         btnPrescribeMed = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnReject = new javax.swing.JButton();
+        lblText = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -76,16 +78,21 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnTest.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        btnTest.setText("Test Record");
+        btnTest.setText("Send for lab tests");
         btnTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTestActionPerformed(evt);
             }
         });
-        add(btnTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, -1, -1));
+        add(btnTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 800, -1, -1));
 
+        tblRequest.setBackground(new java.awt.Color(97, 212, 195));
+        tblRequest.setForeground(new java.awt.Color(36, 47, 65));
         tblRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -96,21 +103,24 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Sender Email", "Receiver", "Status", "Result", "Name"
             }
         ));
+        tblRequest.setGridColor(new java.awt.Color(97, 212, 195));
+        tblRequest.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblRequest.setRowHeight(20);
         jScrollPane1.setViewportView(tblRequest);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, 246));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 680, 180));
 
         btnApprove.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        btnApprove.setText("Approve");
+        btnApprove.setText("Approve Appointment");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnApproveActionPerformed(evt);
             }
         });
-        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
+        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, -1, -1));
 
         appointmentjDateChooser.setBackground(new java.awt.Color(36, 47, 65));
-        add(appointmentjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
+        add(appointmentjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
         btnPrescribeMed.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnPrescribeMed.setText("Prescribe Medicine");
@@ -119,12 +129,21 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnPrescribeMedActionPerformed(evt);
             }
         });
-        add(btnPrescribeMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
+        add(btnPrescribeMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 610, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Optima", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("DOCTOR WORK AREA");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, -1));
+        btnReject.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnReject.setText("Reject Appointment");
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, -1, -1));
+
+        lblText.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblText.setForeground(new java.awt.Color(255, 255, 255));
+        lblText.setText("Currently Logged in as:");
+        add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, 30));
+
+        lblValue.setFont(new java.awt.Font("Optima", 1, 22)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(97, 212, 195));
+        lblValue.setText("<value>");
+        add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestActionPerformed
@@ -215,9 +234,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser appointmentjDateChooser;
     private javax.swing.JButton btnApprove;
     private javax.swing.JButton btnPrescribeMed;
+    private javax.swing.JButton btnReject;
     private javax.swing.JButton btnTest;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblText;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JTable tblRequest;
     // End of variables declaration//GEN-END:variables
     public void populateTable(){
