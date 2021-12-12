@@ -114,6 +114,6 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private boolean validate(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 }
