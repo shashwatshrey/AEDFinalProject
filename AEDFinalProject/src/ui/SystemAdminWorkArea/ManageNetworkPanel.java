@@ -61,7 +61,6 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         lblName = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
         separatorLine = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
@@ -123,15 +122,6 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         txtName.setBorder(null);
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 181, -1));
 
-        btnBack.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        btnBack.setText("<< Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
@@ -149,21 +139,7 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         txtName.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        userProcessContainer.remove(this);
-         Component[] componentArray = userProcessContainer.getComponents();
-         try{
-            Component component = componentArray[componentArray.length - 1];
-
-         }catch(Exception e){
-             System.out.println("Exception Caught");
-         }
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblName;
