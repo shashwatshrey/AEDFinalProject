@@ -194,6 +194,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
         populateTable();
+        
         dB4OUtil.storeSystem(system);
         passwordJPasswordField.setText("");
         nameJTextField.setText("");

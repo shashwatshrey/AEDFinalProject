@@ -41,6 +41,15 @@ public class UserAccountDirectory {
         userAccountList.add(userAccount);
         return userAccount;
     }
+    public UserAccount removeUserAccount(String username, String password, Employee employee, Role role){
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setEmployee(employee);
+        userAccount.setRole(role);
+        userAccountList.remove(userAccount);
+        return userAccount;
+    }
     
     public boolean checkIfUsernameIsUnique(String username){
         for (UserAccount ua : userAccountList){
