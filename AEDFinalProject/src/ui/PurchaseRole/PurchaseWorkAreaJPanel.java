@@ -21,6 +21,7 @@ import Business.WorkQueue.requestVaccine;
 import Business.WorkQueue.vaccineCount;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import ui.ManufacturingRole.AddVaccineJPanel;
@@ -38,6 +39,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public int currEP;
+    public int currentCount = 0;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
@@ -99,11 +101,18 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
         // TODO add your handling code here:
         populateTable();
+        int count = tblVaccine.getModel().getRowCount();
+        System.out.println("Current count -> " + currentCount);
+        if(currentCount <= 10){
         RequestVaccineJPanel requestVaccineJPanel = new RequestVaccineJPanel(enterprise.getOrganizationDirectory(), userProcessContainer, organization, enterprise, userAccount);
         userProcessContainer.add("requestVaccineJPanel", requestVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         dB4OUtil.storeSystem(system);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "You already have enough vaccine in stock please utilise them before ordering");
+        }
 
     }//GEN-LAST:event_btnRequestActionPerformed
 
@@ -121,14 +130,17 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         try{
         for(WorkRequest rv:userAccount.getWorkQueue().getWorkRequestList()){
             System.out.println(enterprise.getName());
-        ArrayList<PurchaseInventory> inv = ((requestVaccine) rv).getInventoryPurchase();
+//        ArrayList<PurchaseInventory> inv = ((requestVaccine) rv).getInventoryPurchase();
             Object row[] = new Object[4];
             row[0] = rv;
             row[1] = rv.getReceiver().getUsername();
-            if(inv!=null){
-            for(PurchaseInventory p : inv){
+            
+//            if(inv!=null){
+//            for(PurchaseInventory p : inv){
                 int c = ((requestVaccine) rv).getCount();
-                row[2] = p.getQty();
+                row[2] = c;
+                
+                currentCount = c;
                 
                 if(rv.getStatus().equals("Approved")){
                 System.out.println(enterprise.getName());
@@ -144,9 +156,9 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
 //                            vc.setVaccineName(rv.getReceiver().toString());
 //                            vc.setCount(p.getQty());
 //                            currEP += p.getQty();
-                            System.out.println(p.getQty());
-                            c+=p.getQty();
-                            System.out.println(c);
+//                            System.out.println(p.getQty());
+//                            c+=p.getQty();
+//                            System.out.println(c);
                             
 //                            DistributionOrganization org = ((DistributionOrganization) o).getVaccineDirectory().add(vc);
                         }
@@ -156,8 +168,8 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                 ((requestVaccine) rv).setCount(c);
                 distributor.getWorkQueue().getWorkRequestList().add(rv);
                 
-            }
-            }
+//            }
+//            }
             row[3] = rv.getStatus();
             System.out.println(rv.getStatus());
             

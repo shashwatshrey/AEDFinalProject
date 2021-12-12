@@ -36,6 +36,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public int currEP;
+    private boolean bool = false;
     /**
      * Creates new form NDistirbutionWorkAreaJPanel
      */
@@ -164,6 +165,10 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         vaccinate req = (vaccinate)tblRequests.getValueAt(selectedRow, 0);
+        if(!bool){
+            JOptionPane.showMessageDialog(this, "You don't have any vaccine in stock please check with manufacturer to approve your order");
+            return;
+        }
         if(req.getStatus() == "Approved"){
             JOptionPane.showMessageDialog(this, "Person is already scheduled a vaccination slot");
             return;
@@ -177,22 +182,31 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         System.out.println(enterprise.getName());
         JOptionPane.showMessageDialog(this, "Vaccination Scheduled");
         Network cn = enterprise.getNetwork();
-        for(Enterprise e : cn.getEnterpriseDirectory().getEnterpriseList()){
-            if(e.getEnterpriseType() == EnterpriseType.Service){
-                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
-                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
-                        if(u.getRole().toString().equals("Business.Role.PurchaseRole")){
-                            for(WorkRequest wr : u.getWorkQueue().getWorkRequestList()){
-                                int p = ((requestVaccine) wr).getQty();
-                                p -=1;
-                                ((requestVaccine) wr).setQty(p);
-                                break;
-                            }
-                        }
-                    }
-                }
+        for(WorkRequest wr : userAccount.getWorkQueue().getWorkRequestList()){
+            if(wr instanceof requestVaccine){
+                System.out.println("Reducing vaccine count");
+                int p = ((requestVaccine) wr).getCount();
+                p-=1;
+                ((requestVaccine) wr).setCount(p);
+                break;
             }
         }
+//        for(Enterprise e : cn.getEnterpriseDirectory().getEnterpriseList()){
+//            if(e.getEnterpriseType() == EnterpriseType.Service){
+//                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+//                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+//                        if(u.getRole().toString().equals("Business.Role.PurchaseRole")){
+//                            for(WorkRequest wr : u.getWorkQueue().getWorkRequestList()){
+//                                int p = ((requestVaccine) wr).getQty();
+//                                p -=1;
+//                                ((requestVaccine) wr).setQty(p);
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
         populateTable();
         try{
             populateVaccineTable();
@@ -250,47 +264,54 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         try{
         for(WorkRequest rv:userAccount.getWorkQueue().getWorkRequestList()){
             System.out.println(enterprise.getName());
-        ArrayList<PurchaseInventory> inv = ((requestVaccine) rv).getInventoryPurchase();
             Object row[] = new Object[4];
+            if(rv instanceof requestVaccine){
+                ArrayList<PurchaseInventory> inv = ((requestVaccine) rv).getInventoryPurchase();
+        
             row[0] = rv;
             row[1] = rv.getReceiver().getUsername();
-            if(inv!=null){
-            for(PurchaseInventory p : inv){
-                int c = ((requestVaccine) rv).getCount();
-                row[2] = p.getQty();
+            row[2] = ((requestVaccine) rv).getCount();
+//            if(inv!=null){
+//            for(PurchaseInventory p : inv){
+//                int c = ((requestVaccine) rv).getCount();
+//                row[2] = p.getQty();
+//                
+//                if(rv.getStatus().equals("Approved")){
+//                System.out.println(enterprise.getName());
+//                for(Organization o : enterprise.getOrganizationDirectory().getOrganizationList()){
+//                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+//                        System.out.println(u.getRole().toString());
+//                        if(u.getRole().toString().equals("Business.Role.DistributionRole")){
+//                            ((requestVaccine) rv).setDistribution(u);
+//                            distributor = u;
+////                            System.out.println(o.getName());
+////                            VaccineCount vc = new VaccineCount();
+////                            vc.setVaccineName(rv.getReceiver().toString());
+////                            vc.setCount(p.getQty());
+////                            currEP += p.getQty();
+//                            System.out.println(p.getQty());
+//                            c+=p.getQty();
+//                            System.out.println(c);
+//                            
+////                            DistributionOrganization org = ((DistributionOrganization) o).getVaccineDirectory().add(vc);
+//                        }
+//                    }
+//                }
+//            }
+//                ((requestVaccine) rv).setCount(c);
+//                distributor.getWorkQueue().getWorkRequestList().add(rv);
                 
-                if(rv.getStatus().equals("Approved")){
-                System.out.println(enterprise.getName());
-                for(Organization o : enterprise.getOrganizationDirectory().getOrganizationList()){
-                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
-                        System.out.println(u.getRole().toString());
-                        if(u.getRole().toString().equals("Business.Role.DistributionRole")){
-                            ((requestVaccine) rv).setDistribution(u);
-                            distributor = u;
-//                            System.out.println(o.getName());
-//                            VaccineCount vc = new VaccineCount();
-//                            vc.setVaccineName(rv.getReceiver().toString());
-//                            vc.setCount(p.getQty());
-//                            currEP += p.getQty();
-                            System.out.println(p.getQty());
-                            c+=p.getQty();
-                            System.out.println(c);
-                            
-//                            DistributionOrganization org = ((DistributionOrganization) o).getVaccineDirectory().add(vc);
-                        }
-                    }
-                }
-            }
-                ((requestVaccine) rv).setCount(c);
-                distributor.getWorkQueue().getWorkRequestList().add(rv);
-                
-            }
-            }
+            
+            
             row[3] = rv.getStatus();
+            if(rv.getStatus().equals("Approved")){
+                bool = true;
+            }
             System.out.println(rv.getStatus());
             
 //            row[2] = 
             model.addRow(row);
+        }
         }
         }
         catch(NullPointerException e){
