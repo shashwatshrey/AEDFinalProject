@@ -205,6 +205,57 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
         // TODO add your handling code here:
+        ManufacturingOrganization org = null;
+        for(Organization o : enterprise.getOrganizationDirectory().getOrganizationList()){
+            for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                if(u.getRole().toString().equals("Business.Role.ManufacturingRole")){
+                    org = ((ManufacturingOrganization)o);
+                }
+            }
+            
+        }
+        for(Vaccine v : org.getVaccineDirectory()){
+            System.out.println("Inside for");
+            if(v.getStatus().equals("Approved")){
+                System.out.println("Vaccine record approved");
+                int selectedRow = tblOrders.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this, "Please select an order to approve");
+            return;
+        }
+        requestVaccine request = (requestVaccine)tblOrders.getValueAt(selectedRow, 0);
+        
+        if(request.getStatus().equals("Approved")){
+            JOptionPane.showMessageDialog(this, "Vaccine already approved");
+            return;
+        }
+     
+        if(validate(txtComments.getText())){
+        request.setStatus("Rejected");
+        request.setTestResult("Rejected");
+        ArrayList<PurchaseInventory> inv = ((requestVaccine) request).getInventoryPurchase();
+        if(inv!=null){
+            for(PurchaseInventory p : inv){
+                ((requestVaccine) request).setQty(p.getQty());
+                
+            }
+            }
+        
+        
+        populateTable();
+        populateApproveTable();
+        dB4OUtil.storeSystem(system);
+        txtComments.setText("");
+        }
+        break;
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "You must have an approved vaccine in the inventory to manage orders");
+                return;
+            }
+        }
+        //dB4OUtil.storeSystem(system);
+        //txtComments.setText("");
     }//GEN-LAST:event_btnRejectActionPerformed
 
 
