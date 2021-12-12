@@ -154,6 +154,10 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         appointment a = (appointment)tblRequest.getValueAt(selectedRow, 0);
+        if(!(a.getStatus().equals("Approved"))){
+            JOptionPane.showMessageDialog(this, "Please approve appointment first");
+            return;
+        }
         UserAccount labUser = new UserAccount();
         Organization org = null;
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
@@ -221,6 +225,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please select a person's record to prescribe");
             return;
         } 
+        appointment a = (appointment)tblRequest.getValueAt(selectedRow, 0);
+        if(!(a.getStatus().equals("Approved"))){
+            JOptionPane.showMessageDialog(this, "Please approve appointment first");
+            return;
+        }
         WorkRequest w = (WorkRequest) tblRequest.getModel().getValueAt(selectedRow, 0);
         UserAccount p = w.getSender();
         AddPrescriptionJPanel addPresciptionJPanel = new AddPrescriptionJPanel(userProcessContainer, enterprise, organization, system, userAccount, p);
