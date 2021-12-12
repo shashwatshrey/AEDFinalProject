@@ -256,12 +256,12 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         lblVital.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblVital.setForeground(new java.awt.Color(255, 255, 255));
         lblVital.setText("Vital Signs: ");
-        add(lblVital, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
+        add(lblVital, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
         lblDosage.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblDosage.setForeground(new java.awt.Color(255, 255, 255));
         lblDosage.setText("Dosage: ");
-        add(lblDosage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
+        add(lblDosage, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
 
         lblCold.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblCold.setForeground(new java.awt.Color(255, 255, 255));
@@ -270,7 +270,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
 
         lblTemperature.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblTemperature.setForeground(new java.awt.Color(255, 255, 255));
-        lblTemperature.setText("Temperature : ");
+        lblTemperature.setText("Temperature: ");
         add(lblTemperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, -1, -1));
 
         barVital.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
@@ -434,12 +434,12 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         lblBloodPressure.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblBloodPressure.setForeground(new java.awt.Color(255, 255, 255));
         lblBloodPressure.setText("Blood Pressure:");
-        add(lblBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, -1, -1));
+        add(lblBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 110, -1));
 
         lblPulse.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblPulse.setForeground(new java.awt.Color(255, 255, 255));
         lblPulse.setText("Pulse:");
-        add(lblPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, -1, -1));
+        add(lblPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
 
         barPulse.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         barPulse.setForeground(new java.awt.Color(0, 255, 51));

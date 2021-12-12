@@ -67,7 +67,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
                 btnAvailableActionPerformed(evt);
             }
         });
-        add(btnAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+        add(btnAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, -1, -1));
 
         tblMedList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,7 +82,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblMedList);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 23, -1, 275));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, -1, 275));
 
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PHARMAWORKAREA.png"))); // NOI18N
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
@@ -93,7 +93,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
                 btnNotAvailableActionPerformed(evt);
             }
         });
-        add(btnNotAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
+        add(btnNotAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAvailableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvailableActionPerformed

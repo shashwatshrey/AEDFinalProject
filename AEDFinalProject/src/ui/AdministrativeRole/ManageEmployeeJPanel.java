@@ -82,7 +82,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         organizationEmpJComboBox = new javax.swing.JComboBox();
-        jLabel3 = new javax.swing.JLabel();
+        lblSelectOrg = new javax.swing.JLabel();
         separatorLine2 = new javax.swing.JSeparator();
         lblTitle = new javax.swing.JLabel();
 
@@ -99,7 +99,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 {null, null}
             },
             new String [] {
-                "ID", "Name"
+                "Employee ID", "Employee Name"
             }
         ) {
             Class[] types = new Class [] {
@@ -166,12 +166,12 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 organizationEmpJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 110, -1));
+        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 110, -1));
 
-        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Organization:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, -1, -1));
+        lblSelectOrg.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblSelectOrg.setForeground(new java.awt.Color(255, 255, 255));
+        lblSelectOrg.setText("Select organization to add new employee in:");
+        add(lblSelectOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
         separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
@@ -187,7 +187,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = txtName.getText();
         if(name.equals("")){
-            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please enter a name", "Warning", JOptionPane.WARNING_MESSAGE);
             
         }
         organization.getEmployeeDirectory().createEmployee(name);
@@ -212,10 +212,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JComboBox cmbOrganization;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblOrganization;
+    private javax.swing.JLabel lblSelectOrg;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JComboBox organizationEmpJComboBox;
     private javax.swing.JSeparator separatorLine2;

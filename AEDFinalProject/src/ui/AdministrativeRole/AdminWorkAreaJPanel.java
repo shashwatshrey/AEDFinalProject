@@ -20,7 +20,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
-        valueLabel.setText(enterprise.getName());
+        lblValue.setText(enterprise.getName());
     }
     
     /** This method is called from within the constructor to
@@ -32,8 +32,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         menuPanel = new javax.swing.JPanel();
-        enterpriseLabel1 = new javax.swing.JLabel();
-        valueLabel = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
         onePanel = new javax.swing.JPanel();
         lblOrganizations = new javax.swing.JLabel();
         iconOrganizations = new javax.swing.JLabel();
@@ -43,6 +42,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         threePanel = new javax.swing.JPanel();
         lblUsers = new javax.swing.JLabel();
         iconUsers = new javax.swing.JLabel();
+        lblText = new javax.swing.JLabel();
         cardWorkPanel = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
 
@@ -57,14 +57,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         menuPanel.setPreferredSize(new java.awt.Dimension(250, 848));
         menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        enterpriseLabel1.setText("Enterprise:");
-        menuPanel.add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
-
-        valueLabel.setForeground(new java.awt.Color(255, 255, 255));
-        valueLabel.setText("<value>");
-        menuPanel.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 120, 30));
+        lblValue.setFont(new java.awt.Font("Optima", 1, 18)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(97, 212, 195));
+        lblValue.setText("<value>");
+        menuPanel.add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 230, 30));
 
         onePanel.setBackground(new java.awt.Color(36, 47, 65));
         onePanel.setMaximumSize(new java.awt.Dimension(250, 40));
@@ -144,6 +140,11 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         menuPanel.add(threePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
+        lblText.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblText.setForeground(new java.awt.Color(255, 255, 255));
+        lblText.setText("Currently Logged in as:");
+        menuPanel.add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+
         add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         cardWorkPanel.setBackground(new java.awt.Color(36, 47, 65));
@@ -190,19 +191,19 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cardWorkPanel;
-    private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JLabel iconEmployees;
     private javax.swing.JLabel iconOrganizations;
     private javax.swing.JLabel iconUsers;
     private javax.swing.JLabel lblEmployees;
     private javax.swing.JLabel lblOrganizations;
+    private javax.swing.JLabel lblText;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsers;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JPanel onePanel;
     private javax.swing.JPanel threePanel;
     private javax.swing.JPanel twoPanel;
-    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
     private void setColor(JPanel pane)
     {

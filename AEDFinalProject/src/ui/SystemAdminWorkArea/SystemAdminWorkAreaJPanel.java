@@ -26,6 +26,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
+        lblValue.setText("sysadmin");
     }
 
     /**
@@ -48,6 +49,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         threePanel = new javax.swing.JPanel();
         lblProfile = new javax.swing.JLabel();
         iconAdmin = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
+        lblText = new javax.swing.JLabel();
         cardWorkPanel = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
 
@@ -137,6 +140,16 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         menuPanel.add(threePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
+        lblValue.setFont(new java.awt.Font("Optima", 1, 18)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(97, 212, 195));
+        lblValue.setText("<value>");
+        menuPanel.add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 230, 30));
+
+        lblText.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblText.setForeground(new java.awt.Color(255, 255, 255));
+        lblText.setText("Currently Logged in as:");
+        menuPanel.add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+
         background.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         cardWorkPanel.setBackground(new java.awt.Color(36, 47, 65));
@@ -193,7 +206,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblNetwork;
     private javax.swing.JLabel lblProfile;
+    private javax.swing.JLabel lblText;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JPanel onePanel;
     private javax.swing.JPanel threePanel;

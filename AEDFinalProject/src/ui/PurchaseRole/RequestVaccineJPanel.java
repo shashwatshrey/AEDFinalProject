@@ -83,6 +83,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         txtQuantity = new javax.swing.JTextField();
         btnOrder = new javax.swing.JButton();
         separatorLine = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -126,6 +127,9 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
         add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 180, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbManufacturerActionPerformed
@@ -244,6 +248,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOrder;
     private javax.swing.JComboBox<String> cmbManufacturer;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblManufacturer;
     private javax.swing.JLabel lblQuantity;
     private javax.swing.JSeparator separatorLine;
