@@ -41,7 +41,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }
 
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblEnterprise.getModel();
 
         model.setRowCount(0);
         for (Network network : system.getNetworkList()) {
@@ -59,18 +59,18 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }
 
     private void populateNetworkComboBox(){
-        networkJComboBox.removeAllItems();
+        cmbNetwork.removeAllItems();
         
         for (Network network : system.getNetworkList()){
-            networkJComboBox.addItem(network);
+            cmbNetwork.addItem(network);
         }
     }
     
     private void populateEnterpriseComboBox(Network network){
-        enterpriseJComboBox.removeAllItems();
+        cmbEnterprise.removeAllItems();
         
         for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
-            enterpriseJComboBox.addItem(enterprise);
+            cmbEnterprise.addItem(enterprise);
         }
         
     }
@@ -85,28 +85,30 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        enterpriseJTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        networkJComboBox = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        usernameJTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        enterpriseJComboBox = new javax.swing.JComboBox();
-        submitJButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        nameJTextField = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        passwordJPasswordField = new javax.swing.JPasswordField();
+        tblEnterprise = new javax.swing.JTable();
+        lblNetwork = new javax.swing.JLabel();
+        cmbNetwork = new javax.swing.JComboBox();
+        lblUsername = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        lblEnterprise = new javax.swing.JLabel();
+        cmbEnterprise = new javax.swing.JComboBox();
+        btnSubmit = new javax.swing.JButton();
+        lblPassword = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
         separatorLine = new javax.swing.JSeparator();
         separatorLine1 = new javax.swing.JSeparator();
         separatorLine2 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(1240, 848));
-        setPreferredSize(new java.awt.Dimension(1240, 848));
+        setMinimumSize(new java.awt.Dimension(1190, 848));
+        setPreferredSize(new java.awt.Dimension(1190, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblEnterprise.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -125,80 +127,80 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(enterpriseJTable);
+        jScrollPane1.setViewportView(tblEnterprise);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
 
-        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Network:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
+        lblNetwork.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblNetwork.setForeground(new java.awt.Color(255, 255, 255));
+        lblNetwork.setText("Network:");
+        add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
-        networkJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        cmbNetwork.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        cmbNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                networkJComboBoxActionPerformed(evt);
+                cmbNetworkActionPerformed(evt);
             }
         });
-        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 136, -1));
+        add(cmbNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 136, -1));
 
-        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Username:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
+        lblUsername.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsername.setText("Username:");
+        add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
-        usernameJTextField.setBackground(new java.awt.Color(36, 47, 65));
-        usernameJTextField.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        usernameJTextField.setForeground(new java.awt.Color(255, 255, 255));
-        usernameJTextField.setBorder(null);
-        add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 301, 210, 20));
+        txtUsername.setBackground(new java.awt.Color(36, 47, 65));
+        txtUsername.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtUsername.setForeground(new java.awt.Color(255, 255, 255));
+        txtUsername.setBorder(null);
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 301, 210, 20));
 
-        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Enterprise:");
-        jLabel3.setToolTipText("");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+        lblEnterprise.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblEnterprise.setForeground(new java.awt.Color(255, 255, 255));
+        lblEnterprise.setText("Enterprise:");
+        lblEnterprise.setToolTipText("");
+        add(lblEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
-        enterpriseJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        enterpriseJComboBox.addActionListener(new java.awt.event.ActionListener() {
+        cmbEnterprise.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        cmbEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enterpriseJComboBoxActionPerformed(evt);
+                cmbEnterpriseActionPerformed(evt);
             }
         });
-        add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 136, -1));
+        add(cmbEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 136, -1));
 
-        submitJButton.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        submitJButton.setText("Submit");
-        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButtonActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Password:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
+        lblPassword.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblPassword.setText("Password:");
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
 
-        nameJTextField.setBackground(new java.awt.Color(36, 47, 65));
-        nameJTextField.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        nameJTextField.setForeground(new java.awt.Color(255, 255, 255));
-        nameJTextField.setBorder(null);
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 180, 20));
+        txtName.setBackground(new java.awt.Color(36, 47, 65));
+        txtName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setBorder(null);
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 180, 20));
 
-        jLabel5.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Name:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+        lblName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setText("Name:");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
-        passwordJPasswordField.setBackground(new java.awt.Color(36, 47, 65));
-        passwordJPasswordField.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        passwordJPasswordField.setForeground(new java.awt.Color(255, 255, 255));
-        passwordJPasswordField.setBorder(null);
-        add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 345, 210, -1));
+        txtPassword.setBackground(new java.awt.Color(36, 47, 65));
+        txtPassword.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
+        txtPassword.setBorder(null);
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 210, 20));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
@@ -214,25 +216,31 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine2.setPreferredSize(new java.awt.Dimension(1, 12));
         add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 180, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ENTERPRISEADMIN.png"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, -1, 850));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ENTERPRISEADMIN.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 100, 850));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
+    private void cmbNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNetworkActionPerformed
 
-        Network network = (Network) networkJComboBox.getSelectedItem();
+        Network network = (Network) cmbNetwork.getSelectedItem();
         if (network != null){
             populateEnterpriseComboBox(network);
         }
         
         
-    }//GEN-LAST:event_networkJComboBoxActionPerformed
+    }//GEN-LAST:event_cmbNetworkActionPerformed
 
-    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         
-        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        Enterprise enterprise = (Enterprise) cmbEnterprise.getSelectedItem();
         System.out.println(enterprise.getNetwork().getName());
-        String username = usernameJTextField.getText();
-        String password = String.valueOf(passwordJPasswordField.getPassword());
-        String name = nameJTextField.getText();
+        String username = txtUsername.getText();
+        String password = String.valueOf(txtPassword.getPassword());
+        String name = txtName.getText();
         
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
         if(username.equals("") || password.equals("")||name.equals("")){
@@ -247,12 +255,12 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         populateTable();
         
         dB4OUtil.storeSystem(system);
-        passwordJPasswordField.setText("");
-        nameJTextField.setText("");
-        usernameJTextField.setText("");
+        txtPassword.setText("");
+        txtName.setText("");
+        txtUsername.setText("");
       
         
-    }//GEN-LAST:event_submitJButtonActionPerformed
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -271,26 +279,28 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
 
-    private void enterpriseJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseJComboBoxActionPerformed
+    private void cmbEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEnterpriseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enterpriseJComboBoxActionPerformed
+    }//GEN-LAST:event_cmbEnterpriseActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox enterpriseJComboBox;
-    private javax.swing.JTable enterpriseJTable;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox cmbEnterprise;
+    private javax.swing.JComboBox cmbNetwork;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nameJTextField;
-    private javax.swing.JComboBox networkJComboBox;
-    private javax.swing.JPasswordField passwordJPasswordField;
+    private javax.swing.JLabel lblEnterprise;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNetwork;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JSeparator separatorLine;
     private javax.swing.JSeparator separatorLine1;
     private javax.swing.JSeparator separatorLine2;
-    private javax.swing.JButton submitJButton;
-    private javax.swing.JTextField usernameJTextField;
+    private javax.swing.JTable tblEnterprise;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

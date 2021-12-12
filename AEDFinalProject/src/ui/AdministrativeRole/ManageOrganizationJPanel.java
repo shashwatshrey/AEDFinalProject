@@ -40,15 +40,15 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     }
     
     private void populateCombo(){
-        organizationJComboBox.removeAllItems();
+        cmbOrganization.removeAllItems();
         for (Type type : Type.values()){
             if (!type.getValue().equals(Type.Admin.getValue()))
-                organizationJComboBox.addItem(type);
+                cmbOrganization.addItem(type);
         }
     }
 
     private void populateTable(){
-        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrganization.getModel();
         
         model.setRowCount(0);
         
@@ -70,17 +70,18 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        organizationJTable = new javax.swing.JTable();
-        addJButton = new javax.swing.JButton();
-        organizationJComboBox = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
+        tblOrganization = new javax.swing.JTable();
+        btnAdd = new javax.swing.JButton();
+        cmbOrganization = new javax.swing.JComboBox();
+        lblOrganization = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1190, 848));
         setPreferredSize(new java.awt.Dimension(1190, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrganization.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -106,49 +107,53 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(organizationJTable);
-        if (organizationJTable.getColumnModel().getColumnCount() > 0) {
-            organizationJTable.getColumnModel().getColumn(0).setResizable(false);
-            organizationJTable.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(tblOrganization);
+        if (tblOrganization.getColumnModel().getColumnCount() > 0) {
+            tblOrganization.getColumnModel().getColumn(0).setResizable(false);
+            tblOrganization.getColumnModel().getColumn(1).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 60, 480, 92));
 
-        addJButton.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        addJButton.setText("Add Organization");
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnAdd.setText("Add Organization");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 315, -1, -1));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, -1, -1));
 
-        organizationJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 120, -1));
+        cmbOrganization.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        cmbOrganization.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cmbOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 120, -1));
 
-        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Organization Type:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 229, -1, -1));
+        lblOrganization.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblOrganization.setForeground(new java.awt.Color(255, 255, 255));
+        lblOrganization.setText("Organization Type:");
+        add(lblOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 229, -1, -1));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ORGANIZATIONS.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 100, 850));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
 
-        Type type = (Type) organizationJComboBox.getSelectedItem();
+        Type type = (Type) cmbOrganization.getSelectedItem();
         System.out.print(type.getValue());
         directory.createOrganization(type);
         System.out.print(type.getValue());
         populateTable();
         System.out.print(type.getValue());
         dB4OUtil.storeSystem(system);
-    }//GEN-LAST:event_addJButtonActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addJButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JComboBox cmbOrganization;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTable organizationJTable;
+    private javax.swing.JLabel lblOrganization;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblOrganization;
     // End of variables declaration//GEN-END:variables
 }

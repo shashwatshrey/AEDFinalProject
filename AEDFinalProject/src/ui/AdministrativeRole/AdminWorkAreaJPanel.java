@@ -44,6 +44,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         lblUsers = new javax.swing.JLabel();
         iconUsers = new javax.swing.JLabel();
         cardWorkPanel = new javax.swing.JPanel();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -74,36 +75,20 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 onePanelMouseClicked(evt);
             }
         });
+        onePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblOrganizations.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
         lblOrganizations.setForeground(new java.awt.Color(255, 255, 255));
         lblOrganizations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOrganizations.setText("Manage Organizations");
+        lblOrganizations.setText("MANAGE ORGANIZATION");
+        lblOrganizations.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblOrganizations.setMaximumSize(new java.awt.Dimension(180, 20));
         lblOrganizations.setMinimumSize(new java.awt.Dimension(180, 20));
         lblOrganizations.setPreferredSize(new java.awt.Dimension(180, 20));
+        onePanel.add(lblOrganizations, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 207, -1));
 
         iconOrganizations.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-company-45.png"))); // NOI18N
-
-        javax.swing.GroupLayout onePanelLayout = new javax.swing.GroupLayout(onePanel);
-        onePanel.setLayout(onePanelLayout);
-        onePanelLayout.setHorizontalGroup(
-            onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconOrganizations)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        onePanelLayout.setVerticalGroup(
-            onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblOrganizations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(iconOrganizations)
-        );
+        onePanel.add(iconOrganizations, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
 
         menuPanel.add(onePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
@@ -116,35 +101,19 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 twoPanelMouseClicked(evt);
             }
         });
+        twoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblEmployees.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
         lblEmployees.setForeground(new java.awt.Color(255, 255, 255));
         lblEmployees.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblEmployees.setText("Manage Employees");
+        lblEmployees.setText("MANAGE EMPLOYEES");
         lblEmployees.setMaximumSize(new java.awt.Dimension(180, 20));
         lblEmployees.setMinimumSize(new java.awt.Dimension(180, 20));
         lblEmployees.setPreferredSize(new java.awt.Dimension(180, 20));
+        twoPanel.add(lblEmployees, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 160, -1));
 
         iconEmployees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-employee-50 (1).png"))); // NOI18N
-
-        javax.swing.GroupLayout twoPanelLayout = new javax.swing.GroupLayout(twoPanel);
-        twoPanel.setLayout(twoPanelLayout);
-        twoPanelLayout.setHorizontalGroup(
-            twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, twoPanelLayout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addComponent(iconEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        twoPanelLayout.setVerticalGroup(
-            twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(iconEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(twoPanelLayout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
-                .addComponent(lblEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        twoPanel.add(iconEmployees, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
 
         menuPanel.add(twoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
@@ -157,41 +126,21 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 threePanelMouseClicked(evt);
             }
         });
+        threePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsers.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
         lblUsers.setForeground(new java.awt.Color(255, 255, 255));
         lblUsers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblUsers.setText("Manage Users");
+        lblUsers.setText("MANAGE USERS");
         lblUsers.setMaximumSize(new java.awt.Dimension(180, 20));
         lblUsers.setMinimumSize(new java.awt.Dimension(180, 20));
         lblUsers.setPreferredSize(new java.awt.Dimension(180, 20));
+        threePanel.add(lblUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 120, -1));
 
         iconUsers.setForeground(new java.awt.Color(255, 255, 255));
         iconUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-employee-50.png"))); // NOI18N
         iconUsers.setToolTipText("");
-
-        javax.swing.GroupLayout threePanelLayout = new javax.swing.GroupLayout(threePanel);
-        threePanel.setLayout(threePanelLayout);
-        threePanelLayout.setHorizontalGroup(
-            threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, threePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconUsers)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
-        threePanelLayout.setVerticalGroup(
-            threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(threePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconUsers)
-                .addContainerGap())
-            .addGroup(threePanelLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(lblUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        threePanel.add(iconUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         menuPanel.add(threePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
@@ -201,6 +150,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         cardWorkPanel.setMinimumSize(new java.awt.Dimension(1190, 848));
         cardWorkPanel.setPreferredSize(new java.awt.Dimension(1190, 848));
         cardWorkPanel.setLayout(new java.awt.CardLayout());
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ENTERPRISEADMIN.png"))); // NOI18N
+        cardWorkPanel.add(lblTitle, "card2");
+
         add(cardWorkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -243,6 +196,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel iconUsers;
     private javax.swing.JLabel lblEmployees;
     private javax.swing.JLabel lblOrganizations;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsers;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JPanel onePanel;

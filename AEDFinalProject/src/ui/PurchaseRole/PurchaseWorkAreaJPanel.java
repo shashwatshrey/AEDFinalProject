@@ -62,22 +62,16 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        vaccineTable = new javax.swing.JTable();
-        btnreqVaccine = new javax.swing.JButton();
+        tblVaccine = new javax.swing.JTable();
+        btnRequest = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Purchase Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 61, -1, -1));
-
-        vaccineTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -88,21 +82,21 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Receiver", "Quantity", "Status"
             }
         ));
-        jScrollPane1.setViewportView(vaccineTable);
+        jScrollPane1.setViewportView(tblVaccine);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, 368, 172));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 368, 172));
 
-        btnreqVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        btnreqVaccine.setText("Request Vaccine");
-        btnreqVaccine.addActionListener(new java.awt.event.ActionListener() {
+        btnRequest.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnRequest.setText("Request Vaccine");
+        btnRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnreqVaccineActionPerformed(evt);
+                btnRequestActionPerformed(evt);
             }
         });
-        add(btnreqVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 306, -1, -1));
+        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnreqVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreqVaccineActionPerformed
+    private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
         // TODO add your handling code here:
         populateTable();
         RequestVaccineJPanel requestVaccineJPanel = new RequestVaccineJPanel(enterprise.getOrganizationDirectory(), userProcessContainer, organization, enterprise, userAccount);
@@ -111,18 +105,17 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
         dB4OUtil.storeSystem(system);
 
-    }//GEN-LAST:event_btnreqVaccineActionPerformed
+    }//GEN-LAST:event_btnRequestActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnreqVaccine;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnRequest;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable vaccineTable;
+    private javax.swing.JTable tblVaccine;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) vaccineTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblVaccine.getModel();
         model.setRowCount(0);
         UserAccount distributor = new UserAccount();
         try{

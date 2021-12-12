@@ -50,23 +50,26 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSubmit = new javax.swing.JButton();
+        btnAvailable = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        MedListjTable = new javax.swing.JTable();
+        tblMedList = new javax.swing.JTable();
+        lblTitle = new javax.swing.JLabel();
+        btnNotAvailable = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSubmit.setText("Available");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+        btnAvailable.setText("Available");
+        btnAvailable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
+                btnAvailableActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 804, -1, -1));
+        add(btnAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
 
-        MedListjTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblMedList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -77,32 +80,57 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
                 "Person", "Doctor", "Receiver", "Medicine List", "Status"
             }
         ));
-        jScrollPane1.setViewportView(MedListjTable);
+        jScrollPane1.setViewportView(tblMedList);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 23, -1, 275));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PHARMAWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
+
+        btnNotAvailable.setText("Not Available");
+        btnNotAvailable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNotAvailableActionPerformed(evt);
+            }
+        });
+        add(btnNotAvailable, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+    private void btnAvailableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvailableActionPerformed
         // TODO add your handling code here:
-        int selectedRow = MedListjTable.getSelectedRow();
+        int selectedRow = tblMedList.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(this, "Please select a request");
             return;
         }
-        WorkRequest r = (WorkRequest) MedListjTable.getModel().getValueAt(selectedRow, 0);
+        WorkRequest r = (WorkRequest) tblMedList.getModel().getValueAt(selectedRow, 0);
         r.setStatus("Available");
         populateTable();
-    }//GEN-LAST:event_btnSubmitActionPerformed
+    }//GEN-LAST:event_btnAvailableActionPerformed
+
+    private void btnNotAvailableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotAvailableActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblMedList.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this, "Please select a request");
+            return;
+        }
+        WorkRequest r = (WorkRequest) tblMedList.getModel().getValueAt(selectedRow, 0);
+        r.setStatus("Not available");
+        populateTable();
+    }//GEN-LAST:event_btnNotAvailableActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable MedListjTable;
-    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnAvailable;
+    private javax.swing.JButton btnNotAvailable;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblMedList;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) MedListjTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblMedList.getModel();
         model.setRowCount(0);
         
             System.out.println("Outside for");

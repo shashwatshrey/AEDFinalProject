@@ -57,21 +57,21 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
 
         btnApprove = new javax.swing.JButton();
         btnReject = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtQty = new javax.swing.JTextField();
-        txtNoDose = new javax.swing.JTextField();
+        tblWorkRequest = new javax.swing.JTable();
+        lblQuantity = new javax.swing.JLabel();
+        lblDose = new javax.swing.JLabel();
+        lblGap = new javax.swing.JLabel();
+        txtQuantity = new javax.swing.JTextField();
+        txtDose = new javax.swing.JTextField();
         txtGap = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        lblPrice = new javax.swing.JLabel();
         txtPrice = new javax.swing.JTextField();
         separatorLine = new javax.swing.JSeparator();
         separatorLine1 = new javax.swing.JSeparator();
         separatorLine2 = new javax.swing.JSeparator();
         separatorLine3 = new javax.swing.JSeparator();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -85,7 +85,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 btnApproveActionPerformed(evt);
             }
         });
-        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 562, -1, -1));
+        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 620, -1, -1));
 
         btnReject.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnReject.setText("Reject Vaccine");
@@ -94,21 +94,9 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 btnRejectActionPerformed(evt);
             }
         });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 562, -1, -1));
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
 
-        jTextField1.setBackground(new java.awt.Color(36, 47, 65));
-        jTextField1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("EconomyWorkArea");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 27, -1, -1));
-
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -119,41 +107,41 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 "Vaccine Name", "Sender", "Receiver", "Status"
             }
         ));
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(tblWorkRequest);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 92, -1, 241));
 
-        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Quantity per dose(in mg):");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 367, -1, -1));
+        lblQuantity.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
+        lblQuantity.setText("Quantity per dose(in mg):");
+        add(lblQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Number of doses:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
+        lblDose.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblDose.setForeground(new java.awt.Color(255, 255, 255));
+        lblDose.setText("Number of doses:");
+        add(lblDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Gap between dose(in days):");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, -1));
+        lblGap.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblGap.setForeground(new java.awt.Color(255, 255, 255));
+        lblGap.setText("Gap between dose(in days):");
+        add(lblGap, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, -1, -1));
 
-        txtQty.setBackground(new java.awt.Color(36, 47, 65));
-        txtQty.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        txtQty.setForeground(new java.awt.Color(255, 255, 255));
-        txtQty.setBorder(null);
-        txtQty.addActionListener(new java.awt.event.ActionListener() {
+        txtQuantity.setBackground(new java.awt.Color(36, 47, 65));
+        txtQuantity.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtQuantity.setForeground(new java.awt.Color(255, 255, 255));
+        txtQuantity.setBorder(null);
+        txtQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQtyActionPerformed(evt);
+                txtQuantityActionPerformed(evt);
             }
         });
-        add(txtQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 362, 210, -1));
+        add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 210, -1));
 
-        txtNoDose.setBackground(new java.awt.Color(36, 47, 65));
-        txtNoDose.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        txtNoDose.setForeground(new java.awt.Color(255, 255, 255));
-        txtNoDose.setBorder(null);
-        add(txtNoDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 220, 20));
+        txtDose.setBackground(new java.awt.Color(36, 47, 65));
+        txtDose.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtDose.setForeground(new java.awt.Color(255, 255, 255));
+        txtDose.setBorder(null);
+        add(txtDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, 220, 20));
 
         txtGap.setBackground(new java.awt.Color(36, 47, 65));
         txtGap.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
@@ -164,12 +152,12 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 txtGapActionPerformed(evt);
             }
         });
-        add(txtGap, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 230, -1));
+        add(txtGap, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 230, -1));
 
-        jLabel4.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Price (in USD):");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, -1, -1));
+        lblPrice.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblPrice.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrice.setText("Price (in USD):");
+        add(lblPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, -1, -1));
 
         txtPrice.setBackground(new java.awt.Color(36, 47, 65));
         txtPrice.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
@@ -180,26 +168,29 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 180, -1));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 180, -1));
 
         separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 180, -1));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 180, -1));
 
         separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine2.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 180, -1));
+        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 180, -1));
 
         separatorLine3.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine3.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine3.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 180, -1));
+        add(separatorLine3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 180, -1));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ECONOMYWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateTable(){
-        DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
+        DefaultTableModel model = (DefaultTableModel)tblWorkRequest.getModel();
         
         model.setRowCount(0);
         for(WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
@@ -212,55 +203,51 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
         // TODO add your handling code here:
-        if(txtGap.getText().equals("") || txtNoDose.getText().equals("") || txtPrice.getText().equals("") || txtQty.equals("")){
+        if(txtGap.getText().equals("") || txtDose.getText().equals("") || txtPrice.getText().equals("") || txtQuantity.equals("")){
             JOptionPane.showMessageDialog(null, "Please fill all fields", "Warning", JOptionPane.WARNING_MESSAGE);
             
         }
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblWorkRequest.getSelectedRow();
         
         if (selectedRow < 0){
             return;
         }
         
-        approveVaccine request = (approveVaccine)workRequestJTable.getValueAt(selectedRow, 0);
+        approveVaccine request = (approveVaccine)tblWorkRequest.getValueAt(selectedRow, 0);
         
         if(request.getStatus().equals("Approved")){
             JOptionPane.showMessageDialog(this, "Vaccine already approved");
             return;
         }
      
-        if(validate(txtQty.getText(),txtNoDose.getText(),txtGap.getText(),txtPrice.getText())){
+        if(validate(txtQuantity.getText(),txtDose.getText(),txtGap.getText(),txtPrice.getText())){
         request.setStatus("Approved");
         request.getVaccine().setStatus("Approved");
         
-        request.getVaccine().setMgQty(txtQty.getText());
-        request.getVaccine().setNoOfDoses(Integer.parseInt(txtNoDose.getText()));
+        request.getVaccine().setMgQty(txtQuantity.getText());
+        request.getVaccine().setNoOfDoses(Integer.parseInt(txtDose.getText()));
         request.getVaccine().setGap(Integer.parseInt(txtGap.getText()));
         request.getVaccine().setPrice(Double.parseDouble(txtPrice.getText()));
         populateTable();
         }
         dB4OUtil.storeSystem(system);
         txtGap.setText("");
-        txtNoDose.setText("");
+        txtDose.setText("");
         txtPrice.setText("");
-        txtQty.setText("");
+        txtQuantity.setText("");
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
         // TODO add your handling code here:
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblWorkRequest.getSelectedRow();
         
         if (selectedRow < 0){
             return;
         }
         
-        approveVaccine request = (approveVaccine)workRequestJTable.getValueAt(selectedRow, 0);
+        approveVaccine request = (approveVaccine)tblWorkRequest.getValueAt(selectedRow, 0);
         if(request.getStatus().equals("Rejected") || request.getStatus().equals("Approved")){
             JOptionPane.showMessageDialog(this, "Vaccine already processed");
             return;
@@ -268,15 +255,15 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
      
         request.setStatus("Rejected");
         request.getVaccine().setStatus("Rejected");
-        request.getVaccine().setMgQty(txtQty.getText());
-        request.getVaccine().setNoOfDoses(Integer.parseInt(txtNoDose.getText()));
+        request.getVaccine().setMgQty(txtQuantity.getText());
+        request.getVaccine().setNoOfDoses(Integer.parseInt(txtDose.getText()));
         request.getVaccine().setGap(Integer.parseInt(txtGap.getText()));
         populateTable();
     }//GEN-LAST:event_btnRejectActionPerformed
 
     private void txtGapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGapActionPerformed
         // TODO add your handling code here:
-        if(Integer.parseInt(txtNoDose.getText())==1){
+        if(Integer.parseInt(txtDose.getText())==1){
             txtGap.setText("0");
             txtGap.setEditable(false);
         }
@@ -284,29 +271,29 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_txtGapActionPerformed
 
-    private void txtQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtyActionPerformed
+    private void txtQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtQtyActionPerformed
+    }//GEN-LAST:event_txtQuantityActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApprove;
     private javax.swing.JButton btnReject;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblDose;
+    private javax.swing.JLabel lblGap;
+    private javax.swing.JLabel lblPrice;
+    private javax.swing.JLabel lblQuantity;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JSeparator separatorLine;
     private javax.swing.JSeparator separatorLine1;
     private javax.swing.JSeparator separatorLine2;
     private javax.swing.JSeparator separatorLine3;
+    private javax.swing.JTable tblWorkRequest;
+    private javax.swing.JTextField txtDose;
     private javax.swing.JTextField txtGap;
-    private javax.swing.JTextField txtNoDose;
     private javax.swing.JTextField txtPrice;
-    private javax.swing.JTextField txtQty;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JTextField txtQuantity;
     // End of variables declaration//GEN-END:variables
 
     private boolean validate(String qty, String noDose, String gap, String price) {

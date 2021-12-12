@@ -60,9 +60,9 @@ public class OrderJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        ordersjTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        txtComments = new javax.swing.JTextField();
+        tblOrders = new javax.swing.JTable();
+        lblComment = new javax.swing.JLabel();
+        txtComment = new javax.swing.JTextField();
         btnApprove = new javax.swing.JButton();
         btnReject = new javax.swing.JButton();
         separatorLine = new javax.swing.JSeparator();
@@ -72,7 +72,7 @@ public class OrderJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ordersjTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -83,19 +83,19 @@ public class OrderJPanel extends javax.swing.JPanel {
                 "Sender", "Receiver", "Quantity", "Status"
             }
         ));
-        jScrollPane1.setViewportView(ordersjTable);
+        jScrollPane1.setViewportView(tblOrders);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 84, 375, 275));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 375, 275));
 
-        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Comments:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
+        lblComment.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblComment.setForeground(new java.awt.Color(255, 255, 255));
+        lblComment.setText("Comments:");
+        add(lblComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, -1, -1));
 
-        txtComments.setBackground(new java.awt.Color(36, 47, 65));
-        txtComments.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
-        txtComments.setBorder(null);
-        add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 385, 230, -1));
+        txtComment.setBackground(new java.awt.Color(36, 47, 65));
+        txtComment.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtComment.setBorder(null);
+        add(txtComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 230, -1));
 
         btnApprove.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnApprove.setText("Approve");
@@ -104,7 +104,7 @@ public class OrderJPanel extends javax.swing.JPanel {
                 btnApproveActionPerformed(evt);
             }
         });
-        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 429, -1, -1));
+        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, -1, -1));
 
         btnReject.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnReject.setText("Reject");
@@ -113,12 +113,12 @@ public class OrderJPanel extends javax.swing.JPanel {
                 btnRejectActionPerformed(evt);
             }
         });
-        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 429, -1, -1));
+        add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, -1, -1));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 220, 10));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 220, 10));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
@@ -127,19 +127,19 @@ public class OrderJPanel extends javax.swing.JPanel {
             System.out.println("Inside for");
             if(v.getStatus().equals("Approved")){
                 System.out.println("Vaccine record approved");
-                int selectedRow = ordersjTable.getSelectedRow();
+                int selectedRow = tblOrders.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(this, "Please select an order to approve");
             return;
         }
-        requestVaccine request = (requestVaccine)ordersjTable.getValueAt(selectedRow, 0);
+        requestVaccine request = (requestVaccine)tblOrders.getValueAt(selectedRow, 0);
         
         if(request.getStatus().equals("Approved")){
             JOptionPane.showMessageDialog(this, "Vaccine already approved");
             return;
         }
      
-        if(validate(txtComments.getText())){
+        if(validate(txtComment.getText())){
         request.setStatus("Approved");
         request.setTestResult("Approved");
         ArrayList<PurchaseInventory> inv = ((requestVaccine) request).getInventoryPurchase();
@@ -153,7 +153,7 @@ public class OrderJPanel extends javax.swing.JPanel {
         
         populateTable();
         dB4OUtil.storeSystem(system);
-        txtComments.setText("");
+        txtComment.setText("");
         }
         break;
             }
@@ -166,19 +166,19 @@ public class OrderJPanel extends javax.swing.JPanel {
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
         // TODO add your handling code here:
-        int selectedRow = ordersjTable.getSelectedRow();
+        int selectedRow = tblOrders.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(this, "Please select an order");
             return;
         }
-        requestVaccine request = (requestVaccine)ordersjTable.getValueAt(selectedRow, 0);
+        requestVaccine request = (requestVaccine)tblOrders.getValueAt(selectedRow, 0);
         
         if(request.getStatus().equals("Rejected") || request.getStatus().equals("Approved")){
             JOptionPane.showMessageDialog(this, "Vaccine already processed");
             return;
         }
      
-        if(validate(txtComments.getText())){
+        if(validate(txtComment.getText())){
         request.setStatus("Rejected");
         request.setTestResult("Rejected");
         
@@ -190,15 +190,15 @@ public class OrderJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApprove;
     private javax.swing.JButton btnReject;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable ordersjTable;
+    private javax.swing.JLabel lblComment;
     private javax.swing.JSeparator separatorLine;
-    private javax.swing.JTextField txtComments;
+    private javax.swing.JTable tblOrders;
+    private javax.swing.JTextField txtComment;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) ordersjTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblOrders.getModel();
         model.setRowCount(0);
         System.out.println(enterprise.getName());
         try{
