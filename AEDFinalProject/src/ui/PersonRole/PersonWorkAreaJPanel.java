@@ -12,7 +12,6 @@ import Business.Organization.PersonOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.appointment;
-import Business.WorkQueue.prescribeMedicine;
 import Business.WorkQueue.vaccinate;
 import java.awt.CardLayout;
 import java.util.Date;
@@ -46,7 +45,6 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         this.business = business;
         populateVaccineTable();
         populateAppointmentTable();
-        populateMedTable();
         Date td = new Date();
         lblValue.setText(account.getEmployee().getName());
 //        System.out.println(((td.getTime()-v1date.getTime())/(1000*60*60*24))%365);
@@ -207,14 +205,12 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable PharmajTable;
     private javax.swing.JButton btnAppointment;
     private javax.swing.JButton btnVaccine;
     private javax.swing.JPanel cardWorkArea;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblText;
@@ -279,24 +275,6 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
            model.addRow(row);
            }
         }
-        }
-    }
-
-    private void populateMedTable() {
-        DefaultTableModel model = (DefaultTableModel)PharmajTable.getModel();
-        model.setRowCount(0);
-        
-        for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[5];
-            if(wr instanceof prescribeMedicine){
-                row[0] = wr;
-                row[1] = wr.getSender();
-                row[2] = wr.getReceiver();
-                row[3] = ((prescribeMedicine) wr).getMedList();
-                row[4] = wr.getStatus();
-                model.addRow(row);
-                
-            }
         }
     }
 }
