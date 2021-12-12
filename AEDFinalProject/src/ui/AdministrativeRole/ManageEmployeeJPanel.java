@@ -10,6 +10,7 @@ import Business.Employee.Employee;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -161,7 +162,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
-        
+        if(name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            
+        }
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
         //store data in database

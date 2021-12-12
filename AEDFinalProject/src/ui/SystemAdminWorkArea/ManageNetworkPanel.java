@@ -10,6 +10,7 @@ import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.lang.model.SourceVersion;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -131,7 +132,10 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         
         String name = txtName.getText();
-
+        if(name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please input all fields", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         Network network = system.createAndAddNetwork();
         network.setName(name);
         //stores in the database

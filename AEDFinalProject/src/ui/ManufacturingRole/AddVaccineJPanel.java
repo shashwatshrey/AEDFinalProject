@@ -101,6 +101,10 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
 
     private void btnAddVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVaccineActionPerformed
         // TODO add your handling code here:
+        if(txtName.getText().equals("") || txtScientificName.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill all fields", "Warning", JOptionPane.WARNING_MESSAGE);
+            
+        }
         if(validate(txtName.getText(), txtScientificName.getText())){
             Vaccine newVaccine = new Vaccine();
             newVaccine.setName(txtName.getText());

@@ -162,6 +162,10 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
         // TODO add your handling code here:
+        if(txtGap.getText().equals("") || txtNoDose.getText().equals("") || txtPrice.getText().equals("") || txtQty.equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill all fields", "Warning", JOptionPane.WARNING_MESSAGE);
+            
+        }
         int selectedRow = workRequestJTable.getSelectedRow();
         
         if (selectedRow < 0){

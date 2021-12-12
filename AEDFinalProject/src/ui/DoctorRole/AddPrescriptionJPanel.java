@@ -13,6 +13,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.prescribeMedicine;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -80,6 +81,11 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+        if(txtMedList.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            
+        }
+        
         if(validate(txtMedList.getText())){
             UserAccount pharma = new UserAccount();
             prescribeMedicine pm = new prescribeMedicine();

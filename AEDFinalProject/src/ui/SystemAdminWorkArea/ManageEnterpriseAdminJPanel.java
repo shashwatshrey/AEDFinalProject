@@ -13,6 +13,7 @@ import Business.Role.AdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -187,7 +188,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String name = nameJTextField.getText();
         
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
-        
+        if(username.equals("") || password.equals("")||name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
         populateTable();
         dB4OUtil.storeSystem(system);
