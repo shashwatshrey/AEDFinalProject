@@ -164,8 +164,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_submitJButtonActionPerformed
 
-<<<<<<< Updated upstream
-=======
+
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
@@ -185,7 +184,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
->>>>>>> Stashed changes
+
     private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameJTextFieldActionPerformed
