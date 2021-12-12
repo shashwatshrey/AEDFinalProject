@@ -10,6 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
 import Business.Organization.OrganizationDirectory;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -24,15 +25,18 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-    //private Enterprise enterprise;
+    private UserAccount account;
+    private Enterprise enterprise;
     
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory) {
+    public ManageOrganizationJPanel(JPanel userProcessContainer, OrganizationDirectory directory,UserAccount account,Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
+        this.account = account;
+        this.enterprise = enterprise;
         //this.enterprise = enterprise;
         
         populateTable();
@@ -41,9 +45,47 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     
     private void populateCombo(){
         cmbOrganization.removeAllItems();
+        //System.out.println("User account  --> " + account.getRole().getClass().toString());
+        String enterpriseType = enterprise.getClass().toString();
+        //System.out.println(enterprise.getClass().toString());
         for (Type type : Type.values()){
-            if (!type.getValue().equals(Type.Admin.getValue()))
-                cmbOrganization.addItem(type);
+            if (enterpriseType.equals("class Business.Enterprise.GovernmentEnterprise")){
+                if(type.equals(Type.Health)){
+                   cmbOrganization.addItem(type);
+                }
+                if(type.equals(Type.Economy)){
+                   cmbOrganization.addItem(type);
+                }
+                if(type.equals(Type.Person)){
+                   cmbOrganization.addItem(type);
+                }
+            } else if(enterpriseType.equals("class Business.Enterprise.HospitalEnterprise")){
+                if(type.equals(Type.Doctor)){
+                   cmbOrganization.addItem(type);
+                }
+                if(type.equals(Type.Lab)){
+                   cmbOrganization.addItem(type);
+                }
+                if(type.equals(Type.Pharma)){
+                   cmbOrganization.addItem(type);
+                }
+                
+        }
+            else if(enterpriseType.equals("class Business.Enterprise.PharmaceuticalEnterprise")){
+                if(type.equals(Type.Manufacturing)){
+                   cmbOrganization.addItem(type);
+                }
+                if(type.equals(Type.Sales)){
+                   cmbOrganization.addItem(type);
+                }
+            } else if(enterpriseType.equals("class Business.Enterprise.ServiceEnterprise")){
+                if(type.equals(Type.Purchase)){
+                   cmbOrganization.addItem(type);
+                }
+                if(type.equals(Type.Distribution)){
+                   cmbOrganization.addItem(type);
+                }
+            }
         }
     }
 
