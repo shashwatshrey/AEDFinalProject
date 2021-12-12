@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author raunak
+ * @author shashwatshrey
  */
 public class ManageNetworkPanel extends javax.swing.JPanel {
 
@@ -134,6 +134,7 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
 
         Network network = system.createAndAddNetwork();
         network.setName(name);
+        //stores in the database
         dB4OUtil.storeSystem(system);
         populateNetworkTable();
         txtName.setText("");

@@ -5,6 +5,7 @@
  */
 package ui.PurchaseRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.ServiceEnterprise;
@@ -35,6 +36,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem system;
     private UserAccount userAccount;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public int currEP;
     /**
      * Creates new form DistributionWorkAreaJPanel
@@ -103,6 +105,8 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("requestVaccineJPanel", requestVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        dB4OUtil.storeSystem(system);
+
     }//GEN-LAST:event_btnreqVaccineActionPerformed
 
 

@@ -5,6 +5,7 @@
  */
 package ui.DoctorRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Enterprise.EnterpriseType;
@@ -29,6 +30,7 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
     private Organization organization;
     private Enterprise enterprise;
     private UserAccount person;//userProcessContainer, enterprise, organization, system
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public AddPrescriptionJPanel(JPanel userProcessContainer, Enterprise enterprise, Organization organization, EcoSystem system, UserAccount account, UserAccount person) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -111,6 +113,8 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
             account.getWorkQueue().getWorkRequestList().add(pm);
             pharma.getWorkQueue().getWorkRequestList().add(pm);
         }
+        dB4OUtil.storeSystem(system);
+        txtMedList.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 

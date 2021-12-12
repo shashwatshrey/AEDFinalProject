@@ -5,6 +5,7 @@
  */
 package ui.PurchaseRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Enterprise.EnterpriseType;
@@ -34,6 +35,8 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem business;
     public Enterprise currEP;
+        private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+
 //    private Network network;
     private UserAccount userAccount;
     private ArrayList<PurchaseInventory> inventory = new ArrayList<>();
@@ -217,7 +220,8 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
 //        }
             JOptionPane.showMessageDialog(this, "Order Created");
         }
-        
+        dB4OUtil.storeSystem(business);
+        txtrequestQty.setText("");
     }//GEN-LAST:event_btnOrderVaccineActionPerformed
 
 

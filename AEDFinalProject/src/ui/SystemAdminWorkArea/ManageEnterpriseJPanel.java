@@ -159,6 +159,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         System.out.println(network.getName());
 
         populateTable();
+        //stores in the database
         dB4OUtil.storeSystem(system);
         nameJTextField.setText("");
 

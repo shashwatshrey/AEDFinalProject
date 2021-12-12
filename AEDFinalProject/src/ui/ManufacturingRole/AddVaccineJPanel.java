@@ -5,6 +5,8 @@
  */
 package ui.ManufacturingRole;
 
+import Business.DB4OUtil.DB4OUtil;
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.ManufacturingOrganization;
 import Business.Organization.OrganizationDirectory;
@@ -24,6 +26,8 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private ManufacturingOrganization organization;
     private VaccineDirectory vaccineDirectory;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private EcoSystem system;
     /**
      * Creates new form AddVaccineJPanel
      */
@@ -106,6 +110,7 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
             organization.addVaccine(newVaccine);
             JOptionPane.showMessageDialog(this, "Vaccine Added");
         }
+        dB4OUtil.storeSystem(system);
         txtName.setText("");
         txtScientificName.setText("");
     }//GEN-LAST:event_btnAddVaccineActionPerformed

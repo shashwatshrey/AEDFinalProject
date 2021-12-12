@@ -5,6 +5,7 @@
  */
 package ui.LabRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -29,6 +30,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem system;
     private UserAccount userAccount;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     /**
      * Creates new form LabAreaJPanel
      */
@@ -352,6 +354,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         System.out.println("2");
         JOptionPane.showMessageDialog(this, "Request tested");
         populateTable();
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void vitalYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitalYesRadioActionPerformed

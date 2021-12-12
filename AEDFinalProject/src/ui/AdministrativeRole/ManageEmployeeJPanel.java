@@ -4,6 +4,8 @@
  */
 package ui.AdministrativeRole;
 
+import Business.DB4OUtil.DB4OUtil;
+import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
@@ -19,6 +21,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private EcoSystem system;
     
     /**
      * Creates new form ManageOrganizationJPanel
@@ -160,6 +164,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
+        //store data in database
+        dB4OUtil.storeSystem(system);
+        nameJTextField.setText("");
         
     }//GEN-LAST:event_addJButtonActionPerformed
 
