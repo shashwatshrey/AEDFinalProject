@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author MyPC1
+ * @author shashwatshrey
  */
 public class EnterpriseDirectory {
     private ArrayList<Enterprise> enterpriseList;
