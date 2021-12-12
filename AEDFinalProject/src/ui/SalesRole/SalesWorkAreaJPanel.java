@@ -72,6 +72,7 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         btnApprove = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         ordersjTable = new javax.swing.JTable();
+        separatorLine = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMaximumSize(new java.awt.Dimension(1440, 848));
@@ -79,6 +80,8 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sales Work Area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 68, -1, -1));
 
@@ -97,6 +100,7 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, -1, 180));
 
+        btnReject.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,11 +108,19 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, -1));
-        add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, -1));
 
+        txtComments.setBackground(new java.awt.Color(36, 47, 65));
+        txtComments.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtComments.setForeground(new java.awt.Color(255, 255, 255));
+        txtComments.setBorder(null);
+        add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 190, 20));
+
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Comments:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
 
+        btnApprove.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnApprove.setText("Approve");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +143,11 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(ordersjTable);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, 180));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
@@ -201,6 +218,7 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable ordersjTable;
+    private javax.swing.JSeparator separatorLine;
     private javax.swing.JTextField txtComments;
     private javax.swing.JTable vaccinejTable;
     // End of variables declaration//GEN-END:variables

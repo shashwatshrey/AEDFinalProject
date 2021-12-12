@@ -74,6 +74,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnvcn.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnvcn.setText("Schedule Vaccination");
         btnvcn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +83,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnvcn, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 530, -1, -1));
 
+        btnappt.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnappt.setText("Schedule Appointment");
         btnappt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

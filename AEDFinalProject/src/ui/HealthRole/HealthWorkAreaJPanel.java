@@ -72,6 +72,8 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Health Workarea");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 42, -1, -1));
 
@@ -105,12 +107,17 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, 170));
 
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Approved List");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Requested List");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
 
+        jButton1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         jButton1.setText("Generate PieChart");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

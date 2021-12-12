@@ -59,9 +59,12 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Select Distribution Center");
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Select Distribution Center:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
+        btnRequest.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnRequest.setText("Request");
         btnRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +73,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         });
         add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 187, -1, -1));
 
+        jComboBox1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 56, -1, -1));
     }// </editor-fold>//GEN-END:initComponents

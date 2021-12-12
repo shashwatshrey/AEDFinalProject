@@ -65,6 +65,7 @@ public class OrderJPanel extends javax.swing.JPanel {
         txtComments = new javax.swing.JTextField();
         btnApprove = new javax.swing.JButton();
         btnReject = new javax.swing.JButton();
+        separatorLine = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -86,10 +87,17 @@ public class OrderJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 84, 375, 275));
 
-        jLabel1.setText("Comments");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 390, -1, -1));
-        add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 385, 86, -1));
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Comments:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
+        txtComments.setBackground(new java.awt.Color(36, 47, 65));
+        txtComments.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtComments.setBorder(null);
+        add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 385, 230, -1));
+
+        btnApprove.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnApprove.setText("Approve");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +106,7 @@ public class OrderJPanel extends javax.swing.JPanel {
         });
         add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 429, -1, -1));
 
+        btnReject.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnReject.setText("Reject");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +114,11 @@ public class OrderJPanel extends javax.swing.JPanel {
             }
         });
         add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 429, -1, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 220, 10));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
@@ -179,6 +193,7 @@ public class OrderJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable ordersjTable;
+    private javax.swing.JSeparator separatorLine;
     private javax.swing.JTextField txtComments;
     // End of variables declaration//GEN-END:variables
 

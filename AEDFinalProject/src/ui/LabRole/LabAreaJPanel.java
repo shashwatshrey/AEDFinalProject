@@ -99,12 +99,19 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
         jButtonSendReport = new javax.swing.JButton();
+        separatorLine = new javax.swing.JSeparator();
+        separatorLine1 = new javax.swing.JSeparator();
+        separatorLine2 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Lab Testing Zone!");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 6, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,280 +126,252 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 78, 441, 113));
+
+        btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 205, -1, -1));
 
+        txtResult.setBackground(new java.awt.Color(36, 47, 65));
+        txtResult.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtResult.setForeground(new java.awt.Color(255, 255, 255));
+        txtResult.setBorder(null);
         txtResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtResultActionPerformed(evt);
             }
         });
+        add(txtResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 210, 250, -1));
 
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Are the Vital Signs of the person completely normal ? ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 266, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Has the patient completed both the doses ?");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 303, 360, -1));
 
+        jLabel4.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Does the patient have cold, cough ?");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 334, 360, -1));
 
+        jLabel5.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Does the patient have a normal temperature ? ");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 362, 360, -1));
 
+        vitalYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        vitalYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         vitalYesRadio.setText("Yes");
         vitalYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vitalYesRadioActionPerformed(evt);
             }
         });
+        add(vitalYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 263, -1, -1));
 
+        vitalNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        vitalNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         vitalNoRadio.setText("No");
         vitalNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vitalNoRadioActionPerformed(evt);
             }
         });
+        add(vitalNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 263, -1, -1));
 
+        dosageYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        dosageYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         dosageYesRadio.setText("Yes");
         dosageYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dosageYesRadioActionPerformed(evt);
             }
         });
+        add(dosageYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, -1, -1));
 
+        coldYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        coldYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         coldYesRadio.setText("Yes");
         coldYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coldYesRadioActionPerformed(evt);
             }
         });
+        add(coldYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 331, -1, -1));
 
+        tempYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        tempYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         tempYesRadio.setText("Yes");
         tempYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tempYesRadioActionPerformed(evt);
             }
         });
+        add(tempYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 362, -1, -1));
 
+        dosageNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        dosageNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         dosageNoRadio.setText("No");
         dosageNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dosageNoRadioActionPerformed(evt);
             }
         });
+        add(dosageNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 300, -1, -1));
 
+        coldNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        coldNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         coldNoRadio.setText("No");
         coldNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coldNoRadioActionPerformed(evt);
             }
         });
+        add(coldNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 331, -1, -1));
 
+        tempNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        tempNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         tempNoRadio.setText("No");
         tempNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tempNoRadioActionPerformed(evt);
             }
         });
+        add(tempNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 362, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Vital Signs : ");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 412, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Dosage : ");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 444, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Cold, cough : ");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 470, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Temperature : ");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 512, -1, -1));
 
+        vitalSignBar.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        vitalSignBar.setForeground(new java.awt.Color(0, 255, 51));
+        vitalSignBar.setBorder(null);
+        add(vitalSignBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 412, -1, -1));
+
+        DosageBar.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        DosageBar.setForeground(new java.awt.Color(0, 255, 51));
+        DosageBar.setBorder(null);
+        add(DosageBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 444, -1, -1));
+
+        ColdBar.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        ColdBar.setForeground(new java.awt.Color(0, 255, 51));
+        ColdBar.setBorder(null);
+        add(ColdBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 470, -1, -1));
+
+        TemperatureBar.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        TemperatureBar.setForeground(new java.awt.Color(0, 255, 51));
+        TemperatureBar.setBorder(null);
+        add(TemperatureBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 512, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Final Report : ");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 412, -1, -1));
 
+        jProgressBar1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jProgressBar1.setForeground(new java.awt.Color(0, 255, 51));
+        jProgressBar1.setBorder(null);
+        add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 412, 308, -1));
+
+        jLabel11.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Result : ");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 475, -1, -1));
 
+        jTextField1.setBackground(new java.awt.Color(36, 47, 65));
+        jTextField1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(null);
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 296, -1));
+
+        jButton1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         jButton1.setText("Generate Report!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 544, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("To: ");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 596, 72, -1));
 
+        txtTo.setBackground(new java.awt.Color(36, 47, 65));
+        txtTo.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtTo.setForeground(new java.awt.Color(255, 255, 255));
+        txtTo.setBorder(null);
         txtTo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtToActionPerformed(evt);
             }
         });
+        add(txtTo, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 591, 206, -1));
 
+        jTextArea1.setBackground(new java.awt.Color(36, 47, 65));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jLabel13.setText("Report : ");
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 639, -1, 148));
 
+        jLabel13.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Report : ");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 648, -1, -1));
+
+        jButtonSendReport.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         jButtonSendReport.setText("Send Report!");
         jButtonSendReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSendReportActionPerformed(evt);
             }
         });
+        add(jButtonSendReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 805, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnSubmit))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addGap(314, 314, 314))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel9)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(TemperatureBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel8)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(ColdBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel7)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(DosageBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel6)
-                                                    .addGap(42, 42, 42)
-                                                    .addComponent(vitalSignBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(68, 68, 68))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel13))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButtonSendReport))
-                                        .addGap(151, 151, 151)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(vitalYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(vitalNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(dosageYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dosageNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(coldYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(coldNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tempYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tempNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addGap(59, 59, 59)
-                                        .addComponent(jTextField1)))))))
-                .addContainerGap(509, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(52, 52, 52)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSubmit))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(vitalYesRadio)
-                    .addComponent(vitalNoRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(dosageYesRadio)
-                    .addComponent(dosageNoRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(coldYesRadio)
-                    .addComponent(coldNoRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tempYesRadio)
-                        .addComponent(tempNoRadio)))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(vitalSignBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(DosageBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(ColdBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel11)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(TemperatureBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel13)))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSendReport)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 220, 10));
+
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 220, 10));
+
+        separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine2.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 610, 220, 10));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -603,6 +582,9 @@ public class LabAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JSeparator separatorLine1;
+    private javax.swing.JSeparator separatorLine2;
     private javax.swing.JRadioButton tempNoRadio;
     private javax.swing.JRadioButton tempYesRadio;
     private javax.swing.JTextField txtResult;

@@ -114,6 +114,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 60, 480, 92));
 
+        addJButton.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         addJButton.setText("Add Organization");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,10 +123,13 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
         add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(446, 315, -1, -1));
 
+        organizationJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 81, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 225, 120, -1));
 
-        jLabel1.setText("Organization Type ");
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Organization Type:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 229, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -55,21 +55,30 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         txtName = new javax.swing.JTextField();
         txtScientificName = new javax.swing.JTextField();
         btnback = new javax.swing.JButton();
+        separatorLine = new javax.swing.JSeparator();
+        separatorLine1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtTitle.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtTitle.setForeground(new java.awt.Color(255, 255, 255));
         txtTitle.setText("Add Vaccine");
         add(txtTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 6, -1, -1));
 
+        lblName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 53, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Scientific Name:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 102, -1, -1));
 
+        btnAddVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnAddVaccine.setText("Add");
         btnAddVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,14 +87,24 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         });
         add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 202, -1, -1));
 
+        txtName.setBackground(new java.awt.Color(36, 47, 65));
+        txtName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setBorder(null);
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 48, 86, -1));
-        add(txtScientificName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 97, 86, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 260, -1));
 
+        txtScientificName.setBackground(new java.awt.Color(36, 47, 65));
+        txtScientificName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtScientificName.setForeground(new java.awt.Color(255, 255, 255));
+        txtScientificName.setBorder(null);
+        add(txtScientificName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 260, -1));
+
+        btnback.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnback.setText("<< Back");
         btnback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +112,16 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
             }
         });
         add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 202, -1, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 220, 10));
+
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 220, 10));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -132,6 +161,8 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnback;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblName;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JSeparator separatorLine1;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtScientificName;
     private javax.swing.JLabel txtTitle;

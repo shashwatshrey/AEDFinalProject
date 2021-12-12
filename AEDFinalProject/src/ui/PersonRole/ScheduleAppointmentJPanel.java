@@ -72,6 +72,7 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         btnRequestAppointment = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        separatorLine = new javax.swing.JSeparator();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -80,12 +81,16 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Select Hospital:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 56, -1, -1));
 
+        HospitaljComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         HospitaljComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(HospitaljComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 52, -1, -1));
 
+        btnRequestAppointment.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnRequestAppointment.setText("Request");
         btnRequestAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,9 +99,21 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         });
         add(btnRequestAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 200, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Enter your Email:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 90, -1));
+
+        txtEmail.setBackground(new java.awt.Color(36, 47, 65));
+        txtEmail.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmail.setBorder(null);
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 290, 30));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 280, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestAppointmentActionPerformed
@@ -161,6 +178,7 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator separatorLine;
     private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables
 }

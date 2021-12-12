@@ -84,6 +84,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         enterpriseTypeJComboBox = new javax.swing.JComboBox();
         submitJButton = new javax.swing.JButton();
+        separatorLine = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1240, 848));
@@ -112,28 +113,41 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
 
-        jLabel1.setText("Network");
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Network:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 202, -1, -1));
 
+        networkJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 198, 136, -1));
 
-        jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 306, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Name:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
+        nameJTextField.setBackground(new java.awt.Color(36, 47, 65));
+        nameJTextField.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        nameJTextField.setForeground(new java.awt.Color(255, 255, 255));
+        nameJTextField.setBorder(null);
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameJTextFieldActionPerformed(evt);
             }
         });
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 301, 136, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 301, 190, 20));
 
-        jLabel3.setText("Enterprise Type");
+        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Enterprise Type:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 260, -1, -1));
 
+        enterpriseTypeJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(enterpriseTypeJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 256, 136, -1));
 
+        submitJButton.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +155,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
         add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 345, -1, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
@@ -203,6 +222,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox networkJComboBox;
+    private javax.swing.JSeparator separatorLine;
     private javax.swing.JButton submitJButton;
     // End of variables declaration//GEN-END:variables
 }

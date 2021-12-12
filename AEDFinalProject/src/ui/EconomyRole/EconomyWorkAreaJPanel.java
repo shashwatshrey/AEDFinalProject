@@ -68,12 +68,17 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         txtGap = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtPrice = new javax.swing.JTextField();
+        separatorLine = new javax.swing.JSeparator();
+        separatorLine1 = new javax.swing.JSeparator();
+        separatorLine2 = new javax.swing.JSeparator();
+        separatorLine3 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnApprove.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnApprove.setText("Approve Vaccine");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +87,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 562, -1, -1));
 
+        btnReject.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnReject.setText("Reject Vaccine");
         btnReject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +96,11 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 562, -1, -1));
 
+        jTextField1.setBackground(new java.awt.Color(36, 47, 65));
+        jTextField1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("EconomyWorkArea");
+        jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -113,33 +123,79 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 92, -1, 241));
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Quantity per dose(in mg):");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 367, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Number of doses:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 411, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gap between dose(in days):");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 455, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, -1));
 
+        txtQty.setBackground(new java.awt.Color(36, 47, 65));
+        txtQty.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtQty.setForeground(new java.awt.Color(255, 255, 255));
+        txtQty.setBorder(null);
         txtQty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtQtyActionPerformed(evt);
             }
         });
-        add(txtQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 362, 83, -1));
-        add(txtNoDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 406, 83, -1));
+        add(txtQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 362, 210, -1));
 
+        txtNoDose.setBackground(new java.awt.Color(36, 47, 65));
+        txtNoDose.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtNoDose.setForeground(new java.awt.Color(255, 255, 255));
+        txtNoDose.setBorder(null);
+        add(txtNoDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 220, 20));
+
+        txtGap.setBackground(new java.awt.Color(36, 47, 65));
+        txtGap.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtGap.setForeground(new java.awt.Color(255, 255, 255));
+        txtGap.setBorder(null);
         txtGap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtGapActionPerformed(evt);
             }
         });
-        add(txtGap, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 450, 83, -1));
+        add(txtGap, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 230, -1));
 
+        jLabel4.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Price (in USD):");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 499, -1, -1));
-        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 494, 83, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, -1, -1));
+
+        txtPrice.setBackground(new java.awt.Color(36, 47, 65));
+        txtPrice.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtPrice.setForeground(new java.awt.Color(255, 255, 255));
+        txtPrice.setBorder(null);
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 250, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 180, -1));
+
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 180, -1));
+
+        separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine2.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 180, -1));
+
+        separatorLine3.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine3.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine3.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateTable(){
@@ -242,6 +298,10 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JSeparator separatorLine1;
+    private javax.swing.JSeparator separatorLine2;
+    private javax.swing.JSeparator separatorLine3;
     private javax.swing.JTextField txtGap;
     private javax.swing.JTextField txtNoDose;
     private javax.swing.JTextField txtPrice;

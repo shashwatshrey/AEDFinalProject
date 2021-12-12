@@ -61,15 +61,22 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Medicine List");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 66, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Medicine List:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
+        txtMedList.setBackground(new java.awt.Color(36, 47, 65));
         txtMedList.setColumns(20);
+        txtMedList.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtMedList.setForeground(new java.awt.Color(255, 255, 255));
         txtMedList.setRows(5);
+        txtMedList.setBorder(null);
         jScrollPane1.setViewportView(txtMedList);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 57, -1, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
+        btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

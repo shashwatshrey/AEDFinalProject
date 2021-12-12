@@ -82,34 +82,50 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txtrequestQty = new javax.swing.JTextField();
         btnOrderVaccine = new javax.swing.JButton();
+        separatorLine = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Select Manufacturer");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 605, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Select Manufacturer:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
+        ManufacturerjComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         ManufacturerjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ManufacturerjComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ManufacturerjComboBoxActionPerformed(evt);
             }
         });
-        add(ManufacturerjComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 601, -1, -1));
+        add(ManufacturerjComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
 
-        jLabel2.setText("Enter Quantity");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 666, -1, -1));
-        add(txtrequestQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 661, 89, -1));
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Enter Quantity:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
+        txtrequestQty.setBackground(new java.awt.Color(36, 47, 65));
+        txtrequestQty.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtrequestQty.setBorder(null);
+        add(txtrequestQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 180, -1));
+
+        btnOrderVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnOrderVaccine.setText("Order");
         btnOrderVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrderVaccineActionPerformed(evt);
             }
         });
-        add(btnOrderVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 744, -1, -1));
+        add(btnOrderVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ManufacturerjComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManufacturerjComboBoxActionPerformed
@@ -230,6 +246,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnOrderVaccine;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator separatorLine;
     private javax.swing.JTextField txtrequestQty;
     // End of variables declaration//GEN-END:variables
 

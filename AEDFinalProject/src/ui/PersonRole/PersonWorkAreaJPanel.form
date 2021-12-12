@@ -48,6 +48,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnvcn">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Optima" size="16" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Schedule Vaccination"/>
       </Properties>
       <Events>
@@ -61,6 +64,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnappt">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Optima" size="16" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Schedule Appointment"/>
       </Properties>
       <Events>

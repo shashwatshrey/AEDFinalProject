@@ -79,6 +79,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnSendSample.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSendSample.setText("Send Sample for approval");
         btnSendSample.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +88,8 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnSendSample, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 666, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manufacturing Work area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 78, -1, -1));
 
@@ -105,6 +108,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 112, -1, 229));
 
+        btnAddVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnAddVaccine.setText("Add Vaccine");
         btnAddVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +117,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 666, -1, -1));
 
+        btnOrder.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnOrder.setText("Order Management");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +126,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 713, -1, -1));
 
+        jButton1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         jButton1.setText("Delete Vaccine");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

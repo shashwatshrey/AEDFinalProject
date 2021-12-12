@@ -72,6 +72,8 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Purchase Work Area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 61, -1, -1));
 
@@ -90,6 +92,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, 368, 172));
 
+        btnreqVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnreqVaccine.setText("Request Vaccine");
         btnreqVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

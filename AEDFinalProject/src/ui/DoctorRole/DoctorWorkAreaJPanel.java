@@ -75,9 +75,12 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Doctor Work Area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 45, -1, -1));
 
+        btnTest.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnTest.setText("Test Record");
         btnTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +105,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 95, -1, 246));
 
+        btnApprove.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnApprove.setText("Approve");
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,8 +113,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, -1));
+
+        appointmentjDateChooser.setBackground(new java.awt.Color(36, 47, 65));
         add(appointmentjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 359, -1, -1));
 
+        btnPrescribeMed.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnPrescribeMed.setText("Prescribe Medicine");
         btnPrescribeMed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

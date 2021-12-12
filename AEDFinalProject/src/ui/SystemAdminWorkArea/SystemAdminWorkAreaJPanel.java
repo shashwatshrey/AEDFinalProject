@@ -41,10 +41,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         menuPanel = new javax.swing.JPanel();
         onePanel = new javax.swing.JPanel();
         lblNetwork = new javax.swing.JLabel();
+        iconNetwork = new javax.swing.JLabel();
         twoPanel = new javax.swing.JPanel();
         lblEnterprise = new javax.swing.JLabel();
+        iconEnterprise = new javax.swing.JLabel();
         threePanel = new javax.swing.JPanel();
         lblProfile = new javax.swing.JLabel();
+        iconAdmin = new javax.swing.JLabel();
         cardWorkPanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(36, 47, 65));
@@ -59,14 +62,14 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menuPanel.setBackground(new java.awt.Color(36, 47, 65));
-        menuPanel.setMaximumSize(new java.awt.Dimension(200, 848));
-        menuPanel.setMinimumSize(new java.awt.Dimension(200, 848));
-        menuPanel.setPreferredSize(new java.awt.Dimension(200, 848));
+        menuPanel.setMaximumSize(new java.awt.Dimension(250, 848));
+        menuPanel.setMinimumSize(new java.awt.Dimension(250, 848));
+        menuPanel.setPreferredSize(new java.awt.Dimension(250, 848));
         menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         onePanel.setBackground(new java.awt.Color(36, 47, 65));
-        onePanel.setMinimumSize(new java.awt.Dimension(200, 40));
-        onePanel.setPreferredSize(new java.awt.Dimension(200, 40));
+        onePanel.setMinimumSize(new java.awt.Dimension(250, 40));
+        onePanel.setPreferredSize(new java.awt.Dimension(250, 40));
         onePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 onePanelMousePressed(evt);
@@ -86,23 +89,29 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         onePanelLayout.setHorizontalGroup(
             onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onePanelLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(lblNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(iconNetwork, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
+                .addComponent(lblNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         onePanelLayout.setVerticalGroup(
             onePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(onePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(iconNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, onePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         menuPanel.add(onePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
         twoPanel.setBackground(new java.awt.Color(36, 47, 65));
-        twoPanel.setMinimumSize(new java.awt.Dimension(200, 40));
-        twoPanel.setPreferredSize(new java.awt.Dimension(200, 40));
+        twoPanel.setMinimumSize(new java.awt.Dimension(250, 40));
+        twoPanel.setPreferredSize(new java.awt.Dimension(250, 40));
         twoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 twoPanelMousePressed(evt);
@@ -117,27 +126,36 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         lblEnterprise.setMinimumSize(new java.awt.Dimension(180, 20));
         lblEnterprise.setPreferredSize(new java.awt.Dimension(180, 20));
 
+        iconEnterprise.setText("jLabel2");
+
         javax.swing.GroupLayout twoPanelLayout = new javax.swing.GroupLayout(twoPanel);
         twoPanel.setLayout(twoPanelLayout);
         twoPanelLayout.setHorizontalGroup(
             twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, twoPanelLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(iconEnterprise)
+                .addGap(34, 34, 34)
+                .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         twoPanelLayout.setVerticalGroup(
             twoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(twoPanelLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(iconEnterprise)
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, twoPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        menuPanel.add(twoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
+        menuPanel.add(twoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         threePanel.setBackground(new java.awt.Color(36, 47, 65));
-        threePanel.setMinimumSize(new java.awt.Dimension(200, 40));
+        threePanel.setMinimumSize(new java.awt.Dimension(250, 40));
+        threePanel.setPreferredSize(new java.awt.Dimension(250, 40));
         threePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 threePanelMousePressed(evt);
@@ -149,12 +167,16 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         lblProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProfile.setText("CREATE ADMIN PROFILE");
 
+        iconAdmin.setText("jLabel3");
+
         javax.swing.GroupLayout threePanelLayout = new javax.swing.GroupLayout(threePanel);
         threePanel.setLayout(threePanelLayout);
         threePanelLayout.setHorizontalGroup(
             threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, threePanelLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+            .addGroup(threePanelLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(iconAdmin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblProfile)
                 .addContainerGap())
         );
@@ -162,18 +184,24 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(threePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblProfile)
-                .addContainerGap())
+                .addGroup(threePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(threePanelLayout.createSequentialGroup()
+                        .addComponent(iconAdmin)
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, threePanelLayout.createSequentialGroup()
+                        .addComponent(lblProfile)
+                        .addContainerGap())))
         );
 
-        menuPanel.add(threePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, 40));
+        menuPanel.add(threePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
         background.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         cardWorkPanel.setBackground(new java.awt.Color(36, 47, 65));
-        cardWorkPanel.setPreferredSize(new java.awt.Dimension(1240, 848));
+        cardWorkPanel.setMinimumSize(new java.awt.Dimension(1190, 848));
+        cardWorkPanel.setPreferredSize(new java.awt.Dimension(1190, 848));
         cardWorkPanel.setLayout(new java.awt.CardLayout());
-        background.add(cardWorkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, -1, -1));
+        background.add(cardWorkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, -1));
 
         add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -212,6 +240,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JPanel cardWorkPanel;
+    private javax.swing.JLabel iconAdmin;
+    private javax.swing.JLabel iconEnterprise;
+    private javax.swing.JLabel iconNetwork;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblNetwork;
     private javax.swing.JLabel lblProfile;

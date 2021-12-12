@@ -97,6 +97,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         passwordJPasswordField = new javax.swing.JPasswordField();
+        separatorLine = new javax.swing.JSeparator();
+        separatorLine1 = new javax.swing.JSeparator();
+        separatorLine2 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1240, 848));
@@ -126,47 +129,91 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 58, 523, 95));
 
-        jLabel1.setText("Network");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 202, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Network:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
+        networkJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         networkJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkJComboBoxActionPerformed(evt);
             }
         });
-        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 198, 136, -1));
+        add(networkJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 136, -1));
 
-        jLabel2.setText("Username");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 306, -1, -1));
-        add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 301, 136, -1));
+        jLabel2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Username:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
-        jLabel3.setText("Enterprise");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 260, -1, -1));
+        usernameJTextField.setBackground(new java.awt.Color(36, 47, 65));
+        usernameJTextField.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        usernameJTextField.setForeground(new java.awt.Color(255, 255, 255));
+        usernameJTextField.setBorder(null);
+        add(usernameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 301, 210, 20));
 
+        jLabel3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Enterprise:");
+        jLabel3.setToolTipText("");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+
+        enterpriseJComboBox.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         enterpriseJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         enterpriseJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterpriseJComboBoxActionPerformed(evt);
             }
         });
-        add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 256, 136, -1));
+        add(enterpriseJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 136, -1));
 
+        submitJButton.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, -1, -1));
 
-        jLabel4.setText("Password");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 350, -1, -1));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 389, 136, -1));
+        jLabel4.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Password:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
 
-        jLabel5.setText("Name");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 394, -1, -1));
-        add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 345, 134, -1));
+        nameJTextField.setBackground(new java.awt.Color(36, 47, 65));
+        nameJTextField.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        nameJTextField.setForeground(new java.awt.Color(255, 255, 255));
+        nameJTextField.setBorder(null);
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 180, 20));
+
+        jLabel5.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Name:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+
+        passwordJPasswordField.setBackground(new java.awt.Color(36, 47, 65));
+        passwordJPasswordField.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        passwordJPasswordField.setForeground(new java.awt.Color(255, 255, 255));
+        passwordJPasswordField.setBorder(null);
+        add(passwordJPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 345, 210, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 180, -1));
+
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 180, -1));
+
+        separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine2.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
@@ -240,6 +287,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox networkJComboBox;
     private javax.swing.JPasswordField passwordJPasswordField;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JSeparator separatorLine1;
+    private javax.swing.JSeparator separatorLine2;
     private javax.swing.JButton submitJButton;
     private javax.swing.JTextField usernameJTextField;
     // End of variables declaration//GEN-END:variables
