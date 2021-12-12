@@ -86,14 +86,14 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
         requestTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Status", "Result", "Name"
+                "Message", "Sender", "Sender Email", "Receiver", "Status", "Result", "Name"
             }
         ));
         jScrollPane1.setViewportView(requestTable);
@@ -215,15 +215,17 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[6];
+            Object[] row = new Object[7];
             if(request instanceof appointment){
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
-            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
-            row[3] = request.getStatus();
+            String email = ((appointment) request).getEmail();
+            row[2] = email;
+            row[3] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[4] = request.getStatus();
             String result = ((appointment) request).getTestResult();
-            row[4] = result;
-            row[5] = request.getReceiver().getUsername();
+            row[5] = result;
+            row[6] = request.getReceiver().getUsername();
             
             model.addRow(row);
         }

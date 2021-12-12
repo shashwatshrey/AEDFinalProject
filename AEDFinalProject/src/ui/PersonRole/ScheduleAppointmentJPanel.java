@@ -67,6 +67,8 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         HospitaljComboBox = new javax.swing.JComboBox<>();
         btnRequestAppointment = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -88,6 +90,10 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
             }
         });
         add(btnRequestAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 200, -1, -1));
+
+        jLabel2.setText("Enter your Email:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 90, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestAppointmentActionPerformed
@@ -102,6 +108,7 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         v.setPerson(userAccount);
         v.setSender(userAccount);
         v.setStatus("Requested");
+        v.setEmail(txtEmail.getText());
         v.setMessage(userAccount.getUsername());
        
         Network currNet = enterprise.getNetwork();
@@ -144,5 +151,7 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnRequestAppointment;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables
 }
