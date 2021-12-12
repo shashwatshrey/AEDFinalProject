@@ -91,13 +91,13 @@ public class LabAreaJPanel extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Status", "Result"
+                "Message", "Sender", "Sender Email", "Receiver", "Status", "Result"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -503,14 +503,16 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[5];
+            Object[] row = new Object[6];
             if(request instanceof appointment){
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
-            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
-            row[3] = request.getStatus();
+            String email = ((appointment) request).getEmail();
+            row[2] = email;
+            row[3] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[4] = request.getStatus();
             String result = ((appointment) request).getTestResult();
-            row[4] = result;
+            row[5] = result;
             
             
             model.addRow(row);
