@@ -4,6 +4,7 @@
  */
 package ui.DoctorRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -35,6 +36,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem system;
     private UserAccount userAccount;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
@@ -182,6 +184,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         appointment a = (appointment)requestTable.getValueAt(selectedRow, 0);
         a.setDate(appointmentjDateChooser.getDate().toString());
         a.setStatus("Approved");
+        dB4OUtil.storeSystem(system);
+        
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void btnPrescribeMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrescribeMedActionPerformed

@@ -4,6 +4,8 @@
  */
 package ui.AdministrativeRole;
 
+import Business.DB4OUtil.DB4OUtil;
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
@@ -20,6 +22,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory directory;
     private JPanel userProcessContainer;
+    private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     //private Enterprise enterprise;
     
     /**
@@ -133,6 +137,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         System.out.print(type.getValue());
         populateTable();
         System.out.print(type.getValue());
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_addJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

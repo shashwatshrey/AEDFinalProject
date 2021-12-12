@@ -4,12 +4,15 @@
  */
 package ui.AdministrativeRole;
 
+import Business.DB4OUtil.DB4OUtil;
+import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +27,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
      */
     private JPanel container;
     private Enterprise enterprise;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private EcoSystem system;
 
     public ManageUserAccountJPanel(JPanel container, Enterprise enterprise) {
         initComponents();
@@ -185,8 +190,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
         
-        organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+        if(userName.equals("") || password.equals("")){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         
+        organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+        dB4OUtil.storeSystem(system);
+        nameJTextField.setText("");
+        passwordJTextField.setText("");
         popData();
     }//GEN-LAST:event_createUserJButtonActionPerformed
 

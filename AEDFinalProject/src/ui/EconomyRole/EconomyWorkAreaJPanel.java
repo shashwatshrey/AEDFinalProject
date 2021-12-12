@@ -4,6 +4,7 @@
  */
 package ui.EconomyRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -30,6 +31,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
     private EcoSystem system;
     private UserAccount userAccount;
     private VaccineDirectory directory;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
@@ -160,6 +162,10 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
         // TODO add your handling code here:
+        if(txtGap.getText().equals("") || txtNoDose.getText().equals("") || txtPrice.getText().equals("") || txtQty.equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill all fields", "Warning", JOptionPane.WARNING_MESSAGE);
+            
+        }
         int selectedRow = workRequestJTable.getSelectedRow();
         
         if (selectedRow < 0){
@@ -183,6 +189,11 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         request.getVaccine().setPrice(Double.parseDouble(txtPrice.getText()));
         populateTable();
         }
+        dB4OUtil.storeSystem(system);
+        txtGap.setText("");
+        txtNoDose.setText("");
+        txtPrice.setText("");
+        txtQty.setText("");
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed

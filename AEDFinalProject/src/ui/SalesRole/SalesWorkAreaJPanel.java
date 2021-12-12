@@ -5,6 +5,7 @@
  */
 package ui.SalesRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -37,6 +38,7 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private Network network;
     private UserAccount userAccount;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
@@ -174,6 +176,8 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
                 return;
             }
         }
+        dB4OUtil.storeSystem(system);
+        txtComments.setText("");
     }//GEN-LAST:event_btnApproveActionPerformed
 
 

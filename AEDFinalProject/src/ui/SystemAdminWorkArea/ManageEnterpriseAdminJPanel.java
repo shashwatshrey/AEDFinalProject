@@ -13,6 +13,7 @@ import Business.Role.AdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -187,9 +188,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String name = nameJTextField.getText();
         
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
-        
+        if(username.equals("") || password.equals("")||name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
         populateTable();
+        
         dB4OUtil.storeSystem(system);
         passwordJPasswordField.setText("");
         nameJTextField.setText("");
@@ -197,6 +202,23 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
       
         
     }//GEN-LAST:event_submitJButtonActionPerformed
+
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
+         Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        try{
+            SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        }catch(Exception e){
+            System.out.println("Exception caught");
+        }
+        
+        //JTree removed --> sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
 
     private void enterpriseJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseJComboBoxActionPerformed
         // TODO add your handling code here:

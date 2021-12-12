@@ -5,6 +5,7 @@
  */
 package ui.ManufacturingRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.ManufacturingOrganization;
@@ -35,6 +36,7 @@ public class OrderJPanel extends javax.swing.JPanel {
     private ManufacturingOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
     public OrderJPanel(JPanel userProcessContainer, Enterprise enterprise, OrganizationDirectory directory, ManufacturingOrganization organization, UserAccount userAccount) {
         initComponents();
@@ -144,7 +146,8 @@ public class OrderJPanel extends javax.swing.JPanel {
                 return;
             }
         }
-        
+        dB4OUtil.storeSystem(system);
+        txtComments.setText("");
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed

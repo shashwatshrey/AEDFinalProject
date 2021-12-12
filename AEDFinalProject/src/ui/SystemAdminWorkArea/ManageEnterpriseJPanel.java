@@ -152,17 +152,43 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Invalid Input!");
             return;
         }
+        
 
         String name = nameJTextField.getText();
-
+        if(name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type, network);
         System.out.println(network.getName());
 
         populateTable();
+        //stores in the database
         dB4OUtil.storeSystem(system);
         nameJTextField.setText("");
 
     }//GEN-LAST:event_submitJButtonActionPerformed
+
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
+         Component[] componentArray = userProcessContainer.getComponents();
+         try{
+             Component component = componentArray[componentArray.length - 1];
+             SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+         }catch(Exception e){
+             System.out.println("Exception caught!");
+         }
+        
+        
+        
+        
+        //Jtree -> removed -> sysAdminwjp.populateTree();
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
 
     private void nameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameJTextFieldActionPerformed
         // TODO add your handling code here:

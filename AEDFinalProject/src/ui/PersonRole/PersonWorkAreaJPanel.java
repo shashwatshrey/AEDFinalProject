@@ -5,6 +5,7 @@
  */
 package ui.PersonRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.PersonOrganization;
@@ -30,6 +31,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
      private PersonOrganization organization;
      private Enterprise enterprise;
      private EcoSystem business;
+     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     
     public PersonWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, PersonOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
@@ -125,6 +127,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+         dB4OUtil.storeSystem(business);
     }//GEN-LAST:event_btnvcnActionPerformed
 
     private void btnapptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnapptActionPerformed
