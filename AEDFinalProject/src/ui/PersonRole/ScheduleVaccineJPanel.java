@@ -97,7 +97,8 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
                     for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
                         System.out.println("2");
                         System.out.println(u.getUsername());
-                        if(u.getUsername().equals(jComboBox1.getSelectedItem().toString())){
+                        if(u.getRole().toString().equals("Business.Role.DistributionRole")){
+                            System.out.println(u.getUsername());
                             v.setReceiver(u);
                             receiver = u;
                         }

@@ -29,7 +29,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
      private Organization organization;
      private Enterprise enterprise;
      private EcoSystem business;
-     private UserAccount person;
+//     private UserAccount person;
     public PharmaWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.account = account;
@@ -37,7 +37,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.enterprise = enterprise;
         this.userProcessContainer = userProcessContainer;
-        this.person = person;
+//        this.person = person;
         populateTable();
     }
 
@@ -54,12 +54,17 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         MedListjTable = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(36, 47, 65));
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnSubmit.setText("Available");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 804, -1, -1));
 
         MedListjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,29 +79,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(MedListjTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(btnSubmit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(232, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                .addComponent(btnSubmit)
-                .addGap(15, 15, 15))
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 23, -1, 275));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -122,9 +105,13 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) MedListjTable.getModel();
         model.setRowCount(0);
         
+            System.out.println("Outside for");
         for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[5];
-            if(wr instanceof prescribeMedicine){
+            System.out.println("inside for");
+//            if(wr instanceof prescribeMedicine){
+                
+            System.out.println("wr found");
                 row[0] = wr;
                 row[1] = wr.getSender().getUsername();
                 row[2] = wr.getReceiver().getUsername();
@@ -132,7 +119,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
                 row[3] = ml;
                 row[4] = wr.getStatus();
                 model.addRow(row);
-            }
+//            }
         }
     }
 }

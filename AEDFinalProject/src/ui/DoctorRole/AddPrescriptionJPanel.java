@@ -84,12 +84,19 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
             pm.setPerson(person);
             pm.setSender(account);
             Network cn = enterprise.getNetwork();
+            System.out.println("Outside for");
             for(Enterprise e : cn.getEnterpriseDirectory().getEnterpriseList()){
+                System.out.println("inside for");
                 if(e.getEnterpriseType() == EnterpriseType.Hospital){
+                    System.out.println("inside enterprise");
                     for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                        System.out.println("inside for org");
                         for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                            System.out.println("inside for user");
                             if(u.getRole().toString().equals("Business.Role.PharmaRole")){
+                                System.out.println("user found");
                                 pm.setReceiver(u);
+                                System.out.println(u.getUsername());
                                 pharma = u;
                                 break;
                             }
@@ -102,6 +109,7 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
             pm.setStatus("Request");
             person.getWorkQueue().getWorkRequestList().add(pm);
             account.getWorkQueue().getWorkRequestList().add(pm);
+            pharma.getWorkQueue().getWorkRequestList().add(pm);
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
@@ -114,6 +122,6 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private boolean validate(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 }
