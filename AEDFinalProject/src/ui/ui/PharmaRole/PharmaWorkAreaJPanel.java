@@ -29,7 +29,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
      private Organization organization;
      private Enterprise enterprise;
      private EcoSystem business;
-     private UserAccount person;
+//     private UserAccount person;
     public PharmaWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.account = account;
@@ -37,7 +37,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         this.organization = organization;
         this.enterprise = enterprise;
         this.userProcessContainer = userProcessContainer;
-        this.person = person;
+//        this.person = person;
         populateTable();
     }
 
@@ -105,9 +105,13 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) MedListjTable.getModel();
         model.setRowCount(0);
         
+            System.out.println("Outside for");
         for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[5];
-            if(wr instanceof prescribeMedicine){
+            System.out.println("inside for");
+//            if(wr instanceof prescribeMedicine){
+                
+            System.out.println("wr found");
                 row[0] = wr;
                 row[1] = wr.getSender().getUsername();
                 row[2] = wr.getReceiver().getUsername();
@@ -115,7 +119,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
                 row[3] = ml;
                 row[4] = wr.getStatus();
                 model.addRow(row);
-            }
+//            }
         }
     }
 }
