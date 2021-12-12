@@ -76,6 +76,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         vaccinate v = new vaccinate();
         UserAccount receiver = new UserAccount();
+        UserAccount health = new UserAccount();
         if(jComboBox1.getSelectedItem()==null){
             JOptionPane.showMessageDialog(this, "Please select a distribution center to request vaccination");
             return;
@@ -96,9 +97,27 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
                     for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
                         System.out.println("2");
                         System.out.println(u.getUsername());
-                        if(u.getUsername().equals(jComboBox1.getSelectedItem().toString())){
+                        if(u.getRole().toString().equals("Business.Role.DistributionRole")){
+                            System.out.println(u.getUsername());
                             v.setReceiver(u);
                             receiver = u;
+                        }
+                    }
+                }
+            }
+        }
+        for(Enterprise e : currNet.getEnterpriseDirectory().getEnterpriseList()){
+            System.out.print("1");
+            System.out.println(e.getEnterpriseType());
+            if(e.getEnterpriseType().toString().equals("Government")){
+                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        System.out.println("2");
+                        System.out.println(u.getUsername());
+                        if(u.getRole().toString().equals("Business.Role.HealthRole")){
+                            v.setHealth(u);
+                            health = u;
+                            break;
                         }
                     }
                 }
@@ -116,6 +135,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
 //        }
         receiver.getWorkQueue().getWorkRequestList().add(v);
         userAccount.getWorkQueue().getWorkRequestList().add(v);
+        health.getWorkQueue().getWorkRequestList().add(v);
         JOptionPane.showMessageDialog(this, "Request sent");
     }//GEN-LAST:event_btnRequestActionPerformed
 

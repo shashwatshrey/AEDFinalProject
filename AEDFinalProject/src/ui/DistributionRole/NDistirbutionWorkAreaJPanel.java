@@ -7,14 +7,17 @@ package ui.DistributionRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.Enterprise.EnterpriseType;
 import Business.Enterprise.ServiceEnterprise;
 import Business.Network.Network;
 import Business.Organization.DistributionOrganization;
+import Business.Organization.Organization;
+import Business.Organization.PurchaseInventory;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.requestVaccine;
 import Business.WorkQueue.vaccinate;
-import Business.WorkQueue.vaccineCount;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -68,6 +71,8 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         txtvaccineCount = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        vaccinejTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -78,7 +83,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 28, -1, -1));
 
         jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 438, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         btnSchedule.setText("Schedule");
         btnSchedule.addActionListener(new java.awt.event.ActionListener() {
@@ -86,9 +91,9 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
                 btnScheduleActionPerformed(evt);
             }
         });
-        add(btnSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 511, -1, -1));
-        add(VaccinationjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 511, -1, -1));
-        add(txtvaccineCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 433, 123, -1));
+        add(btnSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
+        add(VaccinationjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+        add(txtvaccineCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 123, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,6 +109,21 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 106, 485, 121));
+
+        vaccinejTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Sender", "Receiver", "Quantity", "Status"
+            }
+        ));
+        jScrollPane2.setViewportView(vaccinejTable);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, -1, 230));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScheduleActionPerformed
@@ -132,8 +152,31 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         req.setDate(VaccinationjDateChooser.getDate().toString());
         System.out.print(VaccinationjDateChooser.getDate().toString());
         req.setStatus("Approved");
+        currEP-=1;
+        ((ServiceEnterprise) enterprise).setVaccineCount(currEP);
+        
         System.out.println(enterprise.getName());
         JOptionPane.showMessageDialog(this, "Vaccination Scheduled");
+        Network cn = enterprise.getNetwork();
+        for(Enterprise e : cn.getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == EnterpriseType.Service){
+                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        if(u.getRole().toString().equals("Business.Role.PurchaseRole")){
+                            for(WorkRequest wr : u.getWorkQueue().getWorkRequestList()){
+                                int p = ((requestVaccine) wr).getQty();
+                                p -=1;
+                                ((requestVaccine) wr).setQty(p);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        populateTable();
+        populateVaccineTable();
+//        populateCount();
     }//GEN-LAST:event_btnScheduleActionPerformed
 
 
@@ -143,8 +186,10 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtvaccineCount;
+    private javax.swing.JTable vaccinejTable;
     // End of variables declaration//GEN-END:variables
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -169,6 +214,61 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
                 int i = ((requestVaccine) wr).getCount();
                 txtvaccineCount.setText(Integer.toString(i));
             }
+        }
+    }
+
+    private void populateVaccineTable() {
+        DefaultTableModel model = (DefaultTableModel) vaccinejTable.getModel();
+        model.setRowCount(0);
+        UserAccount distributor = new UserAccount();
+        try{
+        for(WorkRequest rv:userAccount.getWorkQueue().getWorkRequestList()){
+            System.out.println(enterprise.getName());
+        ArrayList<PurchaseInventory> inv = ((requestVaccine) rv).getInventoryPurchase();
+            Object row[] = new Object[4];
+            row[0] = rv;
+            row[1] = rv.getReceiver().getUsername();
+            if(inv!=null){
+            for(PurchaseInventory p : inv){
+                int c = ((requestVaccine) rv).getCount();
+                row[2] = p.getQty();
+                
+                if(rv.getStatus().equals("Approved")){
+                System.out.println(enterprise.getName());
+                for(Organization o : enterprise.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        System.out.println(u.getRole().toString());
+                        if(u.getRole().toString().equals("Business.Role.DistributionRole")){
+                            ((requestVaccine) rv).setDistribution(u);
+                            distributor = u;
+//                            System.out.println(o.getName());
+//                            VaccineCount vc = new VaccineCount();
+//                            vc.setVaccineName(rv.getReceiver().toString());
+//                            vc.setCount(p.getQty());
+//                            currEP += p.getQty();
+                            System.out.println(p.getQty());
+                            c+=p.getQty();
+                            System.out.println(c);
+                            
+//                            DistributionOrganization org = ((DistributionOrganization) o).getVaccineDirectory().add(vc);
+                        }
+                    }
+                }
+            }
+                ((requestVaccine) rv).setCount(c);
+                distributor.getWorkQueue().getWorkRequestList().add(rv);
+                
+            }
+            }
+            row[3] = rv.getStatus();
+            System.out.println(rv.getStatus());
+            
+//            row[2] = 
+            model.addRow(row);
+        }
+        }
+        catch(NullPointerException e){
+            System.out.println("No records found");
         }
     }
 }

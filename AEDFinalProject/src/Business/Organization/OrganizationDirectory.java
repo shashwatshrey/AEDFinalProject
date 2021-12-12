@@ -33,6 +33,10 @@ public class OrganizationDirectory {
             organization = new PersonOrganization();
             organizationList.add(organization);
         }
+        else if(type.getValue().equals(Type.Pharma.getValue())){
+            organization = new PharmaOrganization();
+            organizationList.add(organization);
+        }
         else if (type.getValue().equals(Type.Lab.getValue())){
             organization = new LabOrganization();
             organizationList.add(organization);

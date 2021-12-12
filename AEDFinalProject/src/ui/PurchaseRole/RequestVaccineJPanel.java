@@ -82,6 +82,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Select Manufacturer");
@@ -121,6 +122,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         UserAccount receive = new UserAccount();
+        UserAccount dist = new UserAccount();
         if(validate(ManufacturerjComboBox.getSelectedItem().toString(),txtrequestQty.getText())){
             PurchaseInventory pi = new PurchaseInventory();
             pi.setManuEP(currEP);
@@ -141,6 +143,19 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
                     }
                 }
             }
+            Network currnet = enterprise.getNetwork();
+        for(Enterprise e: currnet.getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == EnterpriseType.Service){
+                for(Organization o: e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        if(u.getRole().toString().equals("Business.Role.DistributionRole")){
+                            rv.setDistribution(u);
+                            dist = u;
+                        }
+                    }
+                }
+            }
+        }
 //            for(UserAccount u : currEP.getUserAccountDirectory().getUserAccountList()){
 //                System.out.println(ManufacturerjComboBox.getSelectedItem().toString());
 //                if(u.getUsername().toString().equals(ManufacturerjComboBox.getSelectedItem().toString())){
@@ -154,7 +169,8 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
             rv.setQty(Integer.parseInt(txtrequestQty.getText()));
             rv.setInventoryPurchase(inventory);
             receive.getWorkQueue().getWorkRequestList().add(rv);
-            Network currnet = enterprise.getNetwork();
+            dist.getWorkQueue().getWorkRequestList().add(rv);
+//            Network currnet = enterprise.getNetwork();
         for(Enterprise e: currnet.getEnterpriseDirectory().getEnterpriseList()){
         if(e.getEnterpriseType() == EnterpriseType.Pharmaceutical){
             System.out.println("Searching Org");
