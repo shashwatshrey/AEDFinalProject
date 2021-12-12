@@ -123,15 +123,17 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnvcnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvcnActionPerformed
         // TODO add your handling code here:
+        populateVaccineTable();
         ScheduleVaccineJPanel scheduleVaccineJPanel = new ScheduleVaccineJPanel(userProcessContainer, organization, enterprise, business, account);
         userProcessContainer.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-         dB4OUtil.storeSystem(business);
+        dB4OUtil.storeSystem(business);
     }//GEN-LAST:event_btnvcnActionPerformed
 
     private void btnapptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnapptActionPerformed
         // TODO add your handling code here:
+        populateAppointmentTable();
         ScheduleAppointmentJPanel scheduleAppointmentJPanel = new ScheduleAppointmentJPanel(userProcessContainer, organization, enterprise, business, account);
         userProcessContainer.add("scheduleAppointmentJPanel", scheduleAppointmentJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

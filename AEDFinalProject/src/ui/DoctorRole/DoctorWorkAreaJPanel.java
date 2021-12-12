@@ -146,7 +146,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
             
         }
-        
+        populateTable();
         if (org!=null){
             org.getWorkQueue().getWorkRequestList().add(a);
             labUser.getWorkQueue().getWorkRequestList().add(a);
@@ -185,7 +185,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         a.setDate(appointmentjDateChooser.getDate().toString());
         a.setStatus("Approved");
         dB4OUtil.storeSystem(system);
-        
+        populateTable();
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void btnPrescribeMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrescribeMedActionPerformed
@@ -201,7 +201,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("addPresciptionJPanel", addPresciptionJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-        
+        populateTable();
     }//GEN-LAST:event_btnPrescribeMedActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

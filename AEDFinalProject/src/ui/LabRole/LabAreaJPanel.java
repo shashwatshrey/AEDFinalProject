@@ -557,6 +557,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
                 return new PasswordAuthentication(fromEmail , fromEmailPassword);
             }
         });
+        populateTable();
         
         try{
             MimeMessage message = new MimeMessage(session);

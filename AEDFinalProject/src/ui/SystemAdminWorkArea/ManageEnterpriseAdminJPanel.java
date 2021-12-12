@@ -192,6 +192,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        if(!enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(username)){
+            JOptionPane.showMessageDialog(null, "Username already exists, select a new username", "Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
         populateTable();
         

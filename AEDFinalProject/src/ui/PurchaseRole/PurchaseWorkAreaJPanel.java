@@ -101,6 +101,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnreqVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreqVaccineActionPerformed
         // TODO add your handling code here:
+        populateTable();
         RequestVaccineJPanel requestVaccineJPanel = new RequestVaccineJPanel(enterprise.getOrganizationDirectory(), userProcessContainer, organization, enterprise, userAccount);
         userProcessContainer.add("requestVaccineJPanel", requestVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

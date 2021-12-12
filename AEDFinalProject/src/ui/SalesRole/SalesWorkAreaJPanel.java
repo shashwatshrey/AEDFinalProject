@@ -98,6 +98,11 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, -1, 180));
 
         btnReject.setText("Reject");
+        btnReject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRejectActionPerformed(evt);
+            }
+        });
         add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, -1));
         add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 90, -1));
 
@@ -168,6 +173,9 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
         
         
         populateTable();
+        populateApproveTable();
+        dB4OUtil.storeSystem(system);
+        txtComments.setText("");
         }
         break;
             }
@@ -176,9 +184,13 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
                 return;
             }
         }
-        dB4OUtil.storeSystem(system);
-        txtComments.setText("");
+        //dB4OUtil.storeSystem(system);
+        //txtComments.setText("");
     }//GEN-LAST:event_btnApproveActionPerformed
+
+    private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRejectActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

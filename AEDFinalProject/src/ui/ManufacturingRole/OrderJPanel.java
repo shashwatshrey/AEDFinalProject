@@ -138,6 +138,8 @@ public class OrderJPanel extends javax.swing.JPanel {
         
         
         populateTable();
+        dB4OUtil.storeSystem(system);
+        txtComments.setText("");
         }
         break;
             }
@@ -146,8 +148,6 @@ public class OrderJPanel extends javax.swing.JPanel {
                 return;
             }
         }
-        dB4OUtil.storeSystem(system);
-        txtComments.setText("");
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void btnRejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRejectActionPerformed

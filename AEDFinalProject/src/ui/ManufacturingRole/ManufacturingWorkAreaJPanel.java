@@ -219,6 +219,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("addVaccineJPanel", addVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        populateTable();
         }
         else{
             JOptionPane.showMessageDialog(this, "You already have a vaccine produced, please delete it to create a new one");
@@ -231,6 +232,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("orderJPanel", orderJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        populateTable();
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
