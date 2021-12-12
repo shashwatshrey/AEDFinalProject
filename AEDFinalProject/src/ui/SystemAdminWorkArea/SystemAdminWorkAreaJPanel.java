@@ -182,8 +182,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         setColor(threePanel);
         resetColor(new JPanel[]{twoPanel,onePanel});
-        ManageEnterpriseAdminJPanel manageEnterpriseAdminPanel = new ManageEnterpriseAdminJPanel(cardWorkPanel, ecosystem);
-        cardWorkPanel.add("ManageEnterpriseAdminJPanel",manageEnterpriseAdminPanel);
+        ManageEnterpriseAdminJPanel manageEnterpriseAdminJPanel = new ManageEnterpriseAdminJPanel(cardWorkPanel, ecosystem);
+        cardWorkPanel.add("ManageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
         CardLayout layout = (CardLayout) cardWorkPanel.getLayout();
         layout.next(cardWorkPanel);
     }//GEN-LAST:event_threePanelMousePressed
