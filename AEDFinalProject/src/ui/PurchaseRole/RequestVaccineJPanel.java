@@ -219,7 +219,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         }
             
             userAccount.getWorkQueue().getWorkRequestList().add(rv);
-            receive.getWorkQueue().getWorkRequestList().add(rv);
+            //receive.getWorkQueue().getWorkRequestList().add(rv);
 //            for(Network n : business.getNetworkList()){
 //            for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
 //                e.setEnterpriseType(EnterpriseType.Service);

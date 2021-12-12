@@ -14,6 +14,8 @@ import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.appointment;
 import Business.WorkQueue.vaccinate;
 import java.awt.CardLayout;
+import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,6 +34,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
      private Enterprise enterprise;
      private EcoSystem business;
      private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+     private Date v1date;
     
     public PersonWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, PersonOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
@@ -42,6 +45,8 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         this.business = business;
         populateVaccineTable();
         populateAppointmentTable();
+        Date td = new Date();
+//        System.out.println(((td.getTime()-v1date.getTime())/(1000*60*60*24))%365);
     }
 
     /**
@@ -125,21 +130,35 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineActionPerformed
         // TODO add your handling code here:
+        int count = tblVaccineRequest.getModel().getRowCount();
+        if(count==0){
         populateVaccineTable();
         ScheduleVaccineJPanel scheduleVaccineJPanel = new ScheduleVaccineJPanel(userProcessContainer, organization, enterprise, business, account);
         userProcessContainer.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         dB4OUtil.storeSystem(business);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "You already have a vaccination request submitted");
+            return;
+        }
     }//GEN-LAST:event_btnVaccineActionPerformed
 
     private void btnAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAppointmentActionPerformed
         // TODO add your handling code here:
+        int count = tblVaccineRequest.getModel().getRowCount();
+        if(count!=0){
         populateAppointmentTable();
         ScheduleAppointmentJPanel scheduleAppointmentJPanel = new ScheduleAppointmentJPanel(userProcessContainer, organization, enterprise, business, account);
         userProcessContainer.add("scheduleAppointmentJPanel", scheduleAppointmentJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "You can only book an appointment if you have received or a vaccination scheduled!!");
+            return;
+        }
     }//GEN-LAST:event_btnAppointmentActionPerformed
 
 
@@ -158,26 +177,36 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
     private void populateVaccineTable() {
         DefaultTableModel model = (DefaultTableModel) tblVaccineRequest.getModel();
         model.setRowCount(0);
-        
+        System.out.println("out for");
         for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){
            Object[] row = new Object[5];
            
+        System.out.println("in for");
            if(wr instanceof vaccinate){
+               
+        System.out.println("wr found");
            String Date = ((vaccinate) wr).getDate();
-           try{
-           if(Date.length()>0){
+           
+               
+        System.out.println("in try");
+               
+        System.out.println("in if");
            row[0] = wr;
+           
            row[1] = Date;
+           
+//           row[1] = null;
            row[2] = wr.getStatus();
+           v1date = ((vaccinate) wr).getDt();
+           System.out.println(v1date);
+           Date td = new Date();
+//           System.out.println(((td.getTime()-v1date.getTime())/(1000*60*60*24))%365);
            String dc = ((vaccinate) wr).getDistributionCenter();
            row[3] = dc;
            row[4] = null;
            model.addRow(row);
-        }
-        }
-        catch(NullPointerException e){
-                System.out.println("Null Pointer Exception caught");
-                }
+        
+       
     }
         }
     }

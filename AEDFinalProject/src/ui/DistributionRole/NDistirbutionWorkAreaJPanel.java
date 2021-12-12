@@ -19,6 +19,7 @@ import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.requestVaccine;
 import Business.WorkQueue.vaccinate;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -37,6 +38,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public int currEP;
     private boolean bool = false;
+    private boolean bool2 = false;
     /**
      * Creates new form NDistirbutionWorkAreaJPanel
      */
@@ -57,6 +59,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
         populateCount();
         populateVaccineTable();
+       
     }
 
     /**
@@ -153,6 +156,19 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please select a person's request to schedule");
             return;
         }
+        Date d = new Date();
+        System.out.println(d);
+        if(VaccinationjDateChooser.getDate().before(d)){
+            JOptionPane.showMessageDialog(this, "Please select a future date");
+            return;
+        }
+        vaccinate req = (vaccinate)tblRequests.getModel().getValueAt(selectedRow, 0);
+        
+        if(req.getStatus().equals("Approved")){
+            JOptionPane.showMessageDialog(this, "Person is already scheduled a vaccination slot2");
+            System.out.println("Person is already scheduled a vaccination slot");
+            return;
+        }
         try{
         if(VaccinationjDateChooser.getDate().toString().length()<1){
             JOptionPane.showMessageDialog(this, "Please choose a date to schedule vaccination");
@@ -164,16 +180,19 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please select a date");
             return;
         }
-        vaccinate req = (vaccinate)tblRequests.getValueAt(selectedRow, 0);
+        
+        
         if(!bool){
             JOptionPane.showMessageDialog(this, "You don't have any vaccine in stock please check with manufacturer to approve your order");
             return;
         }
-        if(req.getStatus() == "Approved"){
-            JOptionPane.showMessageDialog(this, "Person is already scheduled a vaccination slot");
-            return;
+        if(bool){
+            JOptionPane.showMessageDialog(this, "Please order vaccines as your stock is getting over..");
+            
         }
+        
         req.setDate(VaccinationjDateChooser.getDate().toString());
+        req.setDt(VaccinationjDateChooser.getDate());
         System.out.print(VaccinationjDateChooser.getDate().toString());
         req.setStatus("Approved");
         currEP-=1;
@@ -271,6 +290,9 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = rv;
             row[1] = rv.getReceiver().getUsername();
             row[2] = ((requestVaccine) rv).getCount();
+            if(((requestVaccine) rv).getCount()<10){
+                bool2 = true;
+            }
 //            if(inv!=null){
 //            for(PurchaseInventory p : inv){
 //                int c = ((requestVaccine) rv).getCount();

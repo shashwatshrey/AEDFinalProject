@@ -39,7 +39,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public int currEP;
-    public int currentCount = 0;
+    public int currentCount;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
@@ -52,6 +52,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
         this.system = system;
         this.userAccount = account;
         currEP = ((ServiceEnterprise) enterprise).getVaccineCount();
+        currentCount = 0;
         populateTable();
     }
 
@@ -137,10 +138,6 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
             
 //            if(inv!=null){
 //            for(PurchaseInventory p : inv){
-                int c = ((requestVaccine) rv).getCount();
-                row[2] = c;
-                
-                currentCount = c;
                 
                 if(rv.getStatus().equals("Approved")){
                 System.out.println(enterprise.getName());
@@ -151,6 +148,11 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                             ((requestVaccine) rv).setDistribution(u);
                             distributor = u;
                             System.out.println(distributor.getUsername());
+                            int c = ((requestVaccine) rv).getCount();
+                row[2] = c;
+                
+                currentCount = c;
+                ((requestVaccine) rv).setCount(c);
 //                            System.out.println(o.getName());
 //                            VaccineCount vc = new VaccineCount();
 //                            vc.setVaccineName(rv.getReceiver().toString());
@@ -165,7 +167,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                     }
                 }
             }
-                ((requestVaccine) rv).setCount(c);
+                
                 distributor.getWorkQueue().getWorkRequestList().add(rv);
                 
 //            }
