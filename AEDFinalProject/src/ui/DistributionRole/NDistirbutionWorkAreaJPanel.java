@@ -55,6 +55,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         txtvaccineCount.setText(Integer.toString(currEP));
         populateTable();
         populateCount();
+        populateVaccineTable();
     }
 
     /**
@@ -177,7 +178,12 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
             }
         }
         populateTable();
-        populateVaccineTable();
+        try{
+            populateVaccineTable();
+        }catch(Exception e){
+            System.out.println("Exception handled");
+        }
+        
 //        populateCount();
         dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnScheduleActionPerformed
