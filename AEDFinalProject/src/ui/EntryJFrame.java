@@ -65,7 +65,6 @@ public class EntryJFrame extends javax.swing.JFrame {
         lblText = new javax.swing.JLabel();
         iconLogoSmall = new javax.swing.JLabel();
         iconSignout = new javax.swing.JLabel();
-        lblSignout = new javax.swing.JLabel();
         cardPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -204,9 +203,6 @@ public class EntryJFrame extends javax.swing.JFrame {
             }
         });
 
-        lblSignout.setFont(new java.awt.Font("Optima", 0, 15)); // NOI18N
-        lblSignout.setText("Sign Out");
-
         javax.swing.GroupLayout signoutPanelLayout = new javax.swing.GroupLayout(signoutPanel);
         signoutPanel.setLayout(signoutPanelLayout);
         signoutPanelLayout.setHorizontalGroup(
@@ -218,9 +214,7 @@ public class EntryJFrame extends javax.swing.JFrame {
                 .addComponent(separatorLine3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(156, 156, 156)
                 .addComponent(lblText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 509, Short.MAX_VALUE)
-                .addComponent(lblSignout)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 583, Short.MAX_VALUE)
                 .addComponent(iconSignout)
                 .addGap(26, 26, 26))
         );
@@ -231,13 +225,11 @@ public class EntryJFrame extends javax.swing.JFrame {
                 .addGroup(signoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(signoutPanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addGroup(signoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblText)
-                            .addComponent(lblSignout, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblText)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(separatorLine3))
                 .addContainerGap())
-            .addComponent(iconSignout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(iconSignout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
             .addComponent(iconLogoSmall, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
@@ -409,7 +401,6 @@ public class EntryJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRights;
     private javax.swing.JLabel lblSignin;
-    private javax.swing.JLabel lblSignout;
     private javax.swing.JLabel lblText;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JSeparator separatorLine1;

@@ -43,6 +43,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.userAccount = account;
+        lblValue.setText(account.getEmployee().getName());
         populateTable();
     }
     
@@ -72,6 +73,8 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         separatorLine2 = new javax.swing.JSeparator();
         separatorLine3 = new javax.swing.JSeparator();
         lblTitle = new javax.swing.JLabel();
+        lblText = new javax.swing.JLabel();
+        lblValue = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -96,8 +99,14 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(btnReject, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, -1, -1));
 
+        tblWorkRequest.setBackground(new java.awt.Color(97, 212, 195));
+        tblWorkRequest.setForeground(new java.awt.Color(36, 47, 65));
         tblWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -107,9 +116,12 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 "Vaccine Name", "Sender", "Receiver", "Status"
             }
         ));
+        tblWorkRequest.setGridColor(new java.awt.Color(97, 212, 195));
+        tblWorkRequest.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblWorkRequest.setRowHeight(20);
         jScrollPane1.setViewportView(tblWorkRequest);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 92, -1, 241));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 520, 180));
 
         lblQuantity.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,6 +199,16 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
 
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ECONOMYWORKAREA.png"))); // NOI18N
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
+
+        lblText.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblText.setForeground(new java.awt.Color(255, 255, 255));
+        lblText.setText("Currently Logged in as:");
+        add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, 30));
+
+        lblValue.setFont(new java.awt.Font("Optima", 1, 22)); // NOI18N
+        lblValue.setForeground(new java.awt.Color(97, 212, 195));
+        lblValue.setText("<value>");
+        add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateTable(){
@@ -284,7 +306,9 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblGap;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblQuantity;
+    private javax.swing.JLabel lblText;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblValue;
     private javax.swing.JSeparator separatorLine;
     private javax.swing.JSeparator separatorLine1;
     private javax.swing.JSeparator separatorLine2;

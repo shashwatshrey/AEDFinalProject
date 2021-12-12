@@ -57,7 +57,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         menuPanel.setPreferredSize(new java.awt.Dimension(250, 848));
         menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblValue.setFont(new java.awt.Font("Optima", 1, 18)); // NOI18N
+        lblValue.setFont(new java.awt.Font("Optima", 1, 22)); // NOI18N
         lblValue.setForeground(new java.awt.Color(97, 212, 195));
         lblValue.setText("<value>");
         menuPanel.add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 230, 30));
@@ -83,7 +83,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         lblOrganizations.setPreferredSize(new java.awt.Dimension(180, 20));
         onePanel.add(lblOrganizations, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 207, -1));
 
-        iconOrganizations.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-company-45.png"))); // NOI18N
+        iconOrganizations.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageorganization.png"))); // NOI18N
         onePanel.add(iconOrganizations, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
 
         menuPanel.add(onePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
@@ -108,7 +108,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         lblEmployees.setPreferredSize(new java.awt.Dimension(180, 20));
         twoPanel.add(lblEmployees, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 160, -1));
 
-        iconEmployees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-employee-50 (1).png"))); // NOI18N
+        iconEmployees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageemployees.png"))); // NOI18N
         twoPanel.add(iconEmployees, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
 
         menuPanel.add(twoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
@@ -134,7 +134,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         threePanel.add(lblUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 120, -1));
 
         iconUsers.setForeground(new java.awt.Color(255, 255, 255));
-        iconUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-employee-50.png"))); // NOI18N
+        iconUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageuser.png"))); // NOI18N
         iconUsers.setToolTipText("");
         threePanel.add(iconUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

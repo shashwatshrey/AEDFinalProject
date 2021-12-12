@@ -70,9 +70,15 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1190, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tblNetwork.setBackground(new java.awt.Color(97, 212, 195));
         tblNetwork.setFont(new java.awt.Font("Optima", 0, 14)); // NOI18N
+        tblNetwork.setForeground(new java.awt.Color(36, 47, 65));
         tblNetwork.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null},
                 {null},
                 {null},
                 {null},
@@ -97,17 +103,20 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblNetwork.setGridColor(new java.awt.Color(97, 212, 195));
+        tblNetwork.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblNetwork.setRowHeight(20);
         jScrollPane1.setViewportView(tblNetwork);
         if (tblNetwork.getColumnModel().getColumnCount() > 0) {
             tblNetwork.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 404, 91));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 440, 180));
 
         lblName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, -1, -1));
 
         btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSubmit.setText("Submit");
@@ -116,18 +125,18 @@ public class ManageNetworkPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, -1, -1));
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, -1, -1));
 
         txtName.setBackground(new java.awt.Color(36, 47, 65));
         txtName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtName.setForeground(new java.awt.Color(255, 255, 255));
         txtName.setBorder(null);
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 181, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 181, -1));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 180, -1));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 180, -1));
 
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/NETWORKS.png"))); // NOI18N
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 0, 100, 850));

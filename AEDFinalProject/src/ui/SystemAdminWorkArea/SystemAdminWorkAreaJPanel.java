@@ -140,7 +140,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         menuPanel.add(threePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
-        lblValue.setFont(new java.awt.Font("Optima", 1, 18)); // NOI18N
+        lblValue.setFont(new java.awt.Font("Optima", 1, 22)); // NOI18N
         lblValue.setForeground(new java.awt.Color(97, 212, 195));
         lblValue.setText("<value>");
         menuPanel.add(lblValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 230, 30));
