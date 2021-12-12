@@ -12,6 +12,7 @@ import Business.Organization.PersonOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.appointment;
+import Business.WorkQueue.prescribeMedicine;
 import Business.WorkQueue.vaccinate;
 import java.awt.CardLayout;
 import java.util.Date;
@@ -45,6 +46,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         this.business = business;
         populateVaccineTable();
         populateAppointmentTable();
+        populateMedTable();
         Date td = new Date();
 //        System.out.println(((td.getTime()-v1date.getTime())/(1000*60*60*24))%365);
     }
@@ -67,6 +69,8 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         tblVaccineRequest = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAppoinment = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        PharmajTable = new javax.swing.JTable();
 
         jLabel3.setText("jLabel3");
 
@@ -126,6 +130,21 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblAppoinment);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 375, 169));
+
+        PharmajTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Person", "Doctor", "Pharmacy", "Medicine List", "Availability"
+            }
+        ));
+        jScrollPane3.setViewportView(PharmajTable);
+
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineActionPerformed
@@ -163,11 +182,13 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable PharmajTable;
     private javax.swing.JButton btnAppointment;
     private javax.swing.JButton btnVaccine;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTable tblAppoinment;
@@ -229,6 +250,24 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
            model.addRow(row);
            }
         }
+        }
+    }
+
+    private void populateMedTable() {
+        DefaultTableModel model = (DefaultTableModel)PharmajTable.getModel();
+        model.setRowCount(0);
+        
+        for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){
+            Object[] row = new Object[5];
+            if(wr instanceof prescribeMedicine){
+                row[0] = wr;
+                row[1] = wr.getSender();
+                row[2] = wr.getReceiver();
+                row[3] = ((prescribeMedicine) wr).getMedList();
+                row[4] = wr.getStatus();
+                model.addRow(row);
+                
+            }
         }
     }
 }
