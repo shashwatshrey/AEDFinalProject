@@ -14,6 +14,12 @@ import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.vaccinate;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.chart.plot.PiePlot3D;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -26,6 +32,8 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem system;
     private UserAccount userAccount;
+    int approved = 0;
+    int requested = 0;
     /**
      * Creates new form DistributionWorkAreaJPanel
      */
@@ -57,6 +65,7 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         ApprovedjTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -101,12 +110,34 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Requested List");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
+
+        jButton1.setText("Generate PieChart");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        pieDataset.setValue("Approved", new Integer(ApprovedjTable.getRowCount()));
+        pieDataset.setValue("Requested",new Integer(RequestedjTable.getRowCount()));
+        JFreeChart chart = ChartFactory.createPieChart("Chart", pieDataset,true , true , true);
+        PiePlot P = (PiePlot) chart.getPlot();
+        //P.setForegroundAlpha(TOP_ALIGNMENT);
+        ChartFrame frame = new ChartFrame("Pie Chart" , chart);
+        frame.setVisible(true);
+        frame.setSize(450,500);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ApprovedjTable;
     private javax.swing.JTable RequestedjTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -120,6 +151,7 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         
             System.out.println("Inside approved table");
         for(WorkRequest wr: userAccount.getWorkQueue().getWorkRequestList()){
+            approved++;
             Object[] row = new Object[4];
             System.out.println("Inside approved for");
             if(wr instanceof vaccinate){
@@ -145,7 +177,7 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         
             System.out.println("Inside requesed table");
         for(WorkRequest wr: userAccount.getWorkQueue().getWorkRequestList()){
-            
+            requested++;
             System.out.println("Inside requested for");
             Object[] row = new Object[4];
             if(wr instanceof vaccinate){

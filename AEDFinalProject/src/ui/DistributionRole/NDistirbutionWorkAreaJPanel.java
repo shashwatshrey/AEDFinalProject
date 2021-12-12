@@ -5,6 +5,7 @@
  */
 package ui.DistributionRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Enterprise.EnterpriseType;
@@ -33,6 +34,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem system;
     private UserAccount userAccount;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public int currEP;
     /**
      * Creates new form NDistirbutionWorkAreaJPanel
@@ -53,6 +55,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         txtvaccineCount.setText(Integer.toString(currEP));
         populateTable();
         populateCount();
+        populateVaccineTable();
     }
 
     /**
@@ -175,8 +178,14 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
             }
         }
         populateTable();
-        populateVaccineTable();
+        try{
+            populateVaccineTable();
+        }catch(Exception e){
+            System.out.println("Exception handled");
+        }
+        
 //        populateCount();
+        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnScheduleActionPerformed
 
 

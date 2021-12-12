@@ -4,10 +4,13 @@
  */
 package ui.AdministrativeRole;
 
+import Business.DB4OUtil.DB4OUtil;
+import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,6 +22,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private EcoSystem system;
     
     /**
      * Creates new form ManageOrganizationJPanel
@@ -157,9 +162,15 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
-        
+        if(name.equals("")){
+            JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
+            
+        }
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
+        //store data in database
+        dB4OUtil.storeSystem(system);
+        nameJTextField.setText("");
         
     }//GEN-LAST:event_addJButtonActionPerformed
 

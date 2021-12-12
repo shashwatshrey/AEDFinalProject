@@ -5,6 +5,7 @@
  */
 package ui.PersonRole;
 
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -29,6 +30,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem business;
     private UserAccount userAccount;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public ScheduleVaccineJPanel(JPanel userProcessContainer, PersonOrganization organization, Enterprise enterprise, EcoSystem business, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -137,6 +139,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         userAccount.getWorkQueue().getWorkRequestList().add(v);
         health.getWorkQueue().getWorkRequestList().add(v);
         JOptionPane.showMessageDialog(this, "Request sent");
+        dB4OUtil.storeSystem(business);
     }//GEN-LAST:event_btnRequestActionPerformed
 
 

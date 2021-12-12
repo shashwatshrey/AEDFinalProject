@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package ui.PersonRole;
-
+import Business.Validation;
+import Business.DB4OUtil.DB4OUtil;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
@@ -30,6 +31,8 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private EcoSystem business;
     private UserAccount userAccount;
+    private Validation validation;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     /**
      * Creates new form ScheduleAppointmentJPanel
      */
@@ -98,6 +101,10 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
 
     private void btnRequestAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestAppointmentActionPerformed
         // TODO add your handling code here:
+        if(!validation.emailValidator(txtEmail.getText())){
+            JOptionPane.showMessageDialog(this, "Please enter a valid email");
+            return;
+        }
         appointment v = new appointment();
         UserAccount receiver = new UserAccount();
         if(jComboBox1.getSelectedItem()==null){
@@ -143,6 +150,8 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         receiver.getWorkQueue().getWorkRequestList().add(v);
         userAccount.getWorkQueue().getWorkRequestList().add(v);
         JOptionPane.showMessageDialog(this, "Request sent");
+        dB4OUtil.storeSystem(business);
+        txtEmail.setText("");
     }//GEN-LAST:event_btnRequestAppointmentActionPerformed
 
 
