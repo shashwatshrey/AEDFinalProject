@@ -15,6 +15,7 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.appointment;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 //import Business.WorkQueue.LabTestWorkRequest;
 //import Business.WorkQueue.WorkRequest;
@@ -25,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author vraj
+ * @author abhis
  */
 public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -65,6 +66,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         requestTable = new javax.swing.JTable();
         btnApprove = new javax.swing.JButton();
         appointmentjDateChooser = new com.toedter.calendar.JDateChooser();
+        btnPrescribeMed = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -80,7 +82,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnTestActionPerformed(evt);
             }
         });
-        add(btnTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 418, -1, -1));
+        add(btnTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
 
         requestTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,8 +106,16 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnApproveActionPerformed(evt);
             }
         });
-        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 418, -1, -1));
+        add(btnApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, -1));
         add(appointmentjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 359, -1, -1));
+
+        btnPrescribeMed.setText("Prescribe Medicine");
+        btnPrescribeMed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrescribeMedActionPerformed(evt);
+            }
+        });
+        add(btnPrescribeMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestActionPerformed
@@ -174,9 +184,26 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         a.setStatus("Approved");
     }//GEN-LAST:event_btnApproveActionPerformed
 
+    private void btnPrescribeMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrescribeMedActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = requestTable.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(this, "Please select a person's record to prescribe");
+            return;
+        } 
+        WorkRequest w = (WorkRequest) requestTable.getModel().getValueAt(selectedRow, 0);
+        UserAccount p = w.getSender();
+        AddPrescriptionJPanel addPresciptionJPanel = new AddPrescriptionJPanel(userProcessContainer, enterprise, organization, system, userAccount, p);
+        userProcessContainer.add("addPresciptionJPanel", addPresciptionJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
+    }//GEN-LAST:event_btnPrescribeMedActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser appointmentjDateChooser;
     private javax.swing.JButton btnApprove;
+    private javax.swing.JButton btnPrescribeMed;
     private javax.swing.JButton btnTest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -26,6 +26,7 @@ public abstract class Role {
         Lab("Lab - Hosptial"),
         Manufacturing("Manufacturing - Pharmaceutical"),
         Person("Person - Government"),
+        Pharma("Pharma - Hospital"),
         Purchase("Purchase - Service"),
         Sales("Sales - Pharmaceutical");
         
