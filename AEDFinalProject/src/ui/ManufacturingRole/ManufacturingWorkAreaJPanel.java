@@ -223,6 +223,7 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         }
         else{
             JOptionPane.showMessageDialog(this, "You already have a vaccine produced, please delete it to create a new one");
+            return;
         }
     }//GEN-LAST:event_btnAddVaccineActionPerformed
 

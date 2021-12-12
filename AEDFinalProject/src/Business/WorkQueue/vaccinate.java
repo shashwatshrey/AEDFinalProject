@@ -6,6 +6,7 @@
 package Business.WorkQueue;
 
 import Business.UserAccount.UserAccount;
+import java.util.Date;
 
 /**
  *
@@ -14,6 +15,15 @@ import Business.UserAccount.UserAccount;
 public class vaccinate extends WorkRequest{
     private String testResult;
     private String Date;
+    private Date dt;
+
+    public Date getDt() {
+        return dt;
+    }
+
+    public void setDt(Date dt) {
+        this.dt = dt;
+    }
     private String vaccineName;
     private int gap;
     private String distributionCenter;

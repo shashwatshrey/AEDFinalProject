@@ -36,7 +36,7 @@ public class requestVaccine extends WorkRequest{
         this.distribution = distribution;
     }
     private ArrayList<PurchaseInventory> inventoryPurchase;
-    private int count = 0;
+    private int count;
 
     public int getCount() {
         return count;

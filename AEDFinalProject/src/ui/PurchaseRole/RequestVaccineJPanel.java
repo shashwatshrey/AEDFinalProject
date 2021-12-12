@@ -156,6 +156,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         requestVaccine rv = new requestVaccine();
             rv.setPurchaser(userAccount);
             rv.setSender(userAccount);
+            rv.setCount(Integer.parseInt(txtQuantity.getText()));
             for(Organization o : currEP.getOrganizationDirectory().getOrganizationList()){
                 for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
                     if(u.getRole().toString().equals("Business.Role.SalesRole")){
@@ -218,7 +219,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         }
             
             userAccount.getWorkQueue().getWorkRequestList().add(rv);
-            receive.getWorkQueue().getWorkRequestList().add(rv);
+            //receive.getWorkQueue().getWorkRequestList().add(rv);
 //            for(Network n : business.getNetworkList()){
 //            for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
 //                e.setEnterpriseType(EnterpriseType.Service);

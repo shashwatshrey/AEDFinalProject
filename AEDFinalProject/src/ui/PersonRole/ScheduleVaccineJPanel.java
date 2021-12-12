@@ -89,9 +89,12 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         }
         v.setDistributionCenter(cmbDistributor.getSelectedItem().toString());
         v.setPerson(userAccount);
+        
+        System.out.println(userAccount.getUsername());
         v.setSender(userAccount);
         v.setStatus("Requested");
         v.setMessage(userAccount.getUsername());
+        v.setDate("Date will reflect once approved");
        
         Network currNet = enterprise.getNetwork();
         
