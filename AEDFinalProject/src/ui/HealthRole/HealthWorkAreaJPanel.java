@@ -10,7 +10,10 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.HealthOrganization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.vaccinate;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,7 +37,8 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         this.system = system;
         this.userAccount = account;
-        
+        populateApproveTable();
+        populateRequestedTable();
     }
 
     /**
@@ -46,28 +50,117 @@ public class HealthWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnManagePopulation = new javax.swing.JButton();
-        btnManageAllotment = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        RequestedjTable = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ApprovedjTable = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnManagePopulation.setText("Manage Population Records");
-        add(btnManagePopulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 115, -1, -1));
-
-        btnManageAllotment.setText("Allot Services & Hosptials");
-        add(btnManageAllotment, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 182, 217, -1));
-
         jLabel1.setText("Health Workarea");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 42, -1, -1));
+
+        RequestedjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Person", "Distribution", "Status", "Date"
+            }
+        ));
+        jScrollPane1.setViewportView(RequestedjTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, 170));
+
+        ApprovedjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Person", "Distribution", "Status", "Date"
+            }
+        ));
+        jScrollPane2.setViewportView(ApprovedjTable);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, 170));
+
+        jLabel2.setText("Approved List");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+
+        jLabel3.setText("Requested List");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageAllotment;
-    private javax.swing.JButton btnManagePopulation;
+    private javax.swing.JTable ApprovedjTable;
+    private javax.swing.JTable RequestedjTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
+    private void populateApproveTable() {
+        DefaultTableModel model = (DefaultTableModel) ApprovedjTable.getModel();
+        model.setRowCount(0);
+        
+            System.out.println("Inside approved table");
+        for(WorkRequest wr: userAccount.getWorkQueue().getWorkRequestList()){
+            Object[] row = new Object[4];
+            System.out.println("Inside approved for");
+            if(wr instanceof vaccinate){
+                
+            System.out.println("Inside approved if");
+                if(wr.getStatus().equals("Approved")){
+                    
+            System.out.println("Inside approved if 2");
+                row[0] = wr;
+                row[1] = wr.getReceiver();
+                row[2] = wr.getStatus();
+                String Date = ((vaccinate) wr).getDate();
+                row[3] = Date;
+                model.addRow(row);
+                }
+            }
+        }
+    }
+
+    private void populateRequestedTable() {
+        DefaultTableModel model = (DefaultTableModel) RequestedjTable.getModel();
+        model.setRowCount(0);
+        
+            System.out.println("Inside requesed table");
+        for(WorkRequest wr: userAccount.getWorkQueue().getWorkRequestList()){
+            
+            System.out.println("Inside requested for");
+            Object[] row = new Object[4];
+            if(wr instanceof vaccinate){
+                
+            System.out.println("Inside requested if");
+                if(wr.getStatus().equals("Requested")){
+                    
+            System.out.println("Inside requested if 2");
+                row[0] = wr;
+                row[1] = wr.getReceiver();
+                row[2] = wr.getStatus();
+                String Date = ((vaccinate) wr).getDate();
+                row[3] = Date;
+                model.addRow(row);
+                }
+            }
+        }
+    }
 }

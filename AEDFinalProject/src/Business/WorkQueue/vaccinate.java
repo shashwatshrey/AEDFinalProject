@@ -17,6 +17,15 @@ public class vaccinate extends WorkRequest{
     private String vaccineName;
     private int gap;
     private String distributionCenter;
+    private UserAccount health;
+
+    public UserAccount getHealth() {
+        return health;
+    }
+
+    public void setHealth(UserAccount health) {
+        this.health = health;
+    }
 
     public String getDistributionCenter() {
         return distributionCenter;

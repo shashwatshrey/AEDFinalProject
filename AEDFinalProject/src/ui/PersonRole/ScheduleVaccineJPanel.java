@@ -76,6 +76,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         vaccinate v = new vaccinate();
         UserAccount receiver = new UserAccount();
+        UserAccount health = new UserAccount();
         if(jComboBox1.getSelectedItem()==null){
             JOptionPane.showMessageDialog(this, "Please select a distribution center to request vaccination");
             return;
@@ -104,6 +105,23 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
                 }
             }
         }
+        for(Enterprise e : currNet.getEnterpriseDirectory().getEnterpriseList()){
+            System.out.print("1");
+            System.out.println(e.getEnterpriseType());
+            if(e.getEnterpriseType().toString().equals("Government")){
+                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        System.out.println("2");
+                        System.out.println(u.getUsername());
+                        if(u.getRole().toString().equals("Business.Role.HealthRole")){
+                            v.setHealth(u);
+                            health = u;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
 //        for(UserAccount u: business.getUserAccountDirectory().getUserAccountList()){
 //            System.out.println(u.getUsername());
 //            System.out.println(jComboBox1.getSelectedItem().toString());
@@ -116,6 +134,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
 //        }
         receiver.getWorkQueue().getWorkRequestList().add(v);
         userAccount.getWorkQueue().getWorkRequestList().add(v);
+        health.getWorkQueue().getWorkRequestList().add(v);
         JOptionPane.showMessageDialog(this, "Request sent");
     }//GEN-LAST:event_btnRequestActionPerformed
 
