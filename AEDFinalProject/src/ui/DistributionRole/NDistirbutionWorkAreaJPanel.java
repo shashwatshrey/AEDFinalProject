@@ -7,6 +7,7 @@ package ui.DistributionRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.Enterprise.EnterpriseType;
 import Business.Enterprise.ServiceEnterprise;
 import Business.Network.Network;
 import Business.Organization.DistributionOrganization;
@@ -16,7 +17,6 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.requestVaccine;
 import Business.WorkQueue.vaccinate;
-import Business.WorkQueue.vaccineCount;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -157,6 +157,23 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         
         System.out.println(enterprise.getName());
         JOptionPane.showMessageDialog(this, "Vaccination Scheduled");
+        Network cn = enterprise.getNetwork();
+        for(Enterprise e : cn.getEnterpriseDirectory().getEnterpriseList()){
+            if(e.getEnterpriseType() == EnterpriseType.Service){
+                for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
+                    for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
+                        if(u.getRole().toString().equals("Business.Role.PurchaseRole")){
+                            for(WorkRequest wr : u.getWorkQueue().getWorkRequestList()){
+                                int p = ((requestVaccine) wr).getQty();
+                                p -=1;
+                                ((requestVaccine) wr).setQty(p);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         populateTable();
         populateVaccineTable();
 //        populateCount();

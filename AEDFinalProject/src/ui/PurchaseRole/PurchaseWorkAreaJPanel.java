@@ -137,6 +137,7 @@ public class PurchaseWorkAreaJPanel extends javax.swing.JPanel {
                         if(u.getRole().toString().equals("Business.Role.DistributionRole")){
                             ((requestVaccine) rv).setDistribution(u);
                             distributor = u;
+                            System.out.println(distributor.getUsername());
 //                            System.out.println(o.getName());
 //                            VaccineCount vc = new VaccineCount();
 //                            vc.setVaccineName(rv.getReceiver().toString());
