@@ -48,51 +48,70 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtTitle = new javax.swing.JLabel();
+        lblAddVaccine = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblScientific = new javax.swing.JLabel();
         btnAddVaccine = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
-        txtScientificName = new javax.swing.JTextField();
-        btnback = new javax.swing.JButton();
+        txtScientific = new javax.swing.JTextField();
+        separatorLine = new javax.swing.JSeparator();
+        separatorLine1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtTitle.setText("Add Vaccine");
-        add(txtTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 6, -1, -1));
+        lblAddVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblAddVaccine.setForeground(new java.awt.Color(255, 255, 255));
+        lblAddVaccine.setText("Add Vaccine");
+        add(lblAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
+        lblName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Name:");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 53, -1, -1));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
 
-        jLabel1.setText("Scientific Name:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 102, -1, -1));
+        lblScientific.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblScientific.setForeground(new java.awt.Color(255, 255, 255));
+        lblScientific.setText("Scientific Name:");
+        add(lblScientific, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
 
+        btnAddVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnAddVaccine.setText("Add");
         btnAddVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddVaccineActionPerformed(evt);
             }
         });
-        add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 202, -1, -1));
+        add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
 
+        txtName.setBackground(new java.awt.Color(36, 47, 65));
+        txtName.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setBorder(null);
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 48, 86, -1));
-        add(txtScientificName, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 97, 86, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 260, -1));
 
-        btnback.setText("<< Back");
-        btnback.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbackActionPerformed(evt);
-            }
-        });
-        add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 202, -1, -1));
+        txtScientific.setBackground(new java.awt.Color(36, 47, 65));
+        txtScientific.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtScientific.setForeground(new java.awt.Color(255, 255, 255));
+        txtScientific.setBorder(null);
+        add(txtScientific, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 260, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 220, 10));
+
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 220, 10));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -101,14 +120,14 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
 
     private void btnAddVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVaccineActionPerformed
         // TODO add your handling code here:
-        if(txtName.getText().equals("") || txtScientificName.getText().equals("")){
+        if(txtName.getText().equals("") || txtScientific.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill all fields", "Warning", JOptionPane.WARNING_MESSAGE);
             
         }
-        if(validate(txtName.getText(), txtScientificName.getText())){
+        if(validate(txtName.getText(), txtScientific.getText())){
             Vaccine newVaccine = new Vaccine();
             newVaccine.setName(txtName.getText());
-            newVaccine.setScientificName(txtScientificName.getText());
+            newVaccine.setScientificName(txtScientific.getText());
             newVaccine.setManufacturerName(organization.getName());
             newVaccine.setStatus("Pending");
             organization.addVaccine(newVaccine);
@@ -116,25 +135,19 @@ public class AddVaccineJPanel extends javax.swing.JPanel {
         }
         dB4OUtil.storeSystem(system);
         txtName.setText("");
-        txtScientificName.setText("");
+        txtScientific.setText("");
     }//GEN-LAST:event_btnAddVaccineActionPerformed
-
-    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnbackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddVaccine;
-    private javax.swing.JButton btnback;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblAddVaccine;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblScientific;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JSeparator separatorLine1;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtScientificName;
-    private javax.swing.JLabel txtTitle;
+    private javax.swing.JTextField txtScientific;
     // End of variables declaration//GEN-END:variables
 
     private boolean validate(String name, String sciName) {

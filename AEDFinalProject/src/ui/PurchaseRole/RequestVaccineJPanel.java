@@ -58,12 +58,12 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
     }
 
     public void populateOrganizationComboBox(){
-        ManufacturerjComboBox.removeAllItems();
+        cmbManufacturer.removeAllItems();
         
         Network currnet = enterprise.getNetwork();
         for(Enterprise e: currnet.getEnterpriseDirectory().getEnterpriseList()){
         if(e.getEnterpriseType() == EnterpriseType.Pharmaceutical){
-            ManufacturerjComboBox.addItem(e.getName());
+            cmbManufacturer.addItem(e.getName());
             currEP = e;
             }
         }
@@ -77,59 +77,79 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblManufacturer = new javax.swing.JLabel();
+        cmbManufacturer = new javax.swing.JComboBox<>();
+        lblQuantity = new javax.swing.JLabel();
+        txtQuantity = new javax.swing.JTextField();
+        btnOrder = new javax.swing.JButton();
+        separatorLine = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        ManufacturerjComboBox = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        txtrequestQty = new javax.swing.JTextField();
-        btnOrderVaccine = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Select Manufacturer");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 605, -1, -1));
+        lblManufacturer.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
+        lblManufacturer.setText("Select Manufacturer:");
+        add(lblManufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
-        ManufacturerjComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        ManufacturerjComboBox.addActionListener(new java.awt.event.ActionListener() {
+        cmbManufacturer.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        cmbManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbManufacturer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ManufacturerjComboBoxActionPerformed(evt);
+                cmbManufacturerActionPerformed(evt);
             }
         });
-        add(ManufacturerjComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 601, -1, -1));
+        add(cmbManufacturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
 
-        jLabel2.setText("Enter Quantity");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 666, -1, -1));
-        add(txtrequestQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 661, 89, -1));
+        lblQuantity.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQuantity.setForeground(new java.awt.Color(255, 255, 255));
+        lblQuantity.setText("Enter Quantity:");
+        add(lblQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
-        btnOrderVaccine.setText("Order");
-        btnOrderVaccine.addActionListener(new java.awt.event.ActionListener() {
+        txtQuantity.setBackground(new java.awt.Color(36, 47, 65));
+        txtQuantity.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtQuantity.setBorder(null);
+        add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 180, -1));
+
+        btnOrder.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnOrder.setText("Order");
+        btnOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrderVaccineActionPerformed(evt);
+                btnOrderActionPerformed(evt);
             }
         });
-        add(btnOrderVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 744, -1, -1));
+        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
+
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 180, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ManufacturerjComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManufacturerjComboBoxActionPerformed
+    private void cmbManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbManufacturerActionPerformed
         // TODO add your handling code here:
 //        ManufacturingOrganization org = (ManufacturingOrganization) ManufacturerjComboBox.getSelectedItem();
 //        
 //        if(org!=null){
 //        populateVaccineComboBox(org);
 //        }
-    }//GEN-LAST:event_ManufacturerjComboBoxActionPerformed
+    }//GEN-LAST:event_cmbManufacturerActionPerformed
 
-    private void btnOrderVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderVaccineActionPerformed
+    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         // TODO add your handling code here:
         
         UserAccount receive = new UserAccount();
         UserAccount dist = new UserAccount();
-        if(validate(ManufacturerjComboBox.getSelectedItem().toString(),txtrequestQty.getText())){
+        if(validate(cmbManufacturer.getSelectedItem().toString(),txtQuantity.getText())){
             PurchaseInventory pi = new PurchaseInventory();
             pi.setManuEP(currEP);
-            pi.setQty(Integer.parseInt(txtrequestQty.getText()));
+            pi.setQty(Integer.parseInt(txtQuantity.getText()));
             inventory.add(pi);
 //            organization.addPI(pi);
             
@@ -169,7 +189,7 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
 //            }
             System.out.println("123");
             rv.setStatus("Ordered");
-            rv.setQty(Integer.parseInt(txtrequestQty.getText()));
+            rv.setQty(Integer.parseInt(txtQuantity.getText()));
             rv.setInventoryPurchase(inventory);
             receive.getWorkQueue().getWorkRequestList().add(rv);
             dist.getWorkQueue().getWorkRequestList().add(rv);
@@ -221,16 +241,18 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Order Created");
         }
         dB4OUtil.storeSystem(business);
-        txtrequestQty.setText("");
-    }//GEN-LAST:event_btnOrderVaccineActionPerformed
+        txtQuantity.setText("");
+    }//GEN-LAST:event_btnOrderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ManufacturerjComboBox;
-    private javax.swing.JButton btnOrderVaccine;
+    private javax.swing.JButton btnOrder;
+    private javax.swing.JComboBox<String> cmbManufacturer;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField txtrequestQty;
+    private javax.swing.JLabel lblManufacturer;
+    private javax.swing.JLabel lblQuantity;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JTextField txtQuantity;
     // End of variables declaration//GEN-END:variables
 
     private boolean validate(String manuName, String Qty) {

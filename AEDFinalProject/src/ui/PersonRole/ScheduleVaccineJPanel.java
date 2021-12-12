@@ -50,28 +50,32 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblDistributor = new javax.swing.JLabel();
         btnRequest = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbDistributor = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Select Distribution Center");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        lblDistributor.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblDistributor.setForeground(new java.awt.Color(255, 255, 255));
+        lblDistributor.setText("Select Distribution Center:");
+        add(lblDistributor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
 
+        btnRequest.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnRequest.setText("Request");
         btnRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestActionPerformed(evt);
             }
         });
-        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 187, -1, -1));
+        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 56, -1, -1));
+        cmbDistributor.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        cmbDistributor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cmbDistributor, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
@@ -79,11 +83,11 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
         vaccinate v = new vaccinate();
         UserAccount receiver = new UserAccount();
         UserAccount health = new UserAccount();
-        if(jComboBox1.getSelectedItem()==null){
+        if(cmbDistributor.getSelectedItem()==null){
             JOptionPane.showMessageDialog(this, "Please select a distribution center to request vaccination");
             return;
         }
-        v.setDistributionCenter(jComboBox1.getSelectedItem().toString());
+        v.setDistributionCenter(cmbDistributor.getSelectedItem().toString());
         v.setPerson(userAccount);
         v.setSender(userAccount);
         v.setStatus("Requested");
@@ -145,12 +149,12 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRequest;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> cmbDistributor;
+    private javax.swing.JLabel lblDistributor;
     // End of variables declaration//GEN-END:variables
 
     private void populateDistCenterComboBox() {
-        jComboBox1.removeAllItems();
+        cmbDistributor.removeAllItems();
         
         Network currNet = enterprise.getNetwork();
         for(Enterprise e: currNet.getEnterpriseDirectory().getEnterpriseList()){
@@ -160,7 +164,7 @@ public class ScheduleVaccineJPanel extends javax.swing.JPanel {
                 for(UserAccount u: o.getUserAccountDirectory().getUserAccountList()){
                     System.out.println(u.getRole().toString());
                     if(u.getRole().toString().equals("Business.Role.DistributionRole")){
-                        jComboBox1.addItem(u.getUsername());
+                        cmbDistributor.addItem(u.getUsername());
                     }
                 }
             }

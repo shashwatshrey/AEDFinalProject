@@ -63,15 +63,14 @@ public class LabAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnSubmit = new javax.swing.JButton();
-        txtResult = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        txtSubmitResult = new javax.swing.JTextField();
+        lblQ1 = new javax.swing.JLabel();
+        lblQ2 = new javax.swing.JLabel();
+        lblQ3 = new javax.swing.JLabel();
+        lblQ4 = new javax.swing.JLabel();
         vitalYesRadio = new javax.swing.JRadioButton();
         vitalNoRadio = new javax.swing.JRadioButton();
         dosageYesRadio = new javax.swing.JRadioButton();
@@ -80,31 +79,44 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         dosageNoRadio = new javax.swing.JRadioButton();
         coldNoRadio = new javax.swing.JRadioButton();
         tempNoRadio = new javax.swing.JRadioButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        vitalSignBar = new javax.swing.JProgressBar();
-        DosageBar = new javax.swing.JProgressBar();
-        ColdBar = new javax.swing.JProgressBar();
-        TemperatureBar = new javax.swing.JProgressBar();
-        jLabel10 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
+        lblVital = new javax.swing.JLabel();
+        lblDosage = new javax.swing.JLabel();
+        lblCold = new javax.swing.JLabel();
+        lblTemperature = new javax.swing.JLabel();
+        barVital = new javax.swing.JProgressBar();
+        barDosage = new javax.swing.JProgressBar();
+        barCold = new javax.swing.JProgressBar();
+        barTemperature = new javax.swing.JProgressBar();
+        lblFinal = new javax.swing.JLabel();
+        barFinal = new javax.swing.JProgressBar();
+        lblResult = new javax.swing.JLabel();
+        txtResult = new javax.swing.JTextField();
+        btnGenerateReport = new javax.swing.JButton();
+        lblTo = new javax.swing.JLabel();
         txtTo = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel13 = new javax.swing.JLabel();
-        jButtonSendReport = new javax.swing.JButton();
+        txtareaReport = new javax.swing.JTextArea();
+        lblReport = new javax.swing.JLabel();
+        btnSendReport = new javax.swing.JButton();
+        separatorLine = new javax.swing.JSeparator();
+        separatorLine1 = new javax.swing.JSeparator();
+        separatorLine2 = new javax.swing.JSeparator();
+        lblTitle = new javax.swing.JLabel();
+        lblQ5 = new javax.swing.JLabel();
+        lblQ6 = new javax.swing.JLabel();
+        pulseYesRadio = new javax.swing.JRadioButton();
+        pulseNoRadio1 = new javax.swing.JRadioButton();
+        bpYesRadio2 = new javax.swing.JRadioButton();
+        bpNoRadio2 = new javax.swing.JRadioButton();
+        lblBloodPressure = new javax.swing.JLabel();
+        lblPulse = new javax.swing.JLabel();
+        barPulse = new javax.swing.JProgressBar();
+        barBloodPressure = new javax.swing.JProgressBar();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
-
-        jLabel1.setText("Lab Testing Zone!");
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,285 +131,330 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        btnSubmit.setText("Submit");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 441, 113));
+
+        btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnSubmit.setText("Submit Result to Doctor");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, -1, -1));
 
-        txtResult.addActionListener(new java.awt.event.ActionListener() {
+        txtSubmitResult.setBackground(new java.awt.Color(36, 47, 65));
+        txtSubmitResult.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtSubmitResult.setForeground(new java.awt.Color(255, 255, 255));
+        txtSubmitResult.setBorder(null);
+        txtSubmitResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtResultActionPerformed(evt);
+                txtSubmitResultActionPerformed(evt);
             }
         });
+        add(txtSubmitResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 250, -1));
 
-        jLabel2.setText("Are the Vital Signs of the person completely normal ? ");
+        lblQ1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQ1.setForeground(new java.awt.Color(255, 255, 255));
+        lblQ1.setText("Are the Vital Signs of the person completely normal? ");
+        add(lblQ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
-        jLabel3.setText("Has the patient completed both the doses ?");
+        lblQ2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQ2.setForeground(new java.awt.Color(255, 255, 255));
+        lblQ2.setText("Has the patient completed both the doses?");
+        add(lblQ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 360, -1));
 
-        jLabel4.setText("Does the patient have cold, cough ?");
+        lblQ3.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQ3.setForeground(new java.awt.Color(255, 255, 255));
+        lblQ3.setText("Does the patient have cold, cough?");
+        add(lblQ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 360, -1));
 
-        jLabel5.setText("Does the patient have a normal temperature ? ");
+        lblQ4.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQ4.setForeground(new java.awt.Color(255, 255, 255));
+        lblQ4.setText("Does the patient have a normal temperature? ");
+        add(lblQ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 360, -1));
 
+        vitalYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        vitalYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         vitalYesRadio.setText("Yes");
         vitalYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vitalYesRadioActionPerformed(evt);
             }
         });
+        add(vitalYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, -1, -1));
 
+        vitalNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        vitalNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         vitalNoRadio.setText("No");
         vitalNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vitalNoRadioActionPerformed(evt);
             }
         });
+        add(vitalNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, -1, -1));
 
+        dosageYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        dosageYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         dosageYesRadio.setText("Yes");
         dosageYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dosageYesRadioActionPerformed(evt);
             }
         });
+        add(dosageYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, -1, -1));
 
+        coldYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        coldYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         coldYesRadio.setText("Yes");
         coldYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coldYesRadioActionPerformed(evt);
             }
         });
+        add(coldYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, -1, -1));
 
+        tempYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        tempYesRadio.setForeground(new java.awt.Color(255, 255, 255));
         tempYesRadio.setText("Yes");
         tempYesRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tempYesRadioActionPerformed(evt);
             }
         });
+        add(tempYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 170, -1, -1));
 
+        dosageNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        dosageNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         dosageNoRadio.setText("No");
         dosageNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dosageNoRadioActionPerformed(evt);
             }
         });
+        add(dosageNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, -1, -1));
 
+        coldNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        coldNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         coldNoRadio.setText("No");
         coldNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coldNoRadioActionPerformed(evt);
             }
         });
+        add(coldNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, -1, -1));
 
+        tempNoRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        tempNoRadio.setForeground(new java.awt.Color(255, 255, 255));
         tempNoRadio.setText("No");
         tempNoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tempNoRadioActionPerformed(evt);
             }
         });
+        add(tempNoRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 170, -1, -1));
 
-        jLabel6.setText("Vital Signs : ");
+        lblVital.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblVital.setForeground(new java.awt.Color(255, 255, 255));
+        lblVital.setText("Vital Signs: ");
+        add(lblVital, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, -1, -1));
 
-        jLabel7.setText("Dosage : ");
+        lblDosage.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblDosage.setForeground(new java.awt.Color(255, 255, 255));
+        lblDosage.setText("Dosage: ");
+        add(lblDosage, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
 
-        jLabel8.setText("Cold, cough : ");
+        lblCold.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblCold.setForeground(new java.awt.Color(255, 255, 255));
+        lblCold.setText("Cold/cough: ");
+        add(lblCold, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
 
-        jLabel9.setText("Temperature : ");
+        lblTemperature.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblTemperature.setForeground(new java.awt.Color(255, 255, 255));
+        lblTemperature.setText("Temperature: ");
+        add(lblTemperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, -1, -1));
 
-        jLabel10.setText("Final Report : ");
+        barVital.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        barVital.setForeground(new java.awt.Color(0, 255, 51));
+        barVital.setBorder(null);
+        add(barVital, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, 20));
 
-        jLabel11.setText("Result : ");
+        barDosage.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        barDosage.setForeground(new java.awt.Color(0, 255, 51));
+        barDosage.setBorder(null);
+        add(barDosage, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
 
-        jButton1.setText("Generate Report!");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        barCold.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        barCold.setForeground(new java.awt.Color(0, 255, 51));
+        barCold.setBorder(null);
+        add(barCold, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+
+        barTemperature.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        barTemperature.setForeground(new java.awt.Color(0, 255, 51));
+        barTemperature.setBorder(null);
+        add(barTemperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 300, -1, -1));
+
+        lblFinal.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
+        lblFinal.setForeground(new java.awt.Color(255, 255, 255));
+        lblFinal.setText("Final Report : ");
+        add(lblFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, -1, -1));
+
+        barFinal.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        barFinal.setForeground(new java.awt.Color(0, 255, 51));
+        barFinal.setBorder(null);
+        add(barFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 308, -1));
+
+        lblResult.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblResult.setForeground(new java.awt.Color(255, 255, 255));
+        lblResult.setText("Result : ");
+        add(lblResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, -1, 20));
+
+        txtResult.setBackground(new java.awt.Color(36, 47, 65));
+        txtResult.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtResult.setForeground(new java.awt.Color(255, 255, 255));
+        txtResult.setBorder(null);
+        add(txtResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 296, 20));
+
+        btnGenerateReport.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnGenerateReport.setText("Generate Report Result");
+        btnGenerateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGenerateReportActionPerformed(evt);
             }
         });
+        add(btnGenerateReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, -1, -1));
 
-        jLabel12.setText("To: ");
+        lblTo.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblTo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTo.setText("To: ");
+        add(lblTo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 610, -1, -1));
 
+        txtTo.setBackground(new java.awt.Color(36, 47, 65));
+        txtTo.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtTo.setForeground(new java.awt.Color(255, 255, 255));
+        txtTo.setBorder(null);
         txtTo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtToActionPerformed(evt);
             }
         });
+        add(txtTo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 610, 290, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txtareaReport.setBackground(new java.awt.Color(36, 47, 65));
+        txtareaReport.setColumns(20);
+        txtareaReport.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtareaReport.setForeground(new java.awt.Color(255, 255, 255));
+        txtareaReport.setRows(5);
+        txtareaReport.setBorder(null);
+        jScrollPane2.setViewportView(txtareaReport);
 
-        jLabel13.setText("Report : ");
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 657, 280, 130));
 
-        jButtonSendReport.setText("Send Report!");
-        jButtonSendReport.addActionListener(new java.awt.event.ActionListener() {
+        lblReport.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblReport.setForeground(new java.awt.Color(255, 255, 255));
+        lblReport.setText("Comments about report:");
+        add(lblReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, -1, -1));
+
+        btnSendReport.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnSendReport.setText("Send Report to Person");
+        btnSendReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSendReportActionPerformed(evt);
+                btnSendReportActionPerformed(evt);
             }
         });
+        add(btnSendReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 810, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnSubmit))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addGap(314, 314, 314))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel9)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(TemperatureBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel8)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(ColdBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel7)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(DosageBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel6)
-                                                    .addGap(42, 42, 42)
-                                                    .addComponent(vitalSignBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(68, 68, 68))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel13))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButtonSendReport))
-                                        .addGap(151, 151, 151)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(vitalYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(vitalNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(dosageYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dosageNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(coldYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(coldNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(tempYesRadio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tempNoRadio))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addGap(59, 59, 59)
-                                        .addComponent(jTextField1)))))))
-                .addContainerGap(509, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(52, 52, 52)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSubmit))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(vitalYesRadio)
-                    .addComponent(vitalNoRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(dosageYesRadio)
-                    .addComponent(dosageNoRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(coldYesRadio)
-                    .addComponent(coldNoRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tempYesRadio)
-                        .addComponent(tempNoRadio)))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(vitalSignBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(DosageBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(ColdBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel11)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(TemperatureBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel13)))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSendReport)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
+        separatorLine.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 220, -1));
+
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, 220, 10));
+
+        separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine2.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine2.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 630, 220, 10));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LABWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
+
+        lblQ5.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQ5.setForeground(new java.awt.Color(255, 255, 255));
+        lblQ5.setText("Does the patient have a heartbeat/pulse?");
+        add(lblQ5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 360, -1));
+
+        lblQ6.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblQ6.setForeground(new java.awt.Color(255, 255, 255));
+        lblQ6.setText("Does the patient have a normal blood pressure?");
+        add(lblQ6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 360, -1));
+
+        pulseYesRadio.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        pulseYesRadio.setForeground(new java.awt.Color(255, 255, 255));
+        pulseYesRadio.setText("Yes");
+        pulseYesRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pulseYesRadioActionPerformed(evt);
+            }
+        });
+        add(pulseYesRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 200, -1, -1));
+
+        pulseNoRadio1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        pulseNoRadio1.setForeground(new java.awt.Color(255, 255, 255));
+        pulseNoRadio1.setText("No");
+        pulseNoRadio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pulseNoRadio1ActionPerformed(evt);
+            }
+        });
+        add(pulseNoRadio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 200, -1, -1));
+
+        bpYesRadio2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        bpYesRadio2.setForeground(new java.awt.Color(255, 255, 255));
+        bpYesRadio2.setText("Yes");
+        bpYesRadio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bpYesRadio2ActionPerformed(evt);
+            }
+        });
+        add(bpYesRadio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 230, -1, -1));
+
+        bpNoRadio2.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        bpNoRadio2.setForeground(new java.awt.Color(255, 255, 255));
+        bpNoRadio2.setText("No");
+        bpNoRadio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bpNoRadio2ActionPerformed(evt);
+            }
+        });
+        add(bpNoRadio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 230, -1, -1));
+
+        lblBloodPressure.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblBloodPressure.setForeground(new java.awt.Color(255, 255, 255));
+        lblBloodPressure.setText("Blood Pressure:");
+        add(lblBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 110, -1));
+
+        lblPulse.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblPulse.setForeground(new java.awt.Color(255, 255, 255));
+        lblPulse.setText("Pulse:");
+        add(lblPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+
+        barPulse.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        barPulse.setForeground(new java.awt.Color(0, 255, 51));
+        barPulse.setBorder(null);
+        add(barPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, -1, -1));
+
+        barBloodPressure.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        barBloodPressure.setForeground(new java.awt.Color(0, 255, 51));
+        barBloodPressure.setBorder(null);
+        add(barBloodPressure, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        if(!txtResult.getText().equals(jTextField1.getText())){
+        if(!txtSubmitResult.getText().equals(txtResult.getText())){
             JOptionPane.showMessageDialog(this, "Please input valid report");
             return;
         }
@@ -409,8 +466,8 @@ public class LabAreaJPanel extends javax.swing.JPanel {
         
         appointment request = (appointment)jTable1.getValueAt(selectedRow, 0);
      System.out.println("1");
-        request.setTestResult(txtResult.getText());
-        System.out.println(txtResult.getText());
+        request.setTestResult(txtSubmitResult.getText());
+        System.out.println(txtSubmitResult.getText());
         System.out.println("2");
         JOptionPane.showMessageDialog(this, "Request tested");
         populateTable();
@@ -423,7 +480,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             vitalNoRadio.setSelected(false);
         }
         int internalvalue = 100;
-        vitalSignBar.setValue(internalvalue);
+        barVital.setValue(internalvalue);
         
        
     }//GEN-LAST:event_vitalYesRadioActionPerformed
@@ -434,7 +491,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             dosageYesRadio.setSelected(false);
         }
         int value = 0;
-        DosageBar.setValue(value);
+        barDosage.setValue(value);
     }//GEN-LAST:event_dosageNoRadioActionPerformed
 
     private void vitalNoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vitalNoRadioActionPerformed
@@ -442,7 +499,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             vitalYesRadio.setSelected(false);
         }
         int value = 0;
-        vitalSignBar.setValue(value);
+        barVital.setValue(value);
 
         
     }//GEN-LAST:event_vitalNoRadioActionPerformed
@@ -453,7 +510,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             dosageNoRadio.setSelected(false);
         }
         int internalvalue = 100;
-        DosageBar.setValue(internalvalue);
+        barDosage.setValue(internalvalue);
         
     }//GEN-LAST:event_dosageYesRadioActionPerformed
 
@@ -463,7 +520,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             coldNoRadio.setSelected(false);
         }
         int internalvalue = 100;
-        ColdBar.setValue(internalvalue);
+        barCold.setValue(internalvalue);
         
         
     }//GEN-LAST:event_coldYesRadioActionPerformed
@@ -474,7 +531,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             coldYesRadio.setSelected(false);
         }
         int value = 0;
-        ColdBar.setValue(value);
+        barCold.setValue(value);
     }//GEN-LAST:event_coldNoRadioActionPerformed
 
     private void tempYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempYesRadioActionPerformed
@@ -483,7 +540,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             tempNoRadio.setSelected(false);
         }
         int internalvalue = 100;
-        TemperatureBar.setValue(internalvalue);
+        barTemperature.setValue(internalvalue);
         
     }//GEN-LAST:event_tempYesRadioActionPerformed
 
@@ -493,45 +550,45 @@ public class LabAreaJPanel extends javax.swing.JPanel {
             tempYesRadio.setSelected(false);
         }
         int value = 0;
-        TemperatureBar.setValue(value);
+        barTemperature.setValue(value);
     }//GEN-LAST:event_tempNoRadioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
         // TODO add your handling code here:
-        int vitals = vitalSignBar.getValue()/4;
-        int cold = ColdBar.getValue()/4;
-        int dosage = DosageBar.getValue()/4;
-        int temp = TemperatureBar.getValue()/4;
+        int vitals = barVital.getValue()/4;
+        int cold = barCold.getValue()/4;
+        int dosage = barDosage.getValue()/4;
+        int temp = barTemperature.getValue()/4;
         
         int finalResult = vitals + cold + dosage + temp;
         
-        jProgressBar1.setValue(finalResult);
+        barFinal.setValue(finalResult);
         if(finalResult == 100){
-            jProgressBar1.setStringPainted(true);
-            jProgressBar1.setForeground(Color.white);
-            jProgressBar1.setBackground(Color.green);
+            barFinal.setStringPainted(true);
+            barFinal.setForeground(Color.white);
+            barFinal.setBackground(Color.green);
            
             
-            jTextField1.setText("Approved !");
+            txtResult.setText("Approved !");
         } else if(finalResult >= 50 && finalResult < 100){
-            jProgressBar1.setForeground(Color.YELLOW);
-            jTextField1.setText("Needs Monitoring");
+            barFinal.setForeground(Color.YELLOW);
+            txtResult.setText("Needs Monitoring");
         }else if (finalResult < 50){
-            jProgressBar1.setForeground(Color.RED);
-            jTextField1.setText("Danger!");
+            barFinal.setForeground(Color.RED);
+            txtResult.setText("Danger!");
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGenerateReportActionPerformed
 
-    private void txtResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultActionPerformed
+    private void txtSubmitResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSubmitResultActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtResultActionPerformed
+    }//GEN-LAST:event_txtSubmitResultActionPerformed
 
     private void txtToActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtToActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtToActionPerformed
 
-    private void jButtonSendReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSendReportActionPerformed
+    private void btnSendReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendReportActionPerformed
         // TODO add your handling code here:
         String toEmail = txtTo.getText();
         String fromEmail = "nuccfall2021@gmail.com";
@@ -557,57 +614,87 @@ public class LabAreaJPanel extends javax.swing.JPanel {
                 return new PasswordAuthentication(fromEmail , fromEmailPassword);
             }
         });
+        populateTable();
         
         try{
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromEmail));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
             message.setSubject(subject);
-            message.setText(jTextArea1.getText());
+            message.setText(txtareaReport.getText());
             Transport.send(message);
         }catch(Exception e){
             System.out.print(e);
         }
         
-    }//GEN-LAST:event_jButtonSendReportActionPerformed
+    }//GEN-LAST:event_btnSendReportActionPerformed
+
+    private void pulseYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulseYesRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pulseYesRadioActionPerformed
+
+    private void pulseNoRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulseNoRadio1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pulseNoRadio1ActionPerformed
+
+    private void bpYesRadio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpYesRadio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bpYesRadio2ActionPerformed
+
+    private void bpNoRadio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpNoRadio2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bpNoRadio2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar ColdBar;
-    private javax.swing.JProgressBar DosageBar;
-    private javax.swing.JProgressBar TemperatureBar;
+    private javax.swing.JProgressBar barBloodPressure;
+    private javax.swing.JProgressBar barCold;
+    private javax.swing.JProgressBar barDosage;
+    private javax.swing.JProgressBar barFinal;
+    private javax.swing.JProgressBar barPulse;
+    private javax.swing.JProgressBar barTemperature;
+    private javax.swing.JProgressBar barVital;
+    private javax.swing.JRadioButton bpNoRadio2;
+    private javax.swing.JRadioButton bpYesRadio2;
+    private javax.swing.JButton btnGenerateReport;
+    private javax.swing.JButton btnSendReport;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JRadioButton coldNoRadio;
     private javax.swing.JRadioButton coldYesRadio;
     private javax.swing.JRadioButton dosageNoRadio;
     private javax.swing.JRadioButton dosageYesRadio;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonSendReport;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblBloodPressure;
+    private javax.swing.JLabel lblCold;
+    private javax.swing.JLabel lblDosage;
+    private javax.swing.JLabel lblFinal;
+    private javax.swing.JLabel lblPulse;
+    private javax.swing.JLabel lblQ1;
+    private javax.swing.JLabel lblQ2;
+    private javax.swing.JLabel lblQ3;
+    private javax.swing.JLabel lblQ4;
+    private javax.swing.JLabel lblQ5;
+    private javax.swing.JLabel lblQ6;
+    private javax.swing.JLabel lblReport;
+    private javax.swing.JLabel lblResult;
+    private javax.swing.JLabel lblTemperature;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblTo;
+    private javax.swing.JLabel lblVital;
+    private javax.swing.JRadioButton pulseNoRadio1;
+    private javax.swing.JRadioButton pulseYesRadio;
+    private javax.swing.JSeparator separatorLine;
+    private javax.swing.JSeparator separatorLine1;
+    private javax.swing.JSeparator separatorLine2;
     private javax.swing.JRadioButton tempNoRadio;
     private javax.swing.JRadioButton tempYesRadio;
     private javax.swing.JTextField txtResult;
+    private javax.swing.JTextField txtSubmitResult;
     private javax.swing.JTextField txtTo;
+    private javax.swing.JTextArea txtareaReport;
     private javax.swing.JRadioButton vitalNoRadio;
-    private javax.swing.JProgressBar vitalSignBar;
     private javax.swing.JRadioButton vitalYesRadio;
     // End of variables declaration//GEN-END:variables
     public void populateTable(){
