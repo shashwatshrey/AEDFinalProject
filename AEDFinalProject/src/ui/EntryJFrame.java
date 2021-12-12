@@ -57,6 +57,9 @@ public class EntryJFrame extends javax.swing.JFrame {
         iconLogo = new javax.swing.JLabel();
         iconExit = new javax.swing.JLabel();
         lblRights = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         signoutPanel = new javax.swing.JPanel();
         separatorLine3 = new javax.swing.JSeparator();
         lblText = new javax.swing.JLabel();
@@ -77,22 +80,28 @@ public class EntryJFrame extends javax.swing.JFrame {
         signinPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         signinFormPanel.setBackground(new java.awt.Color(36, 47, 65));
+        signinFormPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSignin.setFont(new java.awt.Font("Optima", 1, 20)); // NOI18N
         lblSignin.setForeground(new java.awt.Color(204, 0, 51));
         lblSignin.setText("Welcome to NUCC- We are Happy to Serve You!");
+        signinFormPanel.add(lblSignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, 50));
 
         lblUsername.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(204, 204, 204));
         lblUsername.setText("USERNAME");
+        signinFormPanel.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 94, -1, -1));
 
         lblPassword.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(204, 204, 204));
         lblPassword.setText("PASSWORD");
+        signinFormPanel.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 160, -1, -1));
 
         separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        signinFormPanel.add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 150, 270, 10));
 
         separatorLine2.setForeground(new java.awt.Color(255, 255, 255));
+        signinFormPanel.add(separatorLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 216, 270, 10));
 
         txtPassword.setBackground(new java.awt.Color(36, 47, 65));
         txtPassword.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
@@ -104,6 +113,7 @@ public class EntryJFrame extends javax.swing.JFrame {
                 txtPasswordMouseClicked(evt);
             }
         });
+        signinFormPanel.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 186, 270, 30));
 
         txtUsername.setBackground(new java.awt.Color(36, 47, 65));
         txtUsername.setFont(new java.awt.Font("Optima", 0, 14)); // NOI18N
@@ -117,11 +127,13 @@ public class EntryJFrame extends javax.swing.JFrame {
                 txtUsernameMouseClicked(evt);
             }
         });
+        signinFormPanel.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 120, 270, 30));
 
         chkTerms.setBackground(new java.awt.Color(36, 47, 65));
         chkTerms.setFont(new java.awt.Font("Optima", 0, 13)); // NOI18N
         chkTerms.setForeground(new java.awt.Color(204, 204, 204));
         chkTerms.setText("I agree to all terms of service");
+        signinFormPanel.add(chkTerms, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 254, -1, -1));
 
         btnSignin.setBackground(new java.awt.Color(204, 204, 204));
         btnSignin.setFont(new java.awt.Font("Optima", 1, 16)); // NOI18N
@@ -139,54 +151,9 @@ public class EntryJFrame extends javax.swing.JFrame {
                 btnSigninActionPerformed(evt);
             }
         });
+        signinFormPanel.add(btnSignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 361, 170, 40));
 
-        javax.swing.GroupLayout signinFormPanelLayout = new javax.swing.GroupLayout(signinFormPanel);
-        signinFormPanel.setLayout(signinFormPanelLayout);
-        signinFormPanelLayout.setHorizontalGroup(
-            signinFormPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(signinFormPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(signinFormPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUsername)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(separatorLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPassword)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(separatorLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(signinFormPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnSignin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(chkTerms)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(signinFormPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblSignin)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        signinFormPanelLayout.setVerticalGroup(
-            signinFormPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(signinFormPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblSignin, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addGap(38, 38, 38)
-                .addComponent(lblUsername)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(separatorLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(lblPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(separatorLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(chkTerms)
-                .addGap(84, 84, 84)
-                .addComponent(btnSignin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
-        );
-
-        signinPanel.add(signinFormPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 388, -1, -1));
+        signinPanel.add(signinFormPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, -1, -1));
 
         iconLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iconLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo-signin.png"))); // NOI18N
@@ -200,9 +167,19 @@ public class EntryJFrame extends javax.swing.JFrame {
         });
         signinPanel.add(iconExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1376, 14, -1, -1));
 
+        lblRights.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
         lblRights.setForeground(new java.awt.Color(204, 204, 204));
         lblRights.setText("All rights reserved NUCC 2021");
-        signinPanel.add(lblRights, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 880, -1, -1));
+        signinPanel.add(lblRights, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 880, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/copyright.png"))); // NOI18N
+        signinPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 880, 30, 20));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/trademark.png"))); // NOI18N
+        signinPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 880, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gradient_img.png"))); // NOI18N
+        signinPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 0, 410, 900));
 
         getContentPane().add(signinPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -426,6 +403,9 @@ public class EntryJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel iconLogo;
     private javax.swing.JLabel iconLogoSmall;
     private javax.swing.JLabel iconSignout;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRights;
     private javax.swing.JLabel lblSignin;

@@ -67,30 +67,27 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         btnSendSample = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        requestTable = new javax.swing.JTable();
+        tblRequest = new javax.swing.JTable();
         btnAddVaccine = new javax.swing.JButton();
         btnOrder = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnSendSample.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSendSample.setText("Send Sample for approval");
         btnSendSample.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendSampleActionPerformed(evt);
             }
         });
-        add(btnSendSample, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 666, -1, -1));
+        add(btnSendSample, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, -1, -1));
 
-        jLabel1.setText("Manufacturing Work area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 78, -1, -1));
-
-        requestTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -101,45 +98,48 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
                 "Vaccine Name", "Scientific Name", "Manufacturer Name", "Quantity per dose", "Number of Doses", "Status"
             }
         ));
-        jScrollPane1.setViewportView(requestTable);
+        jScrollPane1.setViewportView(tblRequest);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 112, -1, 229));
 
+        btnAddVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnAddVaccine.setText("Add Vaccine");
         btnAddVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddVaccineActionPerformed(evt);
             }
         });
-        add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 666, -1, -1));
+        add(btnAddVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, -1, -1));
 
+        btnOrder.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnOrder.setText("Order Management");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrderActionPerformed(evt);
             }
         });
-        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 713, -1, -1));
+        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, -1, -1));
 
-        jButton1.setText("Delete Vaccine");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnDelete.setText("Delete Vaccine");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 713, -1, -1));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 550, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendSampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendSampleActionPerformed
         // TODO add your handling code here:
 //        this.network = network;
-        int selectedRow = requestTable.getSelectedRow();
+        int selectedRow = tblRequest.getSelectedRow();
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(this, "Please select a vaccine record to send for approval");
             return;
         }
         approveVaccine lr = new approveVaccine();
-        Vaccine v = (Vaccine) requestTable.getValueAt(selectedRow, 0);
+        Vaccine v = (Vaccine) tblRequest.getValueAt(selectedRow, 0);
         if(v.getStatus().equals("Approved")){
             JOptionPane.showMessageDialog(this, "Vaccine already approved!!");
             return;
@@ -212,13 +212,14 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnAddVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVaccineActionPerformed
         // TODO add your handling code here:
-        int count = requestTable.getModel().getRowCount();
+        int count = tblRequest.getModel().getRowCount();
         if(count == 0){
         this.vaccineDirectory = vaccineDirectory;
         AddVaccineJPanel addVaccineJPanel = new AddVaccineJPanel(userProcessContainer, enterprise.getOrganizationDirectory(), organization, vaccineDirectory);
         userProcessContainer.add("addVaccineJPanel", addVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        populateTable();
         }
         else{
             JOptionPane.showMessageDialog(this, "You already have a vaccine produced, please delete it to create a new one");
@@ -231,33 +232,33 @@ public class ManufacturingWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("orderJPanel", orderJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        populateTable();
     }//GEN-LAST:event_btnOrderActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        int selectedRow = requestTable.getSelectedRow();
+        int selectedRow = tblRequest.getSelectedRow();
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(this, "Please select a vaccine record to delete");
             return;
         }
-        Vaccine v = (Vaccine) requestTable.getModel().getValueAt(selectedRow, 0);
+        Vaccine v = (Vaccine) tblRequest.getModel().getValueAt(selectedRow, 0);
         organization.deleteVaccine(v);
         populateTable();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddVaccine;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnOrder;
     private javax.swing.JButton btnSendSample;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable requestTable;
+    private javax.swing.JTable tblRequest;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblRequest.getModel();
         model.setRowCount(0);
         
         for(Vaccine v : organization.getVaccineDirectory()){

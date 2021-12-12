@@ -67,38 +67,46 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblVaccineCount = new javax.swing.JLabel();
         btnSchedule = new javax.swing.JButton();
         VaccinationjDateChooser = new com.toedter.calendar.JDateChooser();
         txtvaccineCount = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblRequests = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        vaccinejTable = new javax.swing.JTable();
+        tblVaccine = new javax.swing.JTable();
+        separatorLine1 = new javax.swing.JSeparator();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Distributor Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 28, -1, -1));
+        lblVaccineCount.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblVaccineCount.setForeground(new java.awt.Color(255, 255, 255));
+        lblVaccineCount.setText("Vaccine Count:");
+        add(lblVaccineCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
 
-        jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
-
+        btnSchedule.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSchedule.setText("Schedule");
         btnSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnScheduleActionPerformed(evt);
             }
         });
-        add(btnSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
-        add(VaccinationjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
-        add(txtvaccineCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 123, -1));
+        add(btnSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        VaccinationjDateChooser.setBackground(new java.awt.Color(36, 47, 65));
+        add(VaccinationjDateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
+
+        txtvaccineCount.setBackground(new java.awt.Color(36, 47, 65));
+        txtvaccineCount.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtvaccineCount.setForeground(new java.awt.Color(255, 255, 255));
+        txtvaccineCount.setBorder(null);
+        add(txtvaccineCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 240, -1));
+
+        tblRequests.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -109,11 +117,11 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Receiver", "Status", "Date"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblRequests);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 106, 485, 121));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 485, 121));
 
-        vaccinejTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -124,14 +132,22 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Receiver", "Quantity", "Status"
             }
         ));
-        jScrollPane2.setViewportView(vaccinejTable);
+        jScrollPane2.setViewportView(tblVaccine);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, -1, 230));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, -1, 230));
+
+        separatorLine1.setForeground(new java.awt.Color(255, 255, 255));
+        separatorLine1.setMinimumSize(new java.awt.Dimension(1, 12));
+        separatorLine1.setPreferredSize(new java.awt.Dimension(1, 12));
+        add(separatorLine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 220, 10));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/DISTRIBUTORWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScheduleActionPerformed
         // TODO add your handling code here:
-        int selectedRow = jTable1.getSelectedRow();
+        int selectedRow = tblRequests.getSelectedRow();
         if(selectedRow<0){
             JOptionPane.showMessageDialog(this, "Please select a person's request to schedule");
             return;
@@ -147,7 +163,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Please select a date");
             return;
         }
-        vaccinate req = (vaccinate)jTable1.getValueAt(selectedRow, 0);
+        vaccinate req = (vaccinate)tblRequests.getValueAt(selectedRow, 0);
         if(req.getStatus() == "Approved"){
             JOptionPane.showMessageDialog(this, "Person is already scheduled a vaccination slot");
             return;
@@ -192,16 +208,17 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser VaccinationjDateChooser;
     private javax.swing.JButton btnSchedule;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblVaccineCount;
+    private javax.swing.JSeparator separatorLine1;
+    private javax.swing.JTable tblRequests;
+    private javax.swing.JTable tblVaccine;
     private javax.swing.JTextField txtvaccineCount;
-    private javax.swing.JTable vaccinejTable;
     // End of variables declaration//GEN-END:variables
     private void populateTable() {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblRequests.getModel();
         model.setRowCount(0);
         
         for(WorkRequest wr : userAccount.getWorkQueue().getWorkRequestList()){
@@ -227,7 +244,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     private void populateVaccineTable() {
-        DefaultTableModel model = (DefaultTableModel) vaccinejTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblVaccine.getModel();
         model.setRowCount(0);
         UserAccount distributor = new UserAccount();
         try{

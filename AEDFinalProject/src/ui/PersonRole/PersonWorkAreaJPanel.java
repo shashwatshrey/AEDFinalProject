@@ -56,12 +56,12 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        btnvcn = new javax.swing.JButton();
-        btnappt = new javax.swing.JButton();
+        btnVaccine = new javax.swing.JButton();
+        btnAppointment = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        VaccinationRequestjTable = new javax.swing.JTable();
+        tblVaccineRequest = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        AppointmentjTable = new javax.swing.JTable();
+        tblAppoinment = new javax.swing.JTable();
 
         jLabel3.setText("jLabel3");
 
@@ -74,23 +74,25 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnvcn.setText("Schedule Vaccination");
-        btnvcn.addActionListener(new java.awt.event.ActionListener() {
+        btnVaccine.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnVaccine.setText("Schedule Vaccination");
+        btnVaccine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnvcnActionPerformed(evt);
+                btnVaccineActionPerformed(evt);
             }
         });
-        add(btnvcn, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 530, -1, -1));
+        add(btnVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, -1, -1));
 
-        btnappt.setText("Schedule Appointment");
-        btnappt.addActionListener(new java.awt.event.ActionListener() {
+        btnAppointment.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        btnAppointment.setText("Schedule Appointment");
+        btnAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnapptActionPerformed(evt);
+                btnAppointmentActionPerformed(evt);
             }
         });
-        add(btnappt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 780, -1, -1));
+        add(btnAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 720, -1, -1));
 
-        VaccinationRequestjTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblVaccineRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -101,11 +103,11 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Vaccination Date", "Status", "Distribution Center", "Vaccine Name"
             }
         ));
-        jScrollPane2.setViewportView(VaccinationRequestjTable);
+        jScrollPane2.setViewportView(tblVaccineRequest);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 296, 375, 204));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 375, 204));
 
-        AppointmentjTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblAppoinment.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -116,43 +118,45 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 "Sender", "Receiver", "Status", "Date"
             }
         ));
-        jScrollPane1.setViewportView(AppointmentjTable);
+        jScrollPane1.setViewportView(tblAppoinment);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 577, 375, 169));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 375, 169));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnvcnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvcnActionPerformed
+    private void btnVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineActionPerformed
         // TODO add your handling code here:
+        populateVaccineTable();
         ScheduleVaccineJPanel scheduleVaccineJPanel = new ScheduleVaccineJPanel(userProcessContainer, organization, enterprise, business, account);
         userProcessContainer.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-         dB4OUtil.storeSystem(business);
-    }//GEN-LAST:event_btnvcnActionPerformed
+        dB4OUtil.storeSystem(business);
+    }//GEN-LAST:event_btnVaccineActionPerformed
 
-    private void btnapptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnapptActionPerformed
+    private void btnAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAppointmentActionPerformed
         // TODO add your handling code here:
+        populateAppointmentTable();
         ScheduleAppointmentJPanel scheduleAppointmentJPanel = new ScheduleAppointmentJPanel(userProcessContainer, organization, enterprise, business, account);
         userProcessContainer.add("scheduleAppointmentJPanel", scheduleAppointmentJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnapptActionPerformed
+    }//GEN-LAST:event_btnAppointmentActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable AppointmentjTable;
-    private javax.swing.JTable VaccinationRequestjTable;
-    private javax.swing.JButton btnappt;
-    private javax.swing.JButton btnvcn;
+    private javax.swing.JButton btnAppointment;
+    private javax.swing.JButton btnVaccine;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTable tblAppoinment;
+    private javax.swing.JTable tblVaccineRequest;
     // End of variables declaration//GEN-END:variables
 
     private void populateVaccineTable() {
-        DefaultTableModel model = (DefaultTableModel) VaccinationRequestjTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblVaccineRequest.getModel();
         model.setRowCount(0);
         
         for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){
@@ -179,7 +183,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     private void populateAppointmentTable() {
-        DefaultTableModel model = (DefaultTableModel) AppointmentjTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblAppoinment.getModel();
         model.setRowCount(0);
         
         for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){

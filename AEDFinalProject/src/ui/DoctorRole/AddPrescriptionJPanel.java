@@ -51,9 +51,9 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblMedList = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtMedList = new javax.swing.JTextArea();
+        txtareaMedList = new javax.swing.JTextArea();
         btnSubmit = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(36, 47, 65));
@@ -61,15 +61,22 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Medicine List");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 66, -1, -1));
+        lblMedList.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        lblMedList.setForeground(new java.awt.Color(255, 255, 255));
+        lblMedList.setText("Medicine List:");
+        add(lblMedList, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
-        txtMedList.setColumns(20);
-        txtMedList.setRows(5);
-        jScrollPane1.setViewportView(txtMedList);
+        txtareaMedList.setBackground(new java.awt.Color(36, 47, 65));
+        txtareaMedList.setColumns(20);
+        txtareaMedList.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
+        txtareaMedList.setForeground(new java.awt.Color(255, 255, 255));
+        txtareaMedList.setRows(5);
+        txtareaMedList.setBorder(null);
+        jScrollPane1.setViewportView(txtareaMedList);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 57, -1, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
 
+        btnSubmit.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,12 +88,12 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        if(txtMedList.getText().equals("")){
+        if(txtareaMedList.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please agree to the terms of service", "Warning", JOptionPane.WARNING_MESSAGE);
             
         }
         
-        if(validate(txtMedList.getText())){
+        if(validate(txtareaMedList.getText())){
             UserAccount pharma = new UserAccount();
             prescribeMedicine pm = new prescribeMedicine();
             pm.setPerson(person);
@@ -113,22 +120,22 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
                 }
             }
             pm.setMessage(person.getUsername());
-            pm.setMedList(txtMedList.getText());
+            pm.setMedList(txtareaMedList.getText());
             pm.setStatus("Request");
             person.getWorkQueue().getWorkRequestList().add(pm);
             account.getWorkQueue().getWorkRequestList().add(pm);
             pharma.getWorkQueue().getWorkRequestList().add(pm);
         }
         dB4OUtil.storeSystem(system);
-        txtMedList.setText("");
+        txtareaMedList.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtMedList;
+    private javax.swing.JLabel lblMedList;
+    private javax.swing.JTextArea txtareaMedList;
     // End of variables declaration//GEN-END:variables
 
     private boolean validate(String text) {
