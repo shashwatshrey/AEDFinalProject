@@ -163,7 +163,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         txtUsername.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtUsername.setForeground(new java.awt.Color(255, 255, 255));
         txtUsername.setBorder(null);
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 210, 20));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 210, 20));
 
         lblEnterprise.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblEnterprise.setForeground(new java.awt.Color(255, 255, 255));
@@ -209,7 +209,12 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         txtPassword.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setBorder(null);
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 210, 20));
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 210, 20));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
@@ -291,6 +296,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void cmbEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEnterpriseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbEnterpriseActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;

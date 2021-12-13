@@ -10,9 +10,11 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.Enterprise.EnterpriseType;
 import Business.Network.Network;
+import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.prescribeMedicine;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -28,11 +30,11 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private UserAccount account;
     private EcoSystem system;
-    private Organization organization;
+    private DoctorOrganization organization;
     private Enterprise enterprise;
     private UserAccount person;//userProcessContainer, enterprise, organization, system
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-    public AddPrescriptionJPanel(JPanel userProcessContainer, Enterprise enterprise, Organization organization, EcoSystem system, UserAccount account, UserAccount person) {
+    public AddPrescriptionJPanel(JPanel userProcessContainer, Enterprise enterprise, DoctorOrganization organization, EcoSystem system, UserAccount account, UserAccount person) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -55,6 +57,8 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtareaMedList = new javax.swing.JTextArea();
         btnSubmit = new javax.swing.JButton();
+        iconBack = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(36, 47, 65));
         setMinimumSize(new java.awt.Dimension(1440, 848));
@@ -84,6 +88,17 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 222, -1, -1));
+
+        iconBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
+        iconBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconBackMousePressed(evt);
+            }
+        });
+        add(iconBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 30, -1, -1));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/DOCTORWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -128,13 +143,26 @@ public class AddPrescriptionJPanel extends javax.swing.JPanel {
         }
         dB4OUtil.storeSystem(system);
         txtareaMedList.setText("");
+         JOptionPane.showMessageDialog(null, "Request Submited");
+           
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void iconBackMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconBackMousePressed
+        // TODO add your handling code here:
+        userProcessContainer.removeAll();
+        DoctorWorkAreaJPanel doctorWorkAreaJPanel = new DoctorWorkAreaJPanel(userProcessContainer, account, organization, enterprise, system);
+        userProcessContainer.add("DoctorWorkAreaJPanel", doctorWorkAreaJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_iconBackMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JLabel iconBack;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMedList;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JTextArea txtareaMedList;
     // End of variables declaration//GEN-END:variables
 

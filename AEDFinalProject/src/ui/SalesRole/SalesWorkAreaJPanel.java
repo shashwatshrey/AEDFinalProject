@@ -97,7 +97,7 @@ public class SalesWorkAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Sender", "Receiver", "Quantity", "Status"
+                "Sender", "Receiver", "Quantity per dose", "Status"
             }
         ));
         tblVaccine.setGridColor(new java.awt.Color(97, 212, 195));

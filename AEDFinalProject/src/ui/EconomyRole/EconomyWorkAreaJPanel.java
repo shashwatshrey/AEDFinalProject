@@ -147,13 +147,13 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 txtQuantityActionPerformed(evt);
             }
         });
-        add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 210, -1));
+        add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 210, -1));
 
         txtDose.setBackground(new java.awt.Color(36, 47, 65));
         txtDose.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtDose.setForeground(new java.awt.Color(255, 255, 255));
         txtDose.setBorder(null);
-        add(txtDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, 220, 20));
+        add(txtDose, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 220, 20));
 
         txtGap.setBackground(new java.awt.Color(36, 47, 65));
         txtGap.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
@@ -164,7 +164,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
                 txtGapActionPerformed(evt);
             }
         });
-        add(txtGap, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 230, -1));
+        add(txtGap, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 230, -1));
 
         lblPrice.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblPrice.setForeground(new java.awt.Color(255, 255, 255));
@@ -175,7 +175,7 @@ public class EconomyWorkAreaJPanel extends javax.swing.JPanel {
         txtPrice.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtPrice.setForeground(new java.awt.Color(255, 255, 255));
         txtPrice.setBorder(null);
-        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 250, -1));
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 250, -1));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));

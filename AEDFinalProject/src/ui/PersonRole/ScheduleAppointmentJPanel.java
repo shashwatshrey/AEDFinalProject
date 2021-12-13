@@ -16,8 +16,10 @@ import Business.Organization.PurchaseOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.appointment;
 import Business.WorkQueue.vaccinate;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import ui.ManufacturingRole.AddVaccineJPanel;
 
 /**
  *
@@ -73,22 +75,24 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         separatorLine = new javax.swing.JSeparator();
+        lblTitle = new javax.swing.JLabel();
+        iconBack = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setBackground(new java.awt.Color(36, 47, 65));
-        setMinimumSize(new java.awt.Dimension(670, 848));
-        setPreferredSize(new java.awt.Dimension(670, 848));
+        setMinimumSize(new java.awt.Dimension(1440, 848));
+        setPreferredSize(new java.awt.Dimension(1440, 848));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHospital.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblHospital.setForeground(new java.awt.Color(255, 255, 255));
         lblHospital.setText("Select Hospital:");
-        add(lblHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 56, -1, -1));
+        add(lblHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
 
         cmbHospital.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         cmbHospital.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cmbHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 52, -1, -1));
+        add(cmbHospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
 
         btnRequest.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnRequest.setText("Request");
@@ -97,23 +101,34 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
                 btnRequestActionPerformed(evt);
             }
         });
-        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 200, -1, -1));
+        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, -1, -1));
 
         lblEmail.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Enter your Email:");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
 
         txtEmail.setBackground(new java.awt.Color(36, 47, 65));
         txtEmail.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(255, 255, 255));
         txtEmail.setBorder(null);
-        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 290, 30));
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 290, 30));
 
         separatorLine.setForeground(new java.awt.Color(255, 255, 255));
         separatorLine.setMinimumSize(new java.awt.Dimension(1, 12));
         separatorLine.setPreferredSize(new java.awt.Dimension(1, 12));
-        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 280, -1));
+        add(separatorLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 280, -1));
+
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PERSONWORKAREA.png"))); // NOI18N
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
+
+        iconBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
+        iconBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                iconBackMousePressed(evt);
+            }
+        });
+        add(iconBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
@@ -138,14 +153,14 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
         Network currNet = enterprise.getNetwork();
         
         for(Enterprise e : currNet.getEnterpriseDirectory().getEnterpriseList()){
-            System.out.print("1");
-            System.out.println(e.getEnterpriseType());
+            //System.out.print("1");
+            //System.out.println(e.getEnterpriseType());
             if(e.getEnterpriseType().toString().equals("Hospital")){
                 for(Organization o : e.getOrganizationDirectory().getOrganizationList()){
                     for(UserAccount u : o.getUserAccountDirectory().getUserAccountList()){
-                        System.out.println("2");
-                        System.out.println(u.getRole().toString());
-                        System.out.println(u.getUsername());
+                        //System.out.println("2");
+                        //System.out.println(u.getRole().toString());
+                        //System.out.println(u.getUsername());
                         if(u.getRole().toString().equals("Business.Role.DoctorRole")){
                             v.setReceiver(u);
                             receiver = u;
@@ -154,30 +169,39 @@ public class ScheduleAppointmentJPanel extends javax.swing.JPanel {
                 }
             }
         }
-//        for(UserAccount u: business.getUserAccountDirectory().getUserAccountList()){
-//            System.out.println(u.getUsername());
-//            System.out.println(jComboBox1.getSelectedItem().toString());
-//            System.out.println(u.getUsername().equals(jComboBox1.getSelectedItem().toString()));
-//            if(u.getUsername().equals(jComboBox1.getSelectedItem().toString())){
-//               System.out.println(u.getUsername());
-//               v.setReceiver(u);
-//               receiver = u;
-//            }
-//        }
+
         receiver.getWorkQueue().getWorkRequestList().add(v);
         userAccount.getWorkQueue().getWorkRequestList().add(v);
         JOptionPane.showMessageDialog(this, "Request sent");
+        //userProcessContainer.removeAll();
+            
         dB4OUtil.storeSystem(business);
         txtEmail.setText("");
     }//GEN-LAST:event_btnRequestActionPerformed
+
+    private void iconBackMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconBackMousePressed
+        // TODO add your handling code here:
+        System.out.println("icon 1");
+        userProcessContainer.removeAll();
+        System.out.println("icon 2");
+        PersonWorkAreaJPanel personWorkAreaJPanel = new PersonWorkAreaJPanel(userProcessContainer, userAccount, organization, enterprise, business);
+        System.out.println("icon 3");
+        userProcessContainer.add("PersonWorkAreaJPanel", personWorkAreaJPanel);
+        System.out.println("icon 4");
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        System.out.println("icon 5");
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_iconBackMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRequest;
     private javax.swing.JComboBox<String> cmbHospital;
+    private javax.swing.JLabel iconBack;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblHospital;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JSeparator separatorLine;
     private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables

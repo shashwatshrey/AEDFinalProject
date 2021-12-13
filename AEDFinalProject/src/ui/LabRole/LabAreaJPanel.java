@@ -156,7 +156,7 @@ public class LabAreaJPanel extends javax.swing.JPanel {
                 txtSubmitResultActionPerformed(evt);
             }
         });
-        add(txtSubmitResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 250, -1));
+        add(txtSubmitResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 220, -1));
 
         lblQ1.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         lblQ1.setForeground(new java.awt.Color(255, 255, 255));
@@ -560,12 +560,14 @@ public class LabAreaJPanel extends javax.swing.JPanel {
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
         // TODO add your handling code here:
-        int vitals = barVital.getValue()/4;
-        int cold = barCold.getValue()/4;
-        int dosage = barDosage.getValue()/4;
-        int temp = barTemperature.getValue()/4;
+        int vitals = barVital.getValue()/6;
+        int cold = barCold.getValue()/6;
+        int dosage = barDosage.getValue()/6;
+        int temp = barTemperature.getValue()/6;
+        int pulse = barPulse.getValue()/6;
+        int bp = barBloodPressure.getValue()/6;
         
-        int finalResult = vitals + cold + dosage + temp;
+        int finalResult = vitals + cold + dosage + temp + pulse + bp;
         
         barFinal.setValue(finalResult);
         if(finalResult == 100){
@@ -636,18 +638,38 @@ public class LabAreaJPanel extends javax.swing.JPanel {
 
     private void pulseYesRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulseYesRadioActionPerformed
         // TODO add your handling code here:
+        if(pulseNoRadio1.isSelected()){
+            pulseNoRadio1.setSelected(false);
+        }
+        int internalvalue = 100;
+        barPulse.setValue(internalvalue);
     }//GEN-LAST:event_pulseYesRadioActionPerformed
 
     private void pulseNoRadio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulseNoRadio1ActionPerformed
         // TODO add your handling code here:
+        if(pulseYesRadio.isSelected()){
+            pulseYesRadio.setSelected(false);
+        }
+        int internalvalue = 0;
+        barPulse.setValue(internalvalue);
     }//GEN-LAST:event_pulseNoRadio1ActionPerformed
 
     private void bpYesRadio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpYesRadio2ActionPerformed
         // TODO add your handling code here:
+        if(bpNoRadio2.isSelected()){
+            bpNoRadio2.setSelected(false);
+        }
+        int internalvalue = 100;
+        barBloodPressure.setValue(internalvalue);
     }//GEN-LAST:event_bpYesRadio2ActionPerformed
 
     private void bpNoRadio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpNoRadio2ActionPerformed
         // TODO add your handling code here:
+        if(bpYesRadio2.isSelected()){
+            bpYesRadio2.setSelected(false);
+        }
+        int internalvalue = 0;
+        barBloodPressure.setValue(internalvalue);
     }//GEN-LAST:event_bpNoRadio2ActionPerformed
 
 

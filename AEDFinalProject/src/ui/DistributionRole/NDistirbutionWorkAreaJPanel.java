@@ -111,7 +111,7 @@ public class NDistirbutionWorkAreaJPanel extends javax.swing.JPanel {
         txtvaccineCount.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtvaccineCount.setForeground(new java.awt.Color(255, 255, 255));
         txtvaccineCount.setBorder(null);
-        add(txtvaccineCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 240, -1));
+        add(txtvaccineCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 240, -1));
 
         tblRequests.setBackground(new java.awt.Color(97, 212, 195));
         tblRequests.setForeground(new java.awt.Color(36, 47, 65));

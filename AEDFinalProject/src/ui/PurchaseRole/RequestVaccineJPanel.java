@@ -111,6 +111,11 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         txtQuantity.setBackground(new java.awt.Color(36, 47, 65));
         txtQuantity.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         txtQuantity.setBorder(null);
+        txtQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQuantityKeyTyped(evt);
+            }
+        });
         add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 180, -1));
 
         btnOrder.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
@@ -240,6 +245,14 @@ public class RequestVaccineJPanel extends javax.swing.JPanel {
         dB4OUtil.storeSystem(business);
         txtQuantity.setText("");
     }//GEN-LAST:event_btnOrderActionPerformed
+
+    private void txtQuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtQuantityKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

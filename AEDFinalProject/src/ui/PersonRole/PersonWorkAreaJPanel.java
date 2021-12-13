@@ -12,6 +12,7 @@ import Business.Organization.PersonOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.appointment;
+import Business.WorkQueue.prescribeMedicine;
 import Business.WorkQueue.vaccinate;
 import java.awt.CardLayout;
 import java.util.Date;
@@ -45,6 +46,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         this.business = business;
         populateVaccineTable();
         populateAppointmentTable();
+        populateMedTable();
         Date td = new Date();
         lblValue.setText(account.getEmployee().getName());
 //        System.out.println(((td.getTime()-v1date.getTime())/(1000*60*60*24))%365);
@@ -68,10 +70,11 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         tblVaccineRequest = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAppoinment = new javax.swing.JTable();
-        cardWorkArea = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         lblValue = new javax.swing.JLabel();
         lblText = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        PharmajTable = new javax.swing.JTable();
 
         jLabel3.setText("jLabel3");
 
@@ -91,7 +94,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 btnVaccineActionPerformed(evt);
             }
         });
-        add(btnVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
+        add(btnVaccine, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         btnAppointment.setFont(new java.awt.Font("Optima", 0, 16)); // NOI18N
         btnAppointment.setText("Schedule Appointment");
@@ -100,14 +103,12 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
                 btnAppointmentActionPerformed(evt);
             }
         });
-        add(btnAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 740, -1, -1));
+        add(btnAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 570, -1, -1));
 
         tblVaccineRequest.setBackground(new java.awt.Color(97, 212, 195));
         tblVaccineRequest.setForeground(new java.awt.Color(36, 47, 65));
         tblVaccineRequest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -124,14 +125,12 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         tblVaccineRequest.setRowHeight(20);
         jScrollPane2.setViewportView(tblVaccineRequest);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 610, 180));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 610, 140));
 
         tblAppoinment.setBackground(new java.awt.Color(97, 212, 195));
         tblAppoinment.setForeground(new java.awt.Color(36, 47, 65));
         tblAppoinment.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -148,13 +147,7 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         tblAppoinment.setRowHeight(20);
         jScrollPane1.setViewportView(tblAppoinment);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 530, 410, 180));
-
-        cardWorkArea.setBackground(new java.awt.Color(36, 47, 65));
-        cardWorkArea.setMinimumSize(new java.awt.Dimension(670, 848));
-        cardWorkArea.setPreferredSize(new java.awt.Dimension(670, 848));
-        cardWorkArea.setLayout(new java.awt.CardLayout());
-        add(cardWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, -1, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 420, 140));
 
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PERSONWORKAREA.png"))); // NOI18N
         add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 100, 850));
@@ -168,6 +161,28 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         lblText.setForeground(new java.awt.Color(255, 255, 255));
         lblText.setText("Currently Logged in as:");
         add(lblText, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, 30));
+
+        PharmajTable.setBackground(new java.awt.Color(97, 212, 195));
+        PharmajTable.setForeground(new java.awt.Color(36, 47, 65));
+        PharmajTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Person", "Doctor", "Pharmacy", "Medicine List", "Availability"
+            }
+        ));
+        PharmajTable.setGridColor(new java.awt.Color(97, 212, 195));
+        PharmajTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        PharmajTable.setRowHeight(20);
+        jScrollPane3.setViewportView(PharmajTable);
+
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 500, 140));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVaccineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaccineActionPerformed
@@ -175,10 +190,11 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         int count = tblVaccineRequest.getModel().getRowCount();
         if(count==0){
         populateVaccineTable();
+        userProcessContainer.removeAll();
         ScheduleVaccineJPanel scheduleVaccineJPanel = new ScheduleVaccineJPanel(userProcessContainer, organization, enterprise, business, account);
-        cardWorkArea.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
-        CardLayout layout = (CardLayout) cardWorkArea.getLayout();
-        layout.next(cardWorkArea);
+        userProcessContainer.add("scheduleVaccineJPanel", scheduleVaccineJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         dB4OUtil.storeSystem(business);
         }
         else{
@@ -192,10 +208,11 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
         int count = tblVaccineRequest.getModel().getRowCount();
         if(count!=0){
         populateAppointmentTable();
+        userProcessContainer.removeAll();
         ScheduleAppointmentJPanel scheduleAppointmentJPanel = new ScheduleAppointmentJPanel(userProcessContainer, organization, enterprise, business, account);
-        cardWorkArea.add("scheduleAppointmentJPanel", scheduleAppointmentJPanel);
-        CardLayout layout = (CardLayout) cardWorkArea.getLayout();
-        layout.next(cardWorkArea);
+        userProcessContainer.add("scheduleAppointmentJPanel", scheduleAppointmentJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         }
         else{
             JOptionPane.showMessageDialog(this, "You can only book an appointment if you have received or a vaccination scheduled!!");
@@ -205,12 +222,13 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable PharmajTable;
     private javax.swing.JButton btnAppointment;
     private javax.swing.JButton btnVaccine;
-    private javax.swing.JPanel cardWorkArea;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblText;
@@ -275,6 +293,23 @@ public class PersonWorkAreaJPanel extends javax.swing.JPanel {
            model.addRow(row);
            }
         }
+        }
+    }
+    private void populateMedTable() {
+        DefaultTableModel model = (DefaultTableModel)PharmajTable.getModel();
+        model.setRowCount(0);
+        
+        for(WorkRequest wr : account.getWorkQueue().getWorkRequestList()){
+            Object[] row = new Object[5];
+            if(wr instanceof prescribeMedicine){
+                row[0] = wr;
+                row[1] = wr.getSender();
+                row[2] = wr.getReceiver();
+                row[3] = ((prescribeMedicine) wr).getMedList();
+                row[4] = wr.getStatus();
+                model.addRow(row);
+                
+            }
         }
     }
 }

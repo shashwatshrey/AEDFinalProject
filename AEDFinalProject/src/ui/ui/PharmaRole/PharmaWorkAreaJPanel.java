@@ -130,6 +130,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         WorkRequest r = (WorkRequest) tblMedList.getModel().getValueAt(selectedRow, 0);
         r.setStatus("Available");
         populateTable();
+        JOptionPane.showMessageDialog(this, "Made Available");
     }//GEN-LAST:event_btnAvailableActionPerformed
 
     private void btnNotAvailableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotAvailableActionPerformed
@@ -142,6 +143,7 @@ public class PharmaWorkAreaJPanel extends javax.swing.JPanel {
         WorkRequest r = (WorkRequest) tblMedList.getModel().getValueAt(selectedRow, 0);
         r.setStatus("Not available");
         populateTable();
+        JOptionPane.showMessageDialog(this, "Not Available");
     }//GEN-LAST:event_btnNotAvailableActionPerformed
 
 

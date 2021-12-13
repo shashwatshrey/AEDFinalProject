@@ -204,7 +204,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         //store data in database
         dB4OUtil.storeSystem(system);
         txtName.setText("");
-        
+         JOptionPane.showMessageDialog(null, "Employee created");
+           
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void cmbOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrganizationActionPerformed
