@@ -223,6 +223,18 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         }
         Date d = new Date();
         System.out.println(d);
+        //Date date = appointmentjDateChooser.getDate();
+       try{
+        if(appointmentjDateChooser.getDate().toString().length()<1){
+            JOptionPane.showMessageDialog(this, "Please choose a date to schedule vaccination");
+            return;
+        }
+        }
+        catch(NullPointerException e){
+            System.out.println("Null exception caught");
+            JOptionPane.showMessageDialog(this, "Please select a date");
+            return;
+        }
         if(appointmentjDateChooser.getDate().before(d)){
             JOptionPane.showMessageDialog(this, "Please select a future date");
             return;
@@ -234,17 +246,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             //System.out.println("Person is already scheduled a vaccination slot");
             return;
         }
-        try{
-        if(appointmentjDateChooser.getDate().toString().length()<1){
-            JOptionPane.showMessageDialog(this, "Please choose a date to schedule vaccination");
-            return;
-        }
-        }
-        catch(NullPointerException e){
-            System.out.println("Null exception caught");
-            JOptionPane.showMessageDialog(this, "Please select a date");
-            return;
-        }
+        
         
         req.setStatus("Approved");
         dB4OUtil.storeSystem(system);
